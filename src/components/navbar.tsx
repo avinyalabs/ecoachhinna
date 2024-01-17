@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 export const Navbar = () => {
   return (
-    <nav className="px-2 md:px-20 lg:px-56 flex justify-between items-center py-4">
+    <nav className="px-2 md:px-20 lg:px-56 bg-transparent  z-10  flex justify-between items-center py-4">
       <h1 className="text-3xl font-semibold">ecoachhinna</h1>
       <div className="flex justify-center items-center">
         <Button variant="ghost" className="hidden md:flex">

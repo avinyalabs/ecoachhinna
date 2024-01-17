@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
-import { User2Icon } from 'lucide-react'
+import Image from 'next/image'
 
 export default function ExpertiseCarousel() {
   return (
@@ -26,7 +26,13 @@ export default function ExpertiseCarousel() {
             className="w-full md:basis-1/2 lg:basis-1/3 "
           >
             <div className="w-full p-4 flex flex-col justify-center items-center space-y-6">
-              <User2Icon size={200} />
+              <Image
+                src={painPoints.image as string}
+                alt={painPoints.text}
+                width={150}
+                height={150}
+              />
+
               <p className="min-w-0 text-2xl font-semibold text-center">
                 {painPoints.text}
               </p>
@@ -43,20 +49,26 @@ export default function ExpertiseCarousel() {
 const content = [
   {
     text: 'Participate in Discussion',
+    image: '/group-meeting.png',
   },
   {
     text: 'Tell Stories & snd share memories',
+    image: '/emotion.png',
   },
   {
     text: 'Organise your thoughts in English',
+    image: '/mind_man.png',
   },
   {
     text: 'Share Ideas and offer Suggestions',
+    image: '/idea.png',
   },
   {
     text: 'Present information clearly',
+    image: '/information.png',
   },
   {
     text: 'Have conversation with anyone easily',
+    image: '/talking.png',
   },
 ]
