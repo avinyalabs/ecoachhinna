@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 export const Navbar = () => {
   return (
-    <nav className="px-2 md:px-20 lg:px-56 bg-transparent  z-10  flex justify-between items-center py-4">
+    <nav className="px-2 md:px-20 lg:px-56 bg-transparent  border-b border-black z-10  text-white flex justify-between items-center py-4">
       <h1 className="text-3xl font-semibold">ecoachhinna</h1>
       <div className="flex justify-center items-center">
         <Button variant="ghost" className="hidden md:flex">
@@ -22,8 +22,8 @@ export const Navbar = () => {
         </Button>
         <Button variant="ghost" className="hidden md:flex">
           <Select>
-            <SelectTrigger className="outline-none px-0 ">
-              <SelectValue className="font-normal" placeholder="Theme" />
+            <SelectTrigger className="outline-none px-0 bg-transparent ">
+              <SelectValue className="font-normal" placeholder="Services " />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="light">Light</SelectItem>

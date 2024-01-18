@@ -22,7 +22,7 @@ export default function HeroCarousel() {
         {content.map((painPoints, index) => (
           <CarouselItem key={index} className="w-full">
             <div className="">
-              <p className="min-w-0 text-2xl text-gray-500 font-semibold">
+              <p className="min-w-0 text-2xl text-gray-300 font-medium">
                 {painPoints.text}
               </p>
             </div>
