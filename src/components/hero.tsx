@@ -8,17 +8,9 @@ import { ArrowRight } from 'lucide-react'
 export default function HeroSection() {
   return (
     <div className="w-full overflow-x-clip  relative h-screen py-8 flex justify-start items-center">
-      <div className=" w-[110vw] h-[110vh] absolute  -top-20 -z-20 ">
-        <Image
-          src="/about-me.png"
-          alt="Banner"
-          fill
-          className="object-fill h-full"
-        />
-      </div>
       <div className="px-2 md:px-20 py-4 lg:px-56 flex justify-start items-center w-full text-center md:text-left my-auto">
         <div className="space-y-12 w-full md:w-2/3">
-          <h1 className="text-5xl lg:text-7xl text-white font-bold">
+          <h1 className="text-5xl lg:text-7xl text-black font-bold">
             Do you say...
           </h1>
           <div className="w-full ">
