@@ -14,12 +14,9 @@ export default function AboutMe() {
         </div>
         <div>
           <p className="min-w-0 text-2xl font-extralight ">
-            Tempor eu laborum ad elit magna aliqua aliqua consectetur culpa in
-            excepteur irure incididunt. Commodo nostrud Lorem velit veniam ea
-            sunt id. Cupidatat nulla velit incididunt do ad in ut veniam velit
-            velit id officia voluptate. Exercitation consectetur nulla quis ea
-            et. Duis cupidatat enim dolor nulla elit eiusmod amet elit et quis
-            commodo minim proident.
+            Hinna K Mendiratta is an Educator Mentor /Speaker having 10 years of
+            experience in the field of structured communication trainings and
+            teaching.
           </p>
           <div className="py-4 my-4 w-full">
             <Link
@@ -44,13 +41,7 @@ export default function AboutMe() {
             className="w-full h-full"
           />
         </div>
-        <div className="space-y-4">
-          <h3 className="text-[#ee3237] text-xl">About me</h3>
-          <h5 className="min-w-0">
-            Hinna K Mendiratta is an Educator Mentor /Speaker having 10 years of
-            experience in the field of structured communication trainings and
-            teaching.
-          </h5>
+        <div className="space-y-4 my-auto">
           <div className="text-gray-500 min-w-0 p-4 ">
             <h5>
               400 hrs International Programs in TEFL TESOL Accreditation from
