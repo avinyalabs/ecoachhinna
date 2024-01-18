@@ -4,6 +4,7 @@ import HeroSection from '@/components/hero'
 import Image from 'next/image'
 import { Navbar } from '@/components/navbar'
 import AboutMe from '@/components/about-me'
+import Testimonials from '@/components/testimonials'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Expertise />
       <Services />
       <AboutMe />
+      <Testimonials />
     </div>
   )
 }
