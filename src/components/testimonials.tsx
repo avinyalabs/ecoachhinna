@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Testimonials() {
   return (
-    <div className="px-2 md:px-20 lg:px-56 py-8 space-y-4">
+    <div className="px-2 md:px-16 lg:px-56 py-8 space-y-4 text-center md:text-left">
       <h5 className="text-accent font-semibold text-xl">Testimonials</h5>
       <div>
         <h5 className="text-6xl font-bold">What Clients Are Saying</h5>
@@ -36,21 +36,21 @@ const TestimonialsCard = ({
   image: string
 }) => {
   return (
-    <div className="grid grid-cols-5 p-4 hover:shadow-xl duration-200 space-x-4 w-full  text-xl font-semibold text-zinc-600 ">
-      <div className="w-56 col-span-1">
+    <div className="grid grid-cols-1 md:grid-cols-5 px-4 py-8 hover:shadow-xl duration-200 w-full  text-xl font-semibold text-zinc-600 ">
+      <div className=" col-span-1 mx-auto">
         <Image
           src={image}
           alt="testimonials"
           width={100}
           height={100}
-          className="   "
+          className=""
         />
       </div>
-      <div className="col-span-4 space-y-4 ">
+      <div className="md:col-span-4 space-y-4 ">
         <p>&ldquo;{text}&rdquo;</p>
-        <div className="flex justify-start items-center font-sans text-zinc-800">
+        <div className="flex justify-between items-center font-sans text-zinc-800">
           <p>{name}</p>
-          {/* <p>{profession && '-' + profession}</p> */}
+          <p>{profession && '-' + profession}</p>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ export default function HeroSection() {
           className="object-fill h-full"
         />
       </div>
-      <div className="px-2 md:px-20 py-4 lg:px-56 flex justify-start items-center w-full text-center md:text-left my-auto">
+      <div className="px-2 md:px-16 py-4 lg:px-56 flex justify-start items-center w-full text-center md:text-left my-auto">
         <div className="space-y-12 w-full md:w-2/3">
           <h1 className="text-5xl lg:text-7xl text-white font-bold">
             Do you say...
