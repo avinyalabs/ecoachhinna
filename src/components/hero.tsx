@@ -1,9 +1,8 @@
 'use client'
 import Image from 'next/image'
 import HeroCarousel from './hero-carousel'
-import { Button } from './ui/button'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { MoveRight } from 'lucide-react'
 
 export default function HeroSection() {
   return (
@@ -31,7 +30,7 @@ export default function HeroSection() {
             >
               <p>Then you are at rigth place</p>
               <div className="hover:translate-x-2 duration-300">
-                <ArrowRight />
+                <MoveRight />
               </div>
             </Link>
           </div>

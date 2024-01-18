@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function services() {
@@ -11,7 +11,7 @@ export default function services() {
           <div className="py-4 my-4 w-full">
             <Link
               href="#"
-              className=" px-4 rounded-md text-[#ee3237] hover:bg-[#ee3237] hover:text-white duration-200 py-3 text-xl border-[#ee3237] border-2"
+              className=" px-4 rounded-md text-accent hover:bg-accent hover:text-white duration-200 py-3 text-xl border-accent border-2"
             >
               View All Services
             </Link>
@@ -35,11 +35,11 @@ const ServiceCard = ({ link, title }: { link: string; title: string }) => {
   return (
     <Link
       href={link}
-      className="w-full flex justify-between items-center text-xl md:text-2xl font-medium text-left space-x-4 border-b border-white hover:border-[#ee3237] py-3"
+      className="w-full flex justify-between items-center text-xl md:text-2xl font-medium text-left space-x-4 border-b border-white hover:border-accent py-3"
     >
       <p>{title}</p>
       <span>
-        <ArrowRight />
+        <MoveRight />
       </span>
     </Link>
   )

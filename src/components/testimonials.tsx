@@ -48,9 +48,9 @@ const TestimonialsCard = ({
       </div>
       <div className="col-span-4 space-y-4 ">
         <p>&ldquo;{text}&rdquo;</p>
-        <div className="flex justify-between items-center font-sans text-zinc-800">
+        <div className="flex justify-start items-center font-sans text-zinc-800">
           <p>{name}</p>
-          <p>{profession}</p>
+          {/* <p>{profession && '-' + profession}</p> */}
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@ const testimonialsArray = [
     image: '/user.png',
   },
   {
-    name: 'Kriti CHabra',
+    name: 'Kriti Chabra',
     text: 'You pushed me beyond my limits and I had no choice but to step out of my comfort zone.',
     profession: 'Makeup Artist',
     image: '/kriti_chabra.png',

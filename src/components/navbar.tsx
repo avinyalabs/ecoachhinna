@@ -35,7 +35,7 @@ export const Navbar = () => {
         <Button>Contact Me</Button>
         <Link
           href="#"
-          className="w-fit p-2 bg-[#ee3237] text-[#ee3237] rounded-full ml-2 hidden md:flex"
+          className="w-fit p-2 bg-accent text-accent rounded-full ml-2 hidden md:flex"
         >
           <div className="w-fit p-0.5 bg-white rounded-md">
             <LinkedinIcon size={20} />
