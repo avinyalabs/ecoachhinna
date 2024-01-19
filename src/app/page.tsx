@@ -1,10 +1,11 @@
-import Expertise from '@/components/Expertise'
+import Expertise from '@/components/expertise'
 import Services from '@/components/services'
 import HeroSection from '@/components/hero'
 import Image from 'next/image'
 import { Navbar } from '@/components/navbar'
 import AboutMe from '@/components/about-me'
 import Testimonials from '@/components/testimonials'
+import Contact from '@/components/contact'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <AboutMe />
       <Testimonials />
+      <Contact />
     </div>
   )
 }

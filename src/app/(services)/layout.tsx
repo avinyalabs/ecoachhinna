@@ -14,9 +14,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body className={figtree.className}>{children}</body>
-    </html>
-  )
+  return <body className={figtree.className}>{children}</body>
 }
