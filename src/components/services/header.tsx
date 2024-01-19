@@ -13,12 +13,12 @@ export default function Header({
   return (
     <div className="px-2 md:px-20 lg:px-36 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 ">
-        <div className="font-black my-auto space-y-8 order-2 md:order-1 text-center md:text-left ">
+        <div className="font-black my-auto space-y-8 order-2 md:order-1 text-center md:text-left w-full">
           <h5 className="text-[#ED3237] text-6xl">{courseName}</h5>
           <h6 className="text-3xl md:text-4xl lg:text-6xl">{info}</h6>
           <p className="font-normal text-zinc-700 text-xl">{brief}</p>
-          <button className="px-8 py-3 text-base font-medium rounded-sm bg-[#ED3237] text-white flex justify-center items-center hover:bg-[#ED3237]/90 duration-200 space-x-2 mx-auto md:mx-0">
-            <p>Contact Me</p>
+          <button className="px-8 py-3 text-base font-medium rounded bg-[#ED3237] text-white flex justify-center items-center hover:bg-[#ED3237]/90 duration-200 space-x-2 mx-auto md:mx-0">
+            <p>Get in Touch</p>
             <MoveRightIcon />
           </button>
         </div>
