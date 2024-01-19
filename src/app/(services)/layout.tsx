@@ -1,7 +1,4 @@
 import type { Metadata } from 'next'
-import { Figtree } from 'next/font/google'
-import './globals.css'
-const figtree = Figtree({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'E coach Hina',
@@ -14,5 +11,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <body className={figtree.className}>{children}</body>
+  return <>{children}</>
 }

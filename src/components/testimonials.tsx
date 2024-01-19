@@ -47,7 +47,7 @@ const TestimonialsCard = ({
         />
       </div>
       <div className="md:col-span-4 space-y-4 ">
-        <p className="text-lg">&ldquo;{text}&rdquo;</p>
+        <p className="text-base">&ldquo;{text}&rdquo;</p>
         <div className="flex justify-between items-center font-sans text-zinc-800">
           <p>{name}</p>
           <p>{profession && '-' + profession}</p>

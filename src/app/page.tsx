@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <div className="w-full overflow-x-clip space-y-8">
       <div className="">
-        <Navbar />
         <HeroSection />
       </div>
 
@@ -19,7 +18,6 @@ export default function Home() {
       <Services />
       <AboutMe />
       <Testimonials />
-      <Contact />
     </div>
   )
 }
