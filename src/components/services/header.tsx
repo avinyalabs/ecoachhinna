@@ -12,7 +12,7 @@ export default function Header({
 }) {
   return (
     <div className="px-2 md:px-20 lg:px-36 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 ">
         <div className="font-black my-auto space-y-8 order-2 md:order-1 text-center md:text-left ">
           <h5 className="text-[#ED3237] text-6xl">{courseName}</h5>
           <h6 className="text-3xl md:text-4xl lg:text-6xl">{info}</h6>
