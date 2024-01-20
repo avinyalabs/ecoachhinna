@@ -1,4 +1,9 @@
-import { LinkedinIcon } from 'lucide-react'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
+
 import { Button } from './ui/button'
 import {
   Select,
@@ -10,12 +15,13 @@ import {
 import Link from 'next/link'
 import Image from 'next/image'
 import { LinkedinOutlined } from '@ant-design/icons'
+import { ChevronDown } from 'lucide-react'
 
 export const Navbar = () => {
   return (
     <nav className="px-4 md:px-20 lg:px-36 bg-transparent flex justify-between items-center py-4 md:py-2 ">
       <Image src={'/logo.svg'} width={100} height={100} alt="Logo" />
-      <div className="flex justify-center items-center !text-[16px]">
+      <div className="flex justify-center items-center !text-[16px] space-x-4">
         <Button
           variant="ghost"
           className="hidden md:flex hover:text-[#ED3237] !text-[16px]"
@@ -28,27 +34,40 @@ export const Navbar = () => {
         >
           About
         </Button>
-        <Button
-          variant="ghost"
-          className="hidden md:flex hover:text-[#ED3237] !text-[16px]"
-        >
-          <Select>
-            <SelectTrigger className="outline-none px-0 bg-transparent ">
-              <SelectValue className="font-normal" placeholder="Services " />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="light" className="hover:!text-white">
-                Light
-              </SelectItem>
-              <SelectItem value="dark" className="hover:!text-white">
-                Dark
-              </SelectItem>
-              <SelectItem value="system" className="hover:!text-white">
-                System
-              </SelectItem>
-            </SelectContent>
-          </Select>
-        </Button>
+
+        <div className="hidden md:flex justify-center items-center !text-[16px] hover:text-accent hover:underline duration-200">
+          <HoverCard>
+            <HoverCardTrigger className="outline-none flex justify-center items-center space-x-1">
+              <p>Services</p>
+              <ChevronDown size={16} />
+            </HoverCardTrigger>
+            <HoverCardContent>
+              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
+                <Link href="/for-school-kids">For School Kids</Link>
+              </div>
+
+              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
+                <Link href="/for-business-owners">
+                  For Business Owners with overseas clients
+                </Link>
+              </div>
+
+              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
+                <Link href="for-better-dating">For Better Dating</Link>
+              </div>
+
+              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
+                <Link href="/for-working-professionals">
+                  For Working Professionals
+                </Link>
+              </div>
+
+              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
+                <Link href="/for-home-makers">For Home Makers</Link>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+        </div>
         <button className="px-3 py-1 rounded-sm bg-[#ED3237] text-white">
           Contact Me
         </button>
