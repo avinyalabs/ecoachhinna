@@ -5,13 +5,7 @@ import {
 } from '@/components/ui/hover-card'
 
 import { Button } from './ui/button'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from './ui/select'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { LinkedinOutlined } from '@ant-design/icons'
