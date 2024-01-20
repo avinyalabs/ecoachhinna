@@ -1,7 +1,7 @@
+import { PageRouter } from '@/components/navigate-page'
 import { CoursePoint, OfferingCard } from '@/components/services/cards'
 import Header from '@/components/services/header'
 import {
-  BookFilled,
   CheckSquareFilled,
   CoffeeOutlined,
   CompassFilled,
@@ -10,15 +10,17 @@ import {
   VideoCameraFilled,
 } from '@ant-design/icons'
 
-const SchoolKidsPage = () => {
+const BusinessOwners = () => {
   return (
     <>
       <Header
+        image="/business-owners.jpg"
         courseName="I LEAP"
         info="I Learn , Enhance , Act & Perform"
         brief="A Comprehensive Program Designed for Business Owners and Entrepreneurs to accelerate Self Growth"
       />
       <div className=" py-8">
+        <PageRouter currPage="/for-business-owners" />
         <div className="space-y-8 py-16 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold">What I LEAP offers</h5>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -33,6 +35,7 @@ const SchoolKidsPage = () => {
               )
             })}
           </div>
+          P
         </div>
         <div className="py-16 space-y-12 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold ">
@@ -50,7 +53,7 @@ const SchoolKidsPage = () => {
   )
 }
 
-export default SchoolKidsPage
+export default BusinessOwners
 
 const offerings = [
   {

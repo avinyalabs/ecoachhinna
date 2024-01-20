@@ -1,3 +1,4 @@
+import { PageRouter } from '@/components/navigate-page'
 import { CoursePoint, OfferingCard } from '@/components/services/cards'
 import Header from '@/components/services/header'
 import {
@@ -8,15 +9,17 @@ import {
   MehFilled,
 } from '@ant-design/icons'
 
-const SchoolKidsPage = () => {
+const HomeMakers = () => {
   return (
     <>
       <Header
+        image="/home-makers.jpg"
         courseName="I GAIN "
         info="I Grow, Adapt, Innovate & Nurture"
         brief="A Comprehensive Program Designed for Students for enhancing Interpersonal & Communication Skills"
       />
       <div className=" py-8">
+        <PageRouter currPage="/for-home-makers" />
         <div className="space-y-8 py-16 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold">What I GAIN offers</h5>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -31,6 +34,7 @@ const SchoolKidsPage = () => {
               )
             })}
           </div>
+          P
         </div>
         <div className="py-16 space-y-12 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold ">
@@ -63,7 +67,7 @@ const UserFilled = () => (
   </svg>
 )
 
-export default SchoolKidsPage
+export default HomeMakers
 
 const offerings = [
   {

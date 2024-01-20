@@ -1,7 +1,7 @@
+import { PageRouter } from '@/components/navigate-page'
 import { CoursePoint, OfferingCard } from '@/components/services/cards'
 import Header from '@/components/services/header'
 import {
-  BuildOutlined,
   BulbFilled,
   CommentOutlined,
   CrownFilled,
@@ -10,15 +10,17 @@ import {
   UsergroupAddOutlined,
 } from '@ant-design/icons'
 
-const SchoolKidsPage = () => {
+const WorkingProfessionals = () => {
   return (
     <>
       <Header
+        image="/office.jpg"
         courseName="I GATE"
         info="I Grow Adopt, Transform & Evolve"
         brief="A 360 degree program to boost the growth of professionals in corporates"
       />
       <div className=" py-8">
+        <PageRouter currPage="/for-working-professionals" />
         <div className="space-y-8 py-16 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold">What I GATE offers</h5>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -33,6 +35,7 @@ const SchoolKidsPage = () => {
               )
             })}
           </div>
+          P
         </div>
         <div className="py-16 space-y-12 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold ">
@@ -50,7 +53,7 @@ const SchoolKidsPage = () => {
   )
 }
 
-export default SchoolKidsPage
+export default WorkingProfessionals
 
 const offerings = [
   {

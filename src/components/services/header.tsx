@@ -1,24 +1,27 @@
 import { MoveRightIcon } from 'lucide-react'
 import Image from 'next/image'
+import { PageRouter, PageRoutes } from '../navigate-page'
 // import { CalButton } from '../cal-button'
 
 export default function Header({
   courseName,
   info,
   brief,
+  image,
 }: {
   courseName: string
   info: string
   brief: string
+  image: string
 }) {
   return (
     <div className="w-full lg:h-screen py-16 relative bg-zinc-700/50 flex justify-center items-center">
       <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-80">
         <Image
-          src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={image}
           alt={courseName}
-          width={4821}
-          height={2712}
+          width={3840}
+          height={2160}
           className="w-full h-full object-cover"
         />
       </div>
@@ -35,6 +38,7 @@ export default function Header({
             <p>Get in Touch</p>
             <MoveRightIcon />
           </button>
+          <iframe>h</iframe>
           {/* <CalButton className="mx-auto px-8 py-3 text-base font-medium rounded bg-[#ED3237] text-white flex justify-center items-center hover:bg-[#ED3237]/90 duration-200 space-x-2" /> */}
         </div>
         <div className="flex justify-end items-center order-1 md:order-2"></div>

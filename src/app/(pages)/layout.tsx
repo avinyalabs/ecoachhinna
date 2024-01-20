@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Figtree } from 'next/font/google'
-import './globals.css'
+import '@/app/(pages)/globals.css'
 import { Navbar } from '@/components/navbar'
 import Contact from '@/components/contact'
 import { Toaster } from 'react-hot-toast'

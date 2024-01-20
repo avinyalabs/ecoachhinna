@@ -1,3 +1,4 @@
+import { PageRouter } from '@/components/navigate-page'
 import { CoursePoint, OfferingCard } from '@/components/services/cards'
 import Header from '@/components/services/header'
 import {
@@ -13,11 +14,13 @@ const SchoolKidsPage = () => {
   return (
     <>
       <Header
+        image="/school-kids.jpg"
         courseName="E CLIMB"
         info=" English Communication Learning, Improvement & Methodological Boost"
         brief="A Comprehensive Program Designed for Students for enhancing Interpersonal & Communication Skills"
       />
       <div className=" py-8">
+        <PageRouter currPage="/for-school-kids" />
         <div className="space-y-8 py-16 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold">What ECLIMB offers</h5>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -32,6 +35,7 @@ const SchoolKidsPage = () => {
               )
             })}
           </div>
+          P
         </div>
         <div className="py-16 space-y-12 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold ">

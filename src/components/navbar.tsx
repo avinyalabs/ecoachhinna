@@ -63,7 +63,9 @@ export const Navbar = () => {
           </HoverCard>
         </div>
         <button className="px-3 py-1 rounded-sm bg-[#ED3237] text-white">
-          Contact Me
+          <Link href="booking" className="w-full h-full">
+            Contact Me
+          </Link>
         </button>
         <Link
           href="#"
