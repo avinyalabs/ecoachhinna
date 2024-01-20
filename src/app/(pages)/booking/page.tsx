@@ -23,10 +23,10 @@ export default function Page() {
           <div className="flex justify-end items-center order-1 md:order-2"></div>
         </div>
       </div>
-      <div className="h-screen w-full">
+      <div className="h-screen w-full ">
         <iframe
           src="https://cal.com/izaan-anwar-hot4uj/30min"
-          className="w-full min-h-full rounded bg-white"
+          className="w-full min-h-full  "
         />
       </div>
     </>
