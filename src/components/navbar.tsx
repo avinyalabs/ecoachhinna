@@ -49,9 +49,11 @@ export const Navbar = () => {
             </SelectContent>
           </Select>
         </Button>
-        <button className="px-3 py-1 rounded-sm bg-[#ED3237] text-white">
-          Contact Me
-        </button>
+        <Link href={'/contact-us'}>
+          <button className="px-3 py-1 rounded-sm bg-[#ED3237] text-white">
+            Contact Me
+          </button>
+        </Link>
         <Link
           href="#"
           className="w-fit p-2 text-accent rounded-full ml-2 hidden md:flex"
