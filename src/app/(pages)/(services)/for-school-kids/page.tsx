@@ -1,5 +1,13 @@
 import { CoursePoint, OfferingCard } from '@/components/services/cards'
 import Header from '@/components/services/header'
+import {
+  BulbFilled,
+  CustomerServiceFilled,
+  EditFilled,
+  RedditSquareFilled,
+  SmileFilled,
+  SoundFilled,
+} from '@ant-design/icons'
 
 const SchoolKidsPage = () => {
   return (
@@ -18,10 +26,8 @@ const SchoolKidsPage = () => {
                 <OfferingCard
                   key={i}
                   title={off.title}
-                  from={off.from}
-                  to={off.to}
                   info={off.info}
-                  // icon={off.icon}
+                  Icon={off.icon}
                 />
               )
             })}
@@ -48,42 +54,42 @@ export default SchoolKidsPage
 const offerings = [
   {
     title: 'Confidence Building ',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <SmileFilled className="text-[4rem] w-fit" />,
     info: 'I understand that some kids may feel a bit shy or hesitant when it comes to speaking up in class or expressing themselves. My friendly and patient approach helps boost their self-esteem and encourages them to share their thoughts and ideas confidently.',
     from: '#51c5e6',
     to: '#c4effb',
   },
   {
     title: 'Speech Clarity',
-    icon: '/services/for-kids/information.svg',
+    icon: <SoundFilled className="text-[4rem] w-fit" />,
     info: 'Is your child having trouble with pronunciation? I can help! I use interactive games and exercises to improve speech clarity, making it easier for your child to be understood by peers and teachers.',
     from: '#9580ff',
     to: '#aea0f3',
   },
   {
     title: 'Listening Skills',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <CustomerServiceFilled className="text-[4rem] w-fit" />,
     info: 'Effective communication goes beyond talking; it also involves listening actively. I teach kids how to be attentive listeners, which is a crucial skill for better understanding in the classroom and building positive relationships with others.',
     from: '#e5487d',
     to: '#ef739c',
   },
   {
     title: 'Creative Expression',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <EditFilled className="text-[4rem] w-fit" />,
     info: 'I believe that communication is not just about words. I encourage creativity through storytelling, drama, and other creative activities that help children express themselves in imaginative ways.',
     from: '#e99e45',
     to: '#fbb764',
   },
   {
     title: 'Social Interaction',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <RedditSquareFilled className="text-[4rem] w-fit" />,
     info: 'Communication is at the heart of building friendships. I teach kids how to engage in conversations, ask questions, and share their thoughts in a friendly and polite manner, making social interactions more enjoyable.',
     from: '#ed3237',
     to: '#fb666b',
   },
   {
     title: 'Communication Coaching for Kids',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <BulbFilled className="text-[4rem] w-fit" />,
     info: 'If your child is in school, it is a crucial time for developing effective communication skills. I offer personalized coaching sessions that are engaging, fun, and tailored to your child’s unique needs.',
     from: '#9580ff',
     to: '#aea0f3',

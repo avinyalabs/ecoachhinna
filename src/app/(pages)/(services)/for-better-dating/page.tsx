@@ -1,5 +1,13 @@
 import { CoursePoint, OfferingCard } from '@/components/services/cards'
 import Header from '@/components/services/header'
+import {
+  CheckSquareFilled,
+  HeartFilled,
+  MessageFilled,
+  SafetyCertificateFilled,
+  ScheduleFilled,
+  TeamOutlined,
+} from '@ant-design/icons'
 
 const SchoolKidsPage = () => {
   return (
@@ -18,10 +26,8 @@ const SchoolKidsPage = () => {
                 <OfferingCard
                   key={i}
                   title={off.title}
-                  from={off.from}
-                  to={off.to}
                   info={off.info}
-                  // icon={off.icon}
+                  Icon={off.icon}
                 />
               )
             })}
@@ -48,42 +54,42 @@ export default SchoolKidsPage
 const offerings = [
   {
     title: 'Confidence Building ',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <HeartFilled className="text-[4rem] w-fit" />,
     info: 'Dating can be nerve-wracking, but I’ll work with you to boost your self-confidence, so you can approach potential partners with poise and authenticity.',
     from: '#51c5e6',
     to: '#c4effb',
   },
   {
     title: 'Effective Communication',
-    icon: '/services/for-kids/information.svg',
+    icon: <MessageFilled className="text-[4rem] w-fit" />,
     info: 'Successful dating starts with great communication. I’ll teach you how to express yourself, listen actively, and build connections through meaningful conversations.',
     from: '#9580ff',
     to: '#aea0f3',
   },
   {
     title: 'Online Dating Guidance',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <ScheduleFilled className="text-[4rem] w-fit" />,
     info: 'In today’s digital age, online dating is common. I’ll help you navigate dating apps, create an appealing profile, and engage in safe and enjoyable online interactions.',
     from: '#e5487d',
     to: '#ef739c',
   },
   {
     title: 'First Date Strategies',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <CheckSquareFilled className="text-[4rem] w-fit" />,
     info: 'Feeling jittery about first dates? I’ll provide you with strategies to plan, execute, and enjoy first dates, making a lasting impression.',
     from: '#e99e45',
     to: '#fbb764',
   },
   {
     title: 'Healthy Relationship Dynamics',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <SafetyCertificateFilled className="text-[4rem] w-fit" />,
     info: 'Understanding what makes a healthy relationship is essential. I’ll guide you on recognizing red flags, setting boundaries, and nurturing positive connections.',
     from: '#ed3237',
     to: '#fb666b',
   },
   {
     title: 'Communication Coaching for Kids',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <TeamOutlined className="text-[4rem] w-fit" />,
     info: 'If your child is in school, it is a crucial time for developing effective communication skills. I offer personalized coaching sessions that are engaging, fun, and tailored to your child’s unique needs.',
     from: '#9580ff',
     to: '#aea0f3',

@@ -1,5 +1,14 @@
 import { CoursePoint, OfferingCard } from '@/components/services/cards'
 import Header from '@/components/services/header'
+import {
+  BuildOutlined,
+  BulbFilled,
+  CommentOutlined,
+  CrownFilled,
+  FileTextFilled,
+  TeamOutlined,
+  UsergroupAddOutlined,
+} from '@ant-design/icons'
 
 const SchoolKidsPage = () => {
   return (
@@ -11,17 +20,15 @@ const SchoolKidsPage = () => {
       />
       <div className=" py-8">
         <div className="space-y-8 py-16 px-2 md:px-20 lg:px-36">
-          <h5 className="text-4xl text-center font-bold">What ECLIMB offers</h5>
+          <h5 className="text-4xl text-center font-bold">What I GATE offers</h5>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {offerings.map((off, i) => {
               return (
                 <OfferingCard
                   key={i}
                   title={off.title}
-                  from={off.from}
-                  to={off.to}
                   info={off.info}
-                  // icon={off.icon}
+                  Icon={off.icon}
                 />
               )
             })}
@@ -48,46 +55,46 @@ export default SchoolKidsPage
 const offerings = [
   {
     title: 'Communication Skills Development',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <CommentOutlined className="text-[4rem] w-fit" />,
     info: 'I understand that effective communication is essential in the workplace. My coaching services are designed to help you communicate with confidence and clarity, whether you’re giving presentations, leading meetings, or engaging in day-to-day interactions with colleagues and clients.',
     from: '#51c5e6',
     to: '#c4effb',
   },
   {
     title: 'Public Speaking Coaching',
-    icon: '/services/for-kids/information.svg',
+    icon: <BulbFilled className="text-[4rem] w-fit" />,
     info: 'Do you want to conquer your fear of public speaking? My coaching will provide you with the tools and techniques to become a confident and persuasive speaker, whether you’re presenting in front of a small team or a large audience.',
     from: '#9580ff',
     to: '#aea0f3',
   },
   {
     title: 'Interpersonal Communication',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <TeamOutlined className="text-[4rem] w-fit" />,
     info: 'Building strong professional relationships is crucial. I will teach you how to navigate complex workplace dynamics, resolve conflicts, and communicate effectively with colleagues and superiors.',
     from: '#e5487d',
     to: '#ef739c',
   },
   {
     title: 'Business Writing',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <FileTextFilled className="text-[4rem] w-fit" />,
     info: 'Clear and concise written communication is a must in the business world. I will help you improve your email correspondence, reports, and other written materials, ensuring your messages are professional and impactful.',
     from: '#e99e45',
     to: '#fbb764',
   },
   {
     title: 'Interview and Networking Skills',
-    icon: '/services/for-kids/art-1.svg',
+    icon: <UsergroupAddOutlined className="text-[4rem] w-fit" />,
     info: 'Whether you’re seeking a new job or trying to expand your professional network, my coaching will equip you with the skills to excel in interviews and confidently network with potential employers or business partners.',
     from: '#ed3237',
     to: '#fb666b',
   },
-  //   {
-  //     title: 'Communication Coaching for Kids',
-  //     icon: '/services/for-kids/art-1.svg',
-  //     info: 'If your child is in school, it is a crucial time for developing effective communication skills. I offer personalized coaching sessions that are engaging, fun, and tailored to your child’s unique needs.',
-  //     from: '#9580ff',
-  //     to: '#aea0f3',
-  //   },
+  {
+    title: 'Leadership Communication',
+    icon: <CrownFilled className="text-[4rem] w-fit" />,
+    info: 'Effective leadership requires strong communication. I will help you develop leadership communication skills, enabling you to inspire and motivate your team, convey a compelling vision, and lead with authenticity.',
+    from: '#6ac99c',
+    to: '#9ddbb2',
+  },
 ]
 
 const iGate_skills_topics = [

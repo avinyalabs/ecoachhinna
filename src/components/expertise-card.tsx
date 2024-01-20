@@ -10,7 +10,7 @@ export default function ExpertiseCard() {
             className="flex justify-center items-center md:items-start space-y-4 flex-col line-above p-2 md:p-4 mt-2 border-[#fff2d7]  hover:scale-105 transition border-t hover:border-[#ED3237] mx-2"
           >
             <Image
-              src={expertise.image}
+              src={expertise.image ?? '/null'}
               alt={expertise.title}
               width={75}
               height={75}
