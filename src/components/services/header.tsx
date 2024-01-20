@@ -11,9 +11,12 @@ export default function Header({
   brief: string
 }) {
   return (
-    <div className="px-2 md:px-20 lg:px-36 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 ">
-        <div className="font-black my-auto space-y-8 order-2 md:order-1 text-center md:text-left w-full">
+    <div
+      //  className="px-2 md:px-20 lg:px-36 py-16"
+      className="px-2 md:pl-20 md:pr-0 lg:pl-36 py-16 w-full"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 overflow-x-clip">
+        <div className="font-black my-auto space-y-8 order-2 md:order-1 text-center md:text-left w-full bg-accent/10 p-4 rounde-l">
           <h5 className="text-[#ED3237] text-6xl">{courseName}</h5>
           <h6 className="text-3xl md:text-4xl lg:text-6xl">{info}</h6>
           <p className="font-normal text-zinc-700 text-xl">{brief}</p>
@@ -22,12 +25,13 @@ export default function Header({
             <MoveRightIcon />
           </button>
         </div>
-        <div className="flex justify-end items-center order-1 md:order-2">
+        <div className="flex justify-end items-center order-1 md:order-2 w-[55vw] bg-slate-500 overflow-y-visible ">
           <Image
-            src="/banner-homepage.png"
+            src="/professionals.jpg"
             alt={courseName}
-            width={500}
-            height={500}
+            width={800}
+            height={600}
+            className=" w-full h-full "
           />
         </div>
       </div>
