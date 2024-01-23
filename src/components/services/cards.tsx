@@ -1,5 +1,6 @@
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Circle } from 'lucide-react'
+import Image from 'next/image'
 
 export const CoursePoint = ({ title }: { title: string }) => {
   return (

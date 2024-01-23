@@ -4,7 +4,10 @@ import Link from 'next/link'
 
 export default function AboutMe() {
   return (
-    <div className="px-4 md:px-16 lg:px-40 py-8 md:py-20 space-y-8 bg-[#fff2d7]">
+    <div
+      className="px-4 md:px-16 lg:px-40 py-8 md:py-20 space-y-8 bg-[#fff2d7]"
+      id="about"
+    >
       <h5 className="font-bold text-[#ED3237]">About me</h5>
       <div className="grid grid-cols-1 md:grid-cols-2 space-y-5 ">
         <div className="w-full pr-4 md:pr-10">

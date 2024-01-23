@@ -14,19 +14,29 @@ import { ChevronDown } from 'lucide-react'
 export const Navbar = () => {
   return (
     <nav className="px-4 md:px-20 lg:px-36 bg-transparent flex justify-between items-center py-4 md:py-2 ">
-      <Image src={'/logo.svg'} width={100} height={100} alt="Logo" />
+      <Link href={'/'}>
+        <Image src={'/logo.svg'} width={100} height={100} alt="Logo" />
+      </Link>
       <div className="flex justify-center items-center !text-[16px] space-x-4">
+        <Link href={'/'}>
+          <Button
+            variant="ghost"
+            className="hidden md:flex hover:text-[#ED3237] !text-[16px]"
+          >
+            Home
+          </Button>
+        </Link>
         <Button
           variant="ghost"
           className="hidden md:flex hover:text-[#ED3237] !text-[16px]"
         >
-          Home
+          <Link href={'/#about'}>About</Link>
         </Button>
         <Button
           variant="ghost"
           className="hidden md:flex hover:text-[#ED3237] !text-[16px]"
         >
-          About
+          <Link href={'/booking'}>Booking</Link>
         </Button>
 
         <div className="hidden md:flex justify-center items-center !text-[16px] hover:text-accent hover:underline duration-200">
@@ -63,7 +73,7 @@ export const Navbar = () => {
           </HoverCard>
         </div>
         <button className="px-3 py-1 rounded-sm bg-[#ED3237] text-white">
-          <Link href="booking" className="w-full h-full">
+          <Link href={'/contact-us'} className="w-full h-full">
             Contact Me
           </Link>
         </button>
