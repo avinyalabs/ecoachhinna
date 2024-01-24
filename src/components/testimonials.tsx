@@ -1,20 +1,40 @@
+'use client'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { getTestimonials } from '../../sanity/lib/queries'
+
+type TestimonialsType = {
+  author: string
+  description: string
+  image: string
+  designation: string
+}
 
 export default function Testimonials() {
+  const [testimonials, setTestimonials] = useState<TestimonialsType[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getTestimonials()
+      console.log(data)
+      setTestimonials(data)
+    }
+    fetchData()
+  }, [])
   return (
-    <div className="px-2 md:px-16 lg:px-40 py-8 space-y-4 text-center md:text-left">
+    <div className="px-2 md:px-16 lg:px-40 py-12 space-y-4 text-center md:text-left">
       <h5 className="text-accent font-semibold text-2xl">Testimonials</h5>
       <div>
         <h5 className="text-6xl font-bold">What Clients Are Saying</h5>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          {testimonialsArray.map((test, i) => {
+          {testimonials.map((test: TestimonialsType, i) => {
             return (
               <TestimonialsCard
                 key={i}
-                name={test.name}
+                name={test.author}
                 image={test.image}
-                profession={test.profession}
-                text={test.text}
+                profession={test.designation}
+                text={test.description}
               />
             )
           })}

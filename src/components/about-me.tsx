@@ -7,7 +7,6 @@ import { getAboutMe } from '../../sanity/lib/queries'
 import { Statistic } from 'antd'
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
-import { Formatter } from 'antd/lib/statistic/util'
 
 type AboutTypes = {
   title: string
@@ -21,7 +20,6 @@ export default function AboutMe() {
   })
 
   const [startCounting, setStartCounting] = useState(false)
-  const valueRef = useRef(0)
   const [about, setAbout] = useState<AboutTypes[]>([])
 
   useEffect(() => {
@@ -37,7 +35,7 @@ export default function AboutMe() {
       setStartCounting(true)
     }
   }, [inView, startCounting])
-  const formatter: Formatter = (value: number) => (
+  const formatter: any = (value: number) => (
     <CountUp end={startCounting ? value : 0} separator="," />
   )
   return (

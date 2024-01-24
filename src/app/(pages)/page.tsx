@@ -10,7 +10,7 @@ import HeroSection2 from '@/components/hero2'
 
 export default function Home() {
   return (
-    <div className="w-full overflow-x-clip space-y-8">
+    <div className="w-full overflow-x-clip ">
       <div className="">
         {/* <HeroSection /> */}
         <HeroSection2 />

@@ -10,7 +10,7 @@ export const Navbar2 = () => {
     <nav className="px-4 md:px-20 lg:px-56 flex justify-between items-center py-4 md:py-4 border-b-[2px] border-[rgba(255,255,255,0.16)]">
       <div className="flex text-white">
         <Link href={'/'}>
-          <Image src={'/logo.svg'} width={100} height={100} alt="Logo" />
+          <Image src={'/logo.png'} width={100} height={100} alt="Logo" />
         </Link>
         <div className="flex justify-center items-center !text-[16px] space-x-4 md:space-x-2 lg:space-x-4">
           <Link href={'/'}>

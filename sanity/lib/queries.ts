@@ -19,3 +19,8 @@ export async function getAboutMe() {
     groq`*[_type=='about-me']{title,description,content}`
   )
 }
+export async function getTestimonials() {
+  return await client.fetch(
+    groq`*[_type=='testimonials']{description,author,designation,"image":image.asset->url}`
+  )
+}
