@@ -13,3 +13,9 @@ export async function getWhatICanHelp() {
     groq`*[_type=='what-i-can-help']{title,"image":image.asset->url , content}`
   )
 }
+
+export async function getAboutMe() {
+  return await client.fetch(
+    groq`*[_type=='about-me']{title,description,content}`
+  )
+}
