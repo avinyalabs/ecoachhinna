@@ -21,20 +21,20 @@ export const Navbar = () => {
         <Link href={'/'}>
           <Button
             variant="ghost"
-            className="hidden md:flex hover:text-[#ED3237] !text-[16px]"
+            className="hidden md:flex hover:text-accent !text-[16px]"
           >
             Home
           </Button>
         </Link>
         <Button
           variant="ghost"
-          className="hidden md:flex hover:text-[#ED3237] !text-[16px]"
+          className="hidden md:flex hover:text-accent !text-[16px]"
         >
           <Link href={'/#about'}>About</Link>
         </Button>
         <Button
           variant="ghost"
-          className="hidden md:flex hover:text-[#ED3237] !text-[16px]"
+          className="hidden md:flex hover:text-accent !text-[16px]"
         >
           <Link href={'/booking'}>Booking</Link>
         </Button>
@@ -72,7 +72,7 @@ export const Navbar = () => {
             </HoverCardContent>
           </HoverCard>
         </div>
-        <button className="px-3 py-1 rounded-sm bg-[#ED3237] text-white">
+        <button className="px-3 py-1 rounded-sm bg-accent text-white">
           <Link href={'/contact-us'} className="w-full h-full">
             Contact Me
           </Link>
@@ -82,7 +82,7 @@ export const Navbar = () => {
           className="w-fit p-2 text-accent rounded-full ml-2 hidden md:flex"
         >
           <div className="w-fit p-0.5 bg-white rounded-md">
-            <LinkedinOutlined className="text-[#ED3237] text-3xl mb-1" />
+            <LinkedinOutlined className="text-accent text-3xl mb-1" />
           </div>
         </Link>
       </div>

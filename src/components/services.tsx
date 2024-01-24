@@ -11,7 +11,7 @@ export default function services() {
           <div className="py-4 my-4 w-full">
             <Link
               href="#"
-              className=" px-8 rounded-md font-normal text-[#ED3237] hover:bg-[#ED3237] hover:text-white duration-200 py-3 text-base border-[#ED3237]  border-2"
+              className=" px-8 rounded-md font-normal text-accent hover:bg-accent hover:text-white duration-200 py-3 text-base border-accent  border-2"
             >
               View All Services
             </Link>
@@ -35,7 +35,7 @@ const ServiceCard = ({ link, title }: { link: string; title: string }) => {
   return (
     <Link
       href={link}
-      className="w-full flex justify-between items-center text-xl md:text-2xl font-semibold text-left space-x-4 border-b border-white hover:border-[#ED3237] py-3"
+      className="w-full flex justify-between items-center text-xl md:text-2xl font-semibold text-left space-x-4 border-b border-white hover:border-accent py-3"
     >
       <p>{title}</p>
       <span>
@@ -46,17 +46,25 @@ const ServiceCard = ({ link, title }: { link: string; title: string }) => {
 }
 
 const courses = [
-  { category: 'Dating', title: 'For Better Dating', link: '#' },
+  {
+    category: 'Dating',
+    title: 'For Better Dating',
+    link: '/for-better-dating',
+  },
   {
     category: 'Professional Course',
     title: 'For Working Professionals',
-    link: '#',
+    link: '/for-working-professionals',
   },
-  { category: 'Online Course', title: 'For Home Makers', link: '#' },
+  {
+    category: 'Online Course',
+    title: 'For Home Makers',
+    link: '/for-home-makers',
+  },
   {
     category: 'Business Owners',
     title: 'For Business Owners with Overseas clients.',
-    link: '#',
+    link: '/for-business-owners',
   },
-  { category: 'Kids', title: 'For School Kids', link: '#' },
+  { category: 'Kids', title: 'For School Kids', link: '/for-school-kids' },
 ]

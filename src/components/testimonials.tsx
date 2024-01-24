@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Testimonials() {
   return (
     <div className="px-2 md:px-16 lg:px-40 py-8 space-y-4 text-center md:text-left">
-      <h5 className="text-[#ED3237] font-semibold text-2xl">Testimonials</h5>
+      <h5 className="text-accent font-semibold text-2xl">Testimonials</h5>
       <div>
         <h5 className="text-6xl font-bold">What Clients Are Saying</h5>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">

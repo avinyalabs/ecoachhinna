@@ -4,11 +4,18 @@ export const metadata = {
 }
 
 import '@/app/(pages)/globals.css'
+import { Navbar } from '@/components/navbar'
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return <>{children}</>
+  return (
+    <>
+      {' '}
+      <Navbar />
+      {children}
+    </>
+  )
 }

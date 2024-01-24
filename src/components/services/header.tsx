@@ -27,14 +27,14 @@ export default function Header({
       </div>
       <div className="flex justify-center items-center md:w-[60%]">
         <div className="font-black my-auto space-y-8 order-2 md:order-1 text-center  w-full">
-          <h5 className="text-[#ED3237] text-6xl ">{courseName}</h5>
+          <h5 className="text-accent text-6xl ">{courseName}</h5>
           <h6 className="text-3xl md:text-4xl lg:text-6xl text-white ">
             {info}
           </h6>
           <p className="font-normal text-zinc-100 text-xl md:w-[600px] mx-auto">
             {brief}
           </p>
-          <button className="px-8 py-3 text-base font-medium rounded bg-[#ED3237] text-white flex justify-center items-center hover:bg-[#ED3237]/90 duration-200 space-x-2 mx-auto ">
+          <button className="px-8 py-3 text-base font-medium rounded bg-accent text-white flex justify-center items-center hover:bg-accent/90 duration-200 space-x-2 mx-auto ">
             <p>Get in Touch</p>
             <MoveRightIcon />
           </button>

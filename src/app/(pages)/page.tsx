@@ -6,12 +6,14 @@ import { Navbar } from '@/components/navbar'
 import AboutMe from '@/components/about-me'
 import Testimonials from '@/components/testimonials'
 import Contact from '@/components/contact'
+import HeroSection2 from '@/components/hero2'
 
 export default function Home() {
   return (
     <div className="w-full overflow-x-clip space-y-8">
       <div className="">
-        <HeroSection />
+        {/* <HeroSection /> */}
+        <HeroSection2 />
       </div>
 
       <Expertise />

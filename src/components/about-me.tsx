@@ -5,10 +5,10 @@ import Link from 'next/link'
 export default function AboutMe() {
   return (
     <div
-      className="px-4 md:px-16 lg:px-40 py-8 md:py-20 space-y-8 bg-[#fff2d7]"
+      className="px-4 md:px-16 lg:px-40 py-8 md:py-20 space-y-8 bg-accent/10"
       id="about"
     >
-      <h5 className="font-bold text-[#ED3237]">About me</h5>
+      <h5 className="font-bold text-accent">About me</h5>
       <div className="grid grid-cols-1 md:grid-cols-2 space-y-5 ">
         <div className="w-full pr-4 md:pr-10">
           <h3 className="min-w-0 text-4xl lg:text-5xl font-semibold ">
@@ -24,7 +24,7 @@ export default function AboutMe() {
           <div className="py-4 my-4 w-full">
             <Link
               href="#"
-              className="flex justify-center items-center space-x-4 w-fit px-8 rounded-md text-white bg-[#ED3237]  hover:text-white duration-200 py-3 text-base border-[#ED3237] border-2"
+              className="flex justify-center items-center space-x-4 w-fit px-8 rounded-md text-white bg-accent  hover:text-white duration-200 py-3 text-base border-accent border-2"
             >
               <p>Read more</p>
               <span>
@@ -53,24 +53,24 @@ export default function AboutMe() {
           </div>
           <div className="grid grid-cols-2 gap-8">
             <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col">
-              <TrendingUpIcon size={80} className="text-[#ED3237] " />
+              <TrendingUpIcon size={80} className="text-accent" />
               <h6>200+</h6>
               <p className="text-gray-500 text-base">
                 Individuals coached so Far
               </p>
             </div>
             <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col">
-              <TrendingUpIcon size={80} className="text-[#ED3237]" />
+              <TrendingUpIcon size={80} className="text-accent" />
               <h6>10000+</h6>
               <p className="text-gray-500 text-base">Sessions Delivered</p>
             </div>
             <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col">
-              <TrendingUpIcon size={80} className="text-[#ED3237]" />
+              <TrendingUpIcon size={80} className="text-accent" />
               <h6>1000+</h6>
               <p className="text-gray-500 text-base">Hours of Course Content</p>
             </div>
             <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col">
-              <TrendingUpIcon size={80} className="text-[#ED3237]" />
+              <TrendingUpIcon size={80} className="text-accent" />
               <h6>98%</h6>
               <p className="text-gray-500 text-base">Customer Retention Rate</p>
             </div>

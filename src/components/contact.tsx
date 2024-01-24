@@ -25,7 +25,7 @@ export default function Contact() {
         </div>
         <Link
           href="#"
-          className="flex justify-center items-center space-x-4 bg-[#ED3237] text-white hover:bg-zinc-900 rounded-sm text-base px-8 py-3 w-fit duration-200 font-semibold"
+          className="flex justify-center items-center space-x-4 bg-accent text-white hover:bg-zinc-900 rounded-sm text-base px-8 py-3 w-fit duration-200 font-semibold"
         >
           <p>LET&apos;S WORK TOGETHER</p>
           <MoveRight />
@@ -50,13 +50,13 @@ const Footer = () => {
           netus turpis molestie sit molestie quis vitae.
         </p>
         <div className="flex justify-start space-x-4  items-center">
-          <span className=" flex justify-center items-center p-1.5 text-[#ED3237]">
+          <span className=" flex justify-center items-center p-1.5 text-accent">
             <FacebookIcon className="" />
           </span>
-          <span className=" flex justify-center items-center p-1.5 text-[#ED3237]">
+          <span className=" flex justify-center items-center p-1.5 text-accent">
             <TwitterIcon />
           </span>
-          <span className=" flex justify-center items-center p-1.5 text-[#ED3237]">
+          <span className=" flex justify-center items-center p-1.5 text-accent">
             <InstagramIcon />
           </span>
         </div>
@@ -64,19 +64,23 @@ const Footer = () => {
       <div className="text-center md:text-left space-y-8">
         <h5 className=" text-2xl font-normal">Services</h5>
         <div className="flex flex-col">
-          <Link className="hover:text-[#ED3237] duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="#">
             For Better Dating
           </Link>
-          <Link className="hover:text-[#ED3237] duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="#">
             For Working Professionals
           </Link>
-          <Link className="hover:text-[#ED3237] duration-200" href="#">
+          <Link
+            className="hover:text-accent
+           duration-200"
+            href="#"
+          >
             For Home Makers
           </Link>
-          <Link className="hover:text-[#ED3237] duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="#">
             For Business Owners
           </Link>
-          <Link className="hover:text-[#ED3237] duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="#">
             For Schoold Kids
           </Link>
         </div>
@@ -84,16 +88,16 @@ const Footer = () => {
       <div className="text-center md:text-left space-y-8">
         <h5 className=" text-2xl font-normal">Quick Links</h5>
         <div className="flex flex-col">
-          <Link className="hover:text-[#ED3237] duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="#">
             Home
           </Link>
-          <Link className="hover:text-[#ED3237] duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="#">
             Services
           </Link>
-          <Link className="hover:text-[#ED3237] duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="#">
             About
           </Link>
-          <Link className="hover:text-[#ED3237] duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="#">
             Contact
           </Link>
         </div>
@@ -102,13 +106,13 @@ const Footer = () => {
         <h5 className=" text-2xl font-normal">Contact Info</h5>
         <div className="flex flex-col">
           <Link
-            className="hover:text-[#ED3237] duration-200"
+            className="hover:text-accent duration-200"
             href="mailto:seek@ecoachhinna.com"
           >
             seek@ecoachhinna.com
           </Link>
           <Link
-            className="hover:text-[#ED3237] duration-200"
+            className="hover:text-accent duration-200"
             href="tel:+919811525733"
           >
             +91 98115 25733
