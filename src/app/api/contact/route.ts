@@ -10,6 +10,7 @@ export async function POST(req: Request) {
       apiVersion: '2024-01-12',
       token:
         'skCIWopJnCSXRHaPOhiKRSOKiOBYM2wgn0v67DFo6SpdTpalYwfTcb4iIAakaCO6VYa65qPP3X9hM5Y7l4fOpWBjElVrSILxcwUY1wGH7CMxodW0RIZEMvZbwMBtqeHlIfMASVhfZ0KVkrazAHcNQYzeTEYRpWY4dTmNbEHGK56oHGcTpdUD',
+      useCdn: true,
     })
 
     const result = await client.create({
