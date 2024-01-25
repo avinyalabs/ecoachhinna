@@ -21,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={figtree.className}>
         <Toaster />
+        <Navbar />
         {children}
         <Contact />
       </body>

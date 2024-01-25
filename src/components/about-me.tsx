@@ -51,7 +51,7 @@ export default function AboutMe() {
           </h3>
         </div>
         <div>
-          <p className="min-w-0 text-base md:text-xl font-extralight ">
+          <p className="min-w-0 text-base md:text-xl font-extralight md:w-[90%]">
             {about[0]?.description}
           </p>
           <div className="py-4 my-4 w-full">
@@ -72,51 +72,51 @@ export default function AboutMe() {
           <Image
             src="/about-me.png"
             alt="photo"
-            width={500}
-            height={600}
-            className="w-full h-full"
+            width={300}
+            height={400}
+            className="w-full h-full md:w-[90%] md:h-[100%]"
           />
         </div>
         <div className="space-y-4 my-auto">
-          <div className="text-zinc-700 min-w-0 p-4 ">
+          <div className="min-w-0 p-4 text-4xl mr-5">
+            <p className="text-accent text-5xl">&rdquo;</p>
             <h5>{about[0]?.content}</h5>
           </div>
-          <div className="grid grid-cols-2 gap-8" ref={inViewRef}>
-            <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-              <TrendingUpIcon size={80} className="text-accent" />
-              <Statistic
-                title="Individuals coached so Far"
-                value={200}
-                formatter={formatter}
-              />
-            </div>
-            <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-              <TrendingUpIcon size={80} className="text-accent" />
-              <Statistic
-                title="Active Users"
-                value={10000}
-                formatter={formatter}
-              />
-            </div>
-            <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-              <TrendingUpIcon size={80} className="text-accent" />
-              <Statistic
-                title="Hours of Course Content"
-                value={1000}
-                formatter={formatter}
-              />
-            </div>
-            <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-              <TrendingUpIcon size={80} className="text-accent" />
-              {/* <h6>98%</h6>
+        </div>
+      </div>
+      <div
+        className="grid grid-cols-2 md:grid-cols-4 gap-8 font-bold"
+        ref={inViewRef}
+      >
+        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
+          <TrendingUpIcon size={80} className="text-accent" />
+          <Statistic
+            title="Individuals coached so Far"
+            value={200}
+            formatter={formatter}
+          />
+        </div>
+        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
+          <TrendingUpIcon size={80} className="text-accent" />
+          <Statistic title="Active Users" value={10000} formatter={formatter} />
+        </div>
+        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
+          <TrendingUpIcon size={80} className="text-accent" />
+          <Statistic
+            title="Hours of Course Content"
+            value={1000}
+            formatter={formatter}
+          />
+        </div>
+        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
+          <TrendingUpIcon size={80} className="text-accent" />
+          {/* <h6>98%</h6>
               <p className="text-gray-500 text-base">Customer Retention Rate</p> */}
-              <Statistic
-                title="Customer Retention Rate"
-                value={98}
-                formatter={formatter}
-              />
-            </div>
-          </div>
+          <Statistic
+            title="Customer Retention Rate"
+            value={98}
+            formatter={formatter}
+          />
         </div>
       </div>
     </div>

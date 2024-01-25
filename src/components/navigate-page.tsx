@@ -17,7 +17,7 @@ export type PageRoutes =
   | '/for-home-makers'
 export const PageRouter = ({ currPage }: { currPage: PageRoutes }) => {
   return (
-    <div className="py-16 text-xs md:text-base px-2 gap-2 lg:gap-4 md:px-20 lg:px-36 grid   grid-cols-5 text-center font-medium border-b">
+    <div className="py-16 text-[0.65rem] md:text-base px-2 gap-2 lg:gap-4 md:px-20 lg:px-36 grid   grid-cols-5 text-center font-medium border-b">
       {pagePaths.map((page, i) => {
         const pageName = page
           .replace('/for-', '')

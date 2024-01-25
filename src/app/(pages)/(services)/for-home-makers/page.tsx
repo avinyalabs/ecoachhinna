@@ -1,3 +1,4 @@
+'use client'
 import { PageRouter } from '@/components/navigate-page'
 import { CoursePoint, OfferingCard } from '@/components/services/cards'
 import Header from '@/components/services/header'
@@ -8,8 +9,22 @@ import {
   HeartFilled,
   MehFilled,
 } from '@ant-design/icons'
+import { useEffect, useState } from 'react'
+import {
+  getBusinessService,
+  getHomeMakerService,
+} from '../../../../../sanity/lib/queries'
 
 const HomeMakers = () => {
+  const [skills, setSkills] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getHomeMakerService()
+      console.log(data)
+      setSkills(data)
+    }
+    fetchData()
+  }, [])
   return (
     <>
       <Header
@@ -34,7 +49,6 @@ const HomeMakers = () => {
               )
             })}
           </div>
-          P
         </div>
         <div className="py-16 space-y-12 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold ">
@@ -42,9 +56,20 @@ const HomeMakers = () => {
           </h5>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
-            {communication_skills_topics.map((skill, i) => (
-              <CoursePoint title={skill} key={i} />
-            ))}
+            {skills.map((skill: any, i) => {
+              return (
+                <div key={i}>
+                  <h1 className="text-2xl py-4 font-semibold">
+                    {skill.subcategory}
+                  </h1>
+                  <div>
+                    {skill.tags.map((tag: any, index: number) => {
+                      return <CoursePoint title={tag.tag} key={index} />
+                    })}
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
