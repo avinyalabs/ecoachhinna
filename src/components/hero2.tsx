@@ -16,9 +16,6 @@ export default function HeroSection2() {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="w-full my-0 absolute top-0">
-        <Navbar2 />
-      </div>
       <div className="space-y-6 w-full md:w-3/5 text-white mx-5 md:mx-0 py-5 mt-10 md:mt-0">
         <p className="font-semibold">Hinna</p>
         <h1 className="text-3xl lg:text-5xl w-full md:w-3/4 font-bold">

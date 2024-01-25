@@ -39,7 +39,7 @@ export const Navbar = () => {
           <Link href={'/booking'}>Booking</Link>
         </Button>
 
-        <div className="hidden md:flex justify-center items-center !text-[16px] hover:text-accent hover:underline duration-200">
+        <div className="hidden md:flex justify-center items-center !text-[16px] hover:text-accent hover:underline duration-200 cursor-pointer">
           <HoverCard>
             <HoverCardTrigger className="outline-none flex justify-center items-center space-x-1">
               <p>Services</p>
