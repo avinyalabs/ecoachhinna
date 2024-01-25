@@ -61,7 +61,6 @@ const Contact = () => {
     'absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-accent peer-focus:dark:text-accent peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto'
   return (
     <>
-      <Navbar />
       <div className="flex px-4 md:px-40 py-20 ">
         <div>
           <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center ">
@@ -142,7 +141,7 @@ const Contact = () => {
               cols={30}
               rows={5}
               placeholder="Enter your message..."
-              className="w-72 border-b border-black placeholder:text-gray-500 placeholder:text-sm py-3 focus:outline-none"
+              className="w-60 md:w-72 border-b border-black placeholder:text-gray-500 placeholder:text-sm py-3 focus:outline-none"
               onChange={(e) => {
                 setValues({ ...values, message: e.target.value })
               }}

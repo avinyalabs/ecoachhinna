@@ -25,7 +25,7 @@ export default function Page() {
       </div>
       <div className="h-screen w-full ">
         <iframe
-          src="https://cal.com/izaan-anwar-hot4uj/30min"
+          src="https://cal.com/ecoachhinna/meeting"
           className="w-full min-h-full  "
         />
       </div>

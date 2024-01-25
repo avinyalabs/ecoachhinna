@@ -19,12 +19,10 @@ export default function HeroSection2() {
       <div className="space-y-6 w-full md:w-3/5 text-white mx-5 md:mx-0 py-5 mt-10 md:mt-0">
         <p className="font-semibold">Hinna</p>
         <h1 className="text-3xl lg:text-5xl w-full md:w-3/4 font-bold">
-          Transformative Coaching for Personal Growth Success
+          Do you say...
         </h1>
         <div className="w-[90%] md:w-[60%] ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nam
-          eum nihil, dolorum praesentium dolorem vitae expedita provident
-          quaerat delectus.
+          <HeroCarousel />
         </div>
         <div className="w-full space-y-2">
           <p className=" font-medium opacity-95">Want to Start?</p>
@@ -32,7 +30,9 @@ export default function HeroSection2() {
             href="#"
             className="flex justify-center items-center text-center text-xl w-full md:w-[24rem] py-2 border-[1px] border-accent bg-accent hover:bg-accent/0 hover:border-white duration-200 rounded-md space-x-4 px-2"
           >
-            <p className="text-lg">Then you are at rigth place</p>
+            <p className="text-lg">
+              <Link href={'/booking'}>Book You meeting Now</Link>
+            </p>
             <div className="hover:translate-x-2 duration-300">
               <MoveRight />
             </div>

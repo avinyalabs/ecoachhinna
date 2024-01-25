@@ -1,3 +1,4 @@
+'use client'
 import {
   FacebookIcon,
   InstagramIcon,
@@ -5,23 +6,32 @@ import {
   TwitterIcon,
 } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getFooterData } from '../../sanity/lib/queries'
+
+type FooterType = {
+  title: string
+  content: string
+}
 
 export default function Contact() {
+  const [footerData, setFooterData] = useState<FooterType[]>([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getFooterData()
+      console.log(data)
+      setFooterData(data)
+    }
+    fetchData()
+  }, [])
   return (
     <div className="px-2 md:px-16 lg:px-40 py-8 space-y-8 text-white bg-black">
       <div className="text-center flex justify-center items-center flex-col py-10 md:mb-20">
-        <h3 className="text-6xl font-semibold min-w-0">
-          If You Have Any Question,
-        </h3>
-        <h3 className="text-6xl font-semibold min-w-0">
-          Feel Free to Call 123-456-7890
+        <h3 className="text-6xl font-semibold min-w-0 w-[80%]">
+          {footerData[0]?.title}
         </h3>
         <div className="w-full md:w-1/2 text-xl py-8 font-light">
-          <p className="">
-            Ac cum nunc vitae ut turpis praesent nunc odio lorem dictumst
-            vestibulum sem pharetra urna pretium.
-          </p>
+          <p className="">{footerData[0]?.content}</p>
         </div>
         <Link
           href="#"
@@ -44,12 +54,12 @@ const Footer = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 font-light gap-8 text-lg ">
       <div className="text-center md:text-left space-y-8">
-        <h5 className=" text-2xl font-normal">Hina</h5>
+        <h5 className=" text-2xl font-normal">Hinna</h5>
         <p className="min-w-0">
           Amet suscipit urna turpis in malesuada et sapien semper porttitor
           netus turpis molestie sit molestie quis vitae.
         </p>
-        <div className="flex justify-start space-x-4  items-center">
+        <div className="flex justify-center md:justify-start space-x-4 items-center">
           <span className=" flex justify-center items-center p-1.5 text-accent">
             <FacebookIcon className="" />
           </span>
@@ -64,24 +74,36 @@ const Footer = () => {
       <div className="text-center md:text-left space-y-8">
         <h5 className=" text-2xl font-normal">Services</h5>
         <div className="flex flex-col">
-          <Link className="hover:text-accent duration-200" href="#">
+          <Link
+            className="hover:text-accent duration-200"
+            href="/for-better-dating"
+          >
             For Better Dating
           </Link>
-          <Link className="hover:text-accent duration-200" href="#">
+          <Link
+            className="hover:text-accent duration-200"
+            href="/for-working-professionals"
+          >
             For Working Professionals
           </Link>
           <Link
             className="hover:text-accent
            duration-200"
-            href="#"
+            href="/for-home-makers"
           >
             For Home Makers
           </Link>
-          <Link className="hover:text-accent duration-200" href="#">
+          <Link
+            className="hover:text-accent duration-200"
+            href="/for-business-owners"
+          >
             For Business Owners
           </Link>
-          <Link className="hover:text-accent duration-200" href="#">
-            For Schoold Kids
+          <Link
+            className="hover:text-accent duration-200"
+            href="/for-school-kids"
+          >
+            For School Kids
           </Link>
         </div>
       </div>
@@ -94,10 +116,10 @@ const Footer = () => {
           <Link className="hover:text-accent duration-200" href="#">
             Services
           </Link>
-          <Link className="hover:text-accent duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="#about">
             About
           </Link>
-          <Link className="hover:text-accent duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="/contact-us">
             Contact
           </Link>
         </div>
