@@ -61,3 +61,21 @@ export async function getHomeMakerService() {
 export async function getFooterData() {
   return await client.fetch(groq`*[_type=='footer']{title,content}`)
 }
+
+export async function getHeroSectionData() {
+  return await client.fetch(
+    groq`*[_type=='hero-section']{title,'carouselItems': carousel[]->{
+      title
+    }}`
+  )
+}
+
+export async function getEvents() {
+  return await client.fetch(groq`*[_type=='events']{\
+    title,
+    duration,
+    eventDate,
+    "image":image.asset->url,
+    Audience
+  }`)
+}

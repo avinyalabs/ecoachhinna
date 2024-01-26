@@ -14,6 +14,8 @@ import forProfessionals, {
 } from './schemas/services/for-working-professionals'
 import forHomeMakers, { makerTags } from './schemas/services/for-home-markers'
 import footer from './schemas/footer'
+import heroSection, { carouselItem } from './schemas/hero-section'
+import events from './schemas/events'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -33,5 +35,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     makerTags,
     forHomeMakers,
     footer,
+    carouselItem,
+    heroSection,
+    events,
   ],
 }
