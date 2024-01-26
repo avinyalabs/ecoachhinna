@@ -12,6 +12,8 @@ import forProfessionals, {
 } from './services/for-working-professionals'
 import forHomeMakers, { makerTags } from './services/for-home-markers'
 import footer from './footer'
+import heroSection, { carouselItem } from './hero-section'
+import events from './events'
 
 const schemas: SchemaTypeDefinition[] = [
   contactData,
@@ -30,6 +32,9 @@ const schemas: SchemaTypeDefinition[] = [
   makerTags,
   forHomeMakers,
   footer,
+  carouselItem,
+  heroSection,
+  events,
 ]
 
 export default schemas

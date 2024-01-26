@@ -6,6 +6,7 @@ import Testimonials from '@/components/testimonials'
 import HeroSection2 from '@/components/hero2'
 import { useEffect, useState } from 'react'
 import LoadingAnimation from '@/components/loading-animation'
+import Events from '@/components/events'
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -28,7 +29,7 @@ export default function Home() {
           <div className="">
             <HeroSection2 />
           </div>
-
+          <Events />
           <Expertise />
           <Services />
           <AboutMe />

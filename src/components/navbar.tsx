@@ -69,7 +69,7 @@ export const Navbar = () => {
     <>
       <nav className="px-4 md:px-20 lg:px-36 bg-transparent flex justify-between items-center py-4 md:py-2 ">
         <Link href={'/'}>
-          <Image src={'/logo.svg'} width={100} height={100} alt="Logo" />
+          <Image src={'/logo.svg'} width={150} height={150} alt="Logo" />
         </Link>
         <div className="hidden md:flex justify-center items-center !text-[16px] space-x-4">
           <Link href={'/'}>
@@ -122,7 +122,11 @@ export const Navbar = () => {
               Contact Me
             </Link>
           </button>
-          <Link href="#" className="w-fit p-2 text-accent rounded-full ml-2">
+          <Link
+            href="https://www.linkedin.com/in/hinna-k-mendiratta-4b60796b/"
+            className="w-fit p-2 text-accent rounded-full ml-2"
+            target="_blank"
+          >
             <div className="w-fit p-0.5 bg-white rounded-md">
               <LinkedinOutlined className="text-accent text-3xl mb-1" />
             </div>
@@ -156,37 +160,6 @@ export const Navbar = () => {
           <Button variant="ghost" className="hover:text-accent !text-[20px]">
             <Link href={'/booking'}>Booking</Link>
           </Button>
-          {/* <HoverCard>
-            <HoverCardTrigger className="outline-none flex justify-center items-center space-x-1 my-2 text-xl ml-3">
-              <p>Services</p>
-              <ChevronDown size={16} />
-            </HoverCardTrigger>
-            <HoverCardContent>
-              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                <Link href="/for-school-kids">For School Kids</Link>
-              </div>
-
-              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                <Link href="/for-business-owners">
-                  For Business Owners with overseas clients
-                </Link>
-              </div>
-
-              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                <Link href="for-better-dating">For Better Dating</Link>
-              </div>
-
-              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                <Link href="/for-working-professionals">
-                  For Working Professionals
-                </Link>
-              </div>
-
-              <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                <Link href="/for-home-makers">For Home Makers</Link>
-              </div>
-            </HoverCardContent>
-          </HoverCard> */}
           <Dropdown
             menu={{ items }}
             trigger={['click']}

@@ -80,12 +80,14 @@ const ServiceCard = ({
   return (
     <Link
       href={link}
-      className="w-96 flex flex-col justify-between items-center text-xl md:text-2xl font-semibold  space-x-4 border-b border-white py-3 text-center mx-5"
+      className="w-80 md:w-96 mx-auto flex flex-col justify-between items-center text-xl md:text-2xl font-semibold  space-x-4 border-b border-white py-3 text-center hover:text-black my-2"
     >
       <Image src={image} width={300} height={300} alt={category} />
       <p className="text-sm mt-5">{category}</p>
       <p className="text-sm md:text-lg">{title}</p>
-      <p className="hover:text-accent">Know More</p>
+      <p className="border-[1px] mt-3 text-base px-2 py-1 border-accent bg-accent text-white hover:bg-accent/90">
+        Know More
+      </p>
     </Link>
   )
 }

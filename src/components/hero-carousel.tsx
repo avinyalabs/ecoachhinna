@@ -29,8 +29,6 @@ export default function HeroCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <CarouselPrevious  /> */}
-      {/* <CarouselNext /> */}
     </Carousel>
   )
 }
