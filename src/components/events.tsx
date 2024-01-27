@@ -27,9 +27,9 @@ const Events = () => {
     fetchData()
     const handleResize = () => {
       const screenWidth = window.innerWidth
-      if (screenWidth < 600) {
+      if (screenWidth < 400) {
         setSlidesToShow(1)
-      } else if (screenWidth < 1024) {
+      } else if (screenWidth < 756) {
         setSlidesToShow(2)
       } else {
         setSlidesToShow(3)
@@ -48,7 +48,7 @@ const Events = () => {
       <h5 className="text-accent font-semibold text-2xl">Events</h5>
       <div>
         <h5 className="text-5xl md:text-6xl font-bold">Our Upcoming Events</h5>
-        <div className="mt-10 ">
+        <div className="mt-10">
           <Carousel autoplay slidesToShow={slidesToShow}>
             {eventsData.map((event: EventCardType, index) => (
               <EventCard
@@ -84,7 +84,7 @@ const EventCard = ({
   image: string
 }) => {
   return (
-    <div className="w-80 md:w-96 mx-auto flex flex-col justify-between font-semibold items-center space-x-4 shadow-md py-3 hover:text-black my-2">
+    <div className="w-80 md:w-96 mx-auto flex flex-col justify-between font-semibold items-center space-x-4 py-3 hover:text-black my-2">
       <div>
         <Image
           src={image}

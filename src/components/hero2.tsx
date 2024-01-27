@@ -24,7 +24,7 @@ export default function HeroSection2() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getHeroSectionData()
-      console.log(data)
+      console.log(data, 'hero data')
       setHeroData(data)
     }
     fetchData()

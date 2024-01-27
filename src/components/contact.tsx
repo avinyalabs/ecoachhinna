@@ -25,9 +25,9 @@ export default function Contact() {
     fetchData()
   }, [])
   return (
-    <div className="px-2 md:px-16 lg:px-40 py-8 space-y-8 text-white bg-black">
-      <div className="text-center flex justify-center items-center flex-col py-10 md:mb-20">
-        <h3 className="text-6xl font-semibold min-w-0 w-[80%]">
+    <div className="px-2 md:px-16 lg:px-40 py-5 space-y-5 text-white bg-black">
+      <div className="text-center flex justify-center items-center flex-col py-10 mb-5">
+        <h3 className="text-3xl md:text-4xl font-semibold min-w-0 md:w-[80%]">
           {footerData[0]?.title}
         </h3>
         <div className="w-full md:w-1/2 text-xl py-8 font-light">
@@ -37,7 +37,7 @@ export default function Contact() {
           href="/booking"
           className="flex justify-center items-center space-x-4 bg-accent text-white hover:bg-zinc-900 rounded-sm text-base px-8 py-3 w-fit duration-200 font-semibold"
         >
-          <p>LET&apos;S WORK TOGETHER</p>
+          <p>Book a demo session</p>
           <MoveRight />
         </Link>
       </div>
