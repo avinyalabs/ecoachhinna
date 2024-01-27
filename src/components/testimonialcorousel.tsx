@@ -152,7 +152,7 @@ const TestimonialsCarousel = () => {
               resolve: arrowsPlugin,
               options: {
                 arrowLeft: (
-                  <div className="w-fit p-1.5 bg-white shadow-md rounded-full absolute left-[19.5rem] z-10">
+                  <div className="w-fit p-1.5 bg-white shadow-md rounded-full absolute left-[19.5rem] z-10 text-red-500">
                     <ChevronLeft size={32} className="font-thin" />
                   </div>
                 ),
@@ -235,8 +235,10 @@ const TestimonialSCard = ({
   image,
 }: TestimonialsType) => {
   return (
-    <div className="w-full md:w-[75vw] lg:w-[60vw] rounded-lg px-6 py-12 bg-[#fdeaeb] mx-4 h-96 flex flex-col justify-center text-xl">
-      <p className="text-gray-600 min-w-0">&ldquo;{description}&rdquo;</p>
+    <div className="w-full md:w-[75vw] lg:w-[60vw] rounded-lg px-6 py-12 bg-red-500 text-white mx-4 h-96 flex flex-col justify-center text-xl">
+      <p className="text-gray-200 min-w-0 text-left">
+        &ldquo;{description}&rdquo;
+      </p>
       <div className="mt-4 flex justify-start items-center space-x-4">
         <Avatar>
           <AvatarImage
@@ -246,9 +248,9 @@ const TestimonialSCard = ({
           />
           <AvatarFallback>U</AvatarFallback>
         </Avatar>
-        <span>
+        <span className="text-left">
           <p className="font-bold mt-2">{author}</p>
-          <p className="text-sm text-gray-500">{designation}</p>
+          <p className="text-sm text-gray-100">{designation}</p>
         </span>
       </div>
     </div>
