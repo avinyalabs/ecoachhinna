@@ -1,4 +1,22 @@
 import { SchemaTypeDefinition } from 'sanity'
+export const statsCard = {
+  name: 'stats-card',
+  type: 'document',
+  title: 'Stats card',
+  fields: [
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    },
+    {
+      name: 'value',
+      title: 'Value',
+      type: 'string',
+    },
+  ],
+} satisfies SchemaTypeDefinition
+
 const aboutMe = {
   name: 'about-me',
   type: 'document',
@@ -12,6 +30,11 @@ const aboutMe = {
     {
       name: 'description',
       title: 'Description',
+      type: 'text',
+    },
+    {
+      name: 'description2',
+      title: 'Description 2',
       type: 'text',
     },
     {

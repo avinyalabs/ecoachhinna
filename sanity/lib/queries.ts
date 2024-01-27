@@ -17,7 +17,7 @@ export async function getWhatICanHelp() {
 
 export async function getAboutMe() {
   return await client.fetch(
-    groq`*[_type=='about-me']{title,description,content}`
+    groq`*[_type=='about-me']{title,description,content,description2}`
   )
 }
 export async function getTestimonials() {
@@ -99,4 +99,8 @@ export async function getHowItWorksWithItems() {
       title
     }
   }`)
+}
+
+export async function getStatsData() {
+  return await client.fetch(groq`*[_type == 'stats-card']{title,value}`)
 }

@@ -2,8 +2,13 @@ import TestimonialsCarousel from './testimonialcorousel'
 
 export default function Testimonials() {
   return (
-    <div className="px-0 py-20 space-y-4 text-center ">
-      <h5 className="text-6xl font-bold">What Clients Are Saying</h5>
+    <div className="px-2 py-12 space-y-4 text-center md:text-left bg-accent/10">
+      <h5 className="text-accent font-semibold text-2xl lg:px-40">
+        Testimonials
+      </h5>
+      <h5 className="text-3xl md:text-5xl font-bold lg:px-40">
+        What clients are saying
+      </h5>
       <div className=" mt-8">
         <TestimonialsCarousel />
       </div>

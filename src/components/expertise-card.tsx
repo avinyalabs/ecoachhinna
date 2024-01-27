@@ -34,7 +34,9 @@ export default function ExpertiseCard() {
               height={75}
             />
             <h5 className="font-semibold">{expertise.title}</h5>
-            <p className="min-w-0 text-[15px]">{expertise.content}</p>
+            <p className="min-w-0 text-[15px] text-justify">
+              {expertise.content}
+            </p>
           </div>
         )
       })}
