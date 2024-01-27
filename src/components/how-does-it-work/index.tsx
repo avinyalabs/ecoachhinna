@@ -40,17 +40,11 @@ const HowItWorks = () => {
                 <h2 className="text-3xl md:text-4xl font-semibold">
                   {item.title}
                 </h2>
-                <p>{item.description}</p>
+                <p className="text-justify">{item.description}</p>
               </div>
             </div>
-            <div>
-              <Image
-                src={item.image}
-                alt="Image"
-                width={350}
-                height={350}
-                className="hidden md:block"
-              />
+            <div className="hidden md:block">
+              <Image src={item.image} alt="Image" width={350} height={350} />
             </div>
           </div>
         )

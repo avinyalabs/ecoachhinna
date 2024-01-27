@@ -1,7 +1,7 @@
 import { SchemaTypeDefinition } from 'sanity'
 import contactData from './contact-us/contactData'
 import whatICanHelp from './what-i-can-help'
-import aboutMe from './about-me'
+import aboutMe, { statsCard } from './about-me'
 import testimonials from './testimonials'
 import services from './services'
 import forKids, { kidTags } from './services/for-school-kids'
@@ -39,6 +39,7 @@ const schemas: SchemaTypeDefinition[] = [
   footerInfo,
   howItWorks,
   howItWorksItems,
+  statsCard,
 ]
 
 export default schemas
