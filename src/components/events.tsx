@@ -84,7 +84,7 @@ const EventCard = ({
   image: string
 }) => {
   return (
-    <div className="w-80 md:w-96 mx-auto flex flex-col justify-between font-semibold items-center space-x-4 shadow-md py-3 hover:text-black my-2">
+    <div className="w-80 md:w-96 mx-auto flex flex-col justify-between font-semibold items-center space-x-4 py-3 hover:text-black my-2">
       <div>
         <Image
           src={image}
