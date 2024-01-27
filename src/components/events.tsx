@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getEvents } from '../../sanity/lib/queries'
+import toast from 'react-hot-toast'
 
 type EventCardType = {
   title: string
@@ -12,6 +13,7 @@ type EventCardType = {
   duration: string
   image: string
   Audience: string
+  isActive: boolean
 }
 
 const Events = () => {
@@ -43,11 +45,12 @@ const Events = () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
+
   return (
     <div className="px-2 md:px-16 lg:px-40 py-12 space-y-4 text-center md:text-left">
       <h5 className="text-accent font-semibold text-2xl">Events</h5>
       <div>
-        <h5 className="text-5xl md:text-6xl font-bold">Our Upcoming Events</h5>
+        <h5 className="text-5xl md:text-6xl font-bold">Our Events</h5>
         <div className="mt-10">
           <Carousel autoplay slidesToShow={slidesToShow}>
             {eventsData.map((event: EventCardType, index) => (
@@ -58,6 +61,7 @@ const Events = () => {
                 duration={event.duration}
                 image={event.image}
                 audience={event.Audience}
+                isActive={event.isActive}
               />
             ))}
           </Carousel>
@@ -75,6 +79,7 @@ const EventCard = ({
   duration,
   audience,
   image,
+  isActive,
 }: {
   //   image: string
   title: string
@@ -82,9 +87,13 @@ const EventCard = ({
   duration: string
   audience: string
   image: string
+  isActive: boolean
 }) => {
+  const registerHandler = () => {
+    toast.error('Event has already been occurred')
+  }
   return (
-    <div className="w-80 md:w-96 mx-auto flex flex-col justify-between font-semibold items-center space-x-4 py-3 hover:text-black my-2">
+    <div className="w-80 md:w-96 mx-auto flex flex-col justify-between font-semibold items-center space-x-4 py-3 hover:text-black my-2 shadow-md">
       <div>
         <Image
           src={image}
@@ -108,42 +117,25 @@ const EventCard = ({
         <p>
           <span className="font-bold">Target Audience :</span> {audience}
         </p>
-        <button className="w-fit border-[1px] mt-3 text-base px-2 py-1 border-accent bg-accent text-white hover:bg-accent/90">
-          <Link href={'/register-for-event'} className="hover:text-white">
-            Register for event
+        {isActive && (
+          <Link
+            href={'/register-for-event'}
+            className="w-fit border-[1px] mt-3 text-base px-2 py-1 border-accent bg-accent text-white hover:bg-accent/90"
+          >
+            <p className="text-white hover:text-white">Register for event</p>
           </Link>
-        </button>
+        )}
+        {!isActive && (
+          <button
+            className="w-fit border-[1px] mt-3 text-base px-2 py-1 border-accent bg-accent text-white hover:bg-accent/90"
+            onClick={registerHandler}
+          >
+            Register for event
+          </button>
+        )}
       </div>
     </div>
   )
 }
 
 export default Events
-
-const content = [
-  {
-    title: 'Business Event',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex deserunt reiciendis ea perferendis molestiae, quam modi magni laboriosam eos repellendus!',
-  },
-  {
-    title: 'Business Event',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex deserunt reiciendis ea perferendis molestiae, quam modi magni laboriosam eos repellendus!',
-  },
-  {
-    title: 'Business Event',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex deserunt reiciendis ea perferendis molestiae, quam modi magni laboriosam eos repellendus!',
-  },
-  {
-    title: 'Business Event',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex deserunt reiciendis ea perferendis molestiae, quam modi magni laboriosam eos repellendus!',
-  },
-  {
-    title: 'Business Event',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex deserunt reiciendis ea perferendis molestiae, quam modi magni laboriosam eos repellendus!',
-  },
-]

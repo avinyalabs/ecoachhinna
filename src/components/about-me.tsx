@@ -43,41 +43,6 @@ export default function AboutMe() {
       className="px-4 md:px-16 lg:px-40 py-8 md:py-14 space-y-8 bg-accent/10"
       id="about"
     >
-      <div
-        className="grid grid-cols-2 md:grid-cols-4 gap-8 font-bold"
-        ref={inViewRef}
-      >
-        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-          <TrendingUpIcon size={80} className="text-accent" />
-          <Statistic
-            title="Individuals coached so Far"
-            value={200}
-            formatter={formatter}
-          />
-        </div>
-        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-          <TrendingUpIcon size={80} className="text-accent" />
-          <Statistic title="Active Users" value={10000} formatter={formatter} />
-        </div>
-        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-          <TrendingUpIcon size={80} className="text-accent" />
-          <Statistic
-            title="Hours of Course Content"
-            value={1000}
-            formatter={formatter}
-          />
-        </div>
-        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-          <TrendingUpIcon size={80} className="text-accent" />
-          {/* <h6>98%</h6>
-              <p className="text-gray-500 text-base">Customer Retention Rate</p> */}
-          <Statistic
-            title="Customer Retention Rate"
-            value={98}
-            formatter={formatter}
-          />
-        </div>
-      </div>
       <h5 className="font-bold text-accent">About me</h5>
       <div className="grid grid-cols-1 md:grid-cols-2 space-y-5 ">
         <div className="w-full pr-4 md:pr-10">
@@ -94,7 +59,7 @@ export default function AboutMe() {
               href="#"
               className="flex justify-center items-center space-x-4 w-fit px-8 rounded-md text-white bg-accent  hover:text-white duration-200 py-3 text-base border-accent border-2"
             >
-              <p>Read more</p>
+              <p>Know more</p>
               <span>
                 <MoveRight />
               </span>

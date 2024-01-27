@@ -30,7 +30,7 @@ export default function HeroSection() {
     fetchData()
   }, [])
   return (
-    <div className="w-full overflow-x-clip relative h-[80%] md:h-[80%] py-8 flex justify-start items-center">
+    <div className="w-full overflow-x-clip relative h-[80%] md:h-[80%] py-8 flex justify-start items-center bg-accent/10">
       <div className="px-4 md:px-20 py-4 lg:px-36 flex justify-between items-center flex-col md:flex-row w-full md:text-left my-auto">
         <div className="space-y-6 w-full md:w-3/5">
           <h1 className="text-3xl lg:text-5xl text-black w-3/4 font-bold">
