@@ -32,30 +32,35 @@ export async function getServices() {
   )
 }
 
+export type ServiceDetails = {
+  _id: string
+  subcategory: string
+  tags: { tag: string }[]
+}
 export async function getKidsService() {
-  return await client.fetch(
-    groq`*[_type=='forKids']{subcategory,tags[]->{tag}}`
-  )
+  return (await client.fetch(
+    groq`*[_type=='forKids']{_id, subcategory, tags[]->{tag}}`
+  )) as ServiceDetails[]
 }
 export async function getBusinessService() {
-  return await client.fetch(
-    groq`*[_type=='forBusiness']{subcategory,tags[]->{tag}}`
-  )
+  return (await client.fetch(
+    groq`*[_type=='forBusiness']{_id, subcategory,tags[]->{tag}}`
+  )) as ServiceDetails[]
 }
 export async function getDatingService() {
-  return await client.fetch(
-    groq`*[_type=='forDating']{subcategory,tags[]->{tag}}`
-  )
+  return (await client.fetch(
+    groq`*[_type=='forDating']{_id, subcategory,tags[]->{tag}}`
+  )) as ServiceDetails[]
 }
 export async function getProfessionalService() {
-  return await client.fetch(
-    groq`*[_type=='forProfessionals']{subcategory,tags[]->{tag}}`
-  )
+  return (await client.fetch(
+    groq`*[_type=='forProfessionals']{_id, subcategory,tags[]->{tag}}`
+  )) as ServiceDetails[]
 }
 export async function getHomeMakerService() {
-  return await client.fetch(
-    groq`*[_type=='forHomeMakers']{subcategory,tags[]->{tag}}`
-  )
+  return (await client.fetch(
+    groq`*[_type=='forHomeMakers']{_id, subcategory,tags[]->{tag}}`
+  )) as ServiceDetails[]
 }
 
 export async function getFooterData() {

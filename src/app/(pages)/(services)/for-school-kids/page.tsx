@@ -12,10 +12,14 @@ import {
   SoundFilled,
 } from '@ant-design/icons'
 import { useEffect, useState } from 'react'
-import { getKidsService } from '../../../../../sanity/lib/queries'
+import {
+  ServiceDetails,
+  getKidsService,
+} from '../../../../../sanity/lib/queries'
+import { cn } from '@/lib/utils'
 
 const SchoolKidsPage = () => {
-  const [skills, setSkills] = useState([])
+  const [skills, setSkills] = useState<ServiceDetails[]>([])
   useEffect(() => {
     const fetchData = async () => {
       const data = await getKidsService()
@@ -54,17 +58,25 @@ const SchoolKidsPage = () => {
             Topics that I&lsquo;ll Cover
           </h5>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
-            {/* {communication_skills_topics.map((skill, i) => (
-              <CoursePoint title={skill} key={i} />
-            ))} */}
+          <div
+            className={cn(
+              'grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-start',
+              skills.length === 1 && 'md:grid-cols-2 ',
+              skills.length === 2 && 'md:grid-cols-2 ',
+              skills.length === 3 && 'lg:grid-cols-3 ',
+              skills.length >= 4 && 'lg:grid-cols-4 '
+            )}
+          >
             {skills.map((skill: any, i) => {
               return (
-                <div key={i}>
-                  <h1 className="text-2xl py-4 font-semibold">
+                <div
+                  key={i}
+                  className="mx-auto text-left flex flex-col justify-start space-y-4 border-2 rounded min-h-[70vh] px-2"
+                >
+                  <h1 className="text-xl py-4 font-semibold text-accent h-24 text-clip px-4">
                     {skill.subcategory}
                   </h1>
-                  <div>
+                  <div className="border-t-2 ">
                     {skill.tags.map((tag: any, index: number) => {
                       return <CoursePoint title={tag.tag} key={index} />
                     })}
