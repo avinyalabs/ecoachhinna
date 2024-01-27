@@ -4,9 +4,6 @@ export default function Testimonials() {
   return (
     <div className="px-0 py-20 space-y-4 text-center ">
       <h5 className="text-6xl font-bold">What Clients Are Saying</h5>
-      <h5 className=" mx-auto font-semibold text-2xl bg-yellow-300 w-fit">
-        More than 4000 hours of lessons!
-      </h5>
       <div className=" mt-8">
         <TestimonialsCarousel />
       </div>
