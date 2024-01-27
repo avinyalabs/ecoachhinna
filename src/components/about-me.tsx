@@ -67,6 +67,39 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
+      <div
+        className="grid grid-cols-2 md:grid-cols-4 gap-8 font-bold"
+        ref={inViewRef}
+      >
+        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center border-[1px] border-accent/20">
+          <TrendingUpIcon size={80} className="text-accent" />
+          <Statistic
+            title="Individuals coached so Far"
+            value={200}
+            formatter={formatter}
+          />
+        </div>
+        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center border-[1px] border-accent/20">
+          <TrendingUpIcon size={80} className="text-accent" />
+          <Statistic title="Active Users" value={10000} formatter={formatter} />
+        </div>
+        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center border-[1px] border-accent/20">
+          <TrendingUpIcon size={80} className="text-accent" />
+          <Statistic
+            title="Hours of Course Content"
+            value={1000}
+            formatter={formatter}
+          />
+        </div>
+        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center border-[1px] border-accent/20">
+          <TrendingUpIcon size={80} className="text-accent" />
+          <Statistic
+            title="Customer Retention Rate"
+            value={98}
+            formatter={formatter}
+          />
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-semibold text-2xl ">
         <div>
           <Image
@@ -79,44 +112,8 @@ export default function AboutMe() {
         </div>
         <div className="space-y-4 my-auto">
           <div className="min-w-0 p-4 text-4xl mr-5">
-            <p className="text-accent text-5xl">&rdquo;</p>
             <h5>{about[0]?.content}</h5>
           </div>
-        </div>
-      </div>
-      <div
-        className="grid grid-cols-2 md:grid-cols-4 gap-8 font-bold"
-        ref={inViewRef}
-      >
-        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-          <TrendingUpIcon size={80} className="text-accent" />
-          <Statistic
-            title="Individuals coached so Far"
-            value={200}
-            formatter={formatter}
-          />
-        </div>
-        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-          <TrendingUpIcon size={80} className="text-accent" />
-          <Statistic title="Active Users" value={10000} formatter={formatter} />
-        </div>
-        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-          <TrendingUpIcon size={80} className="text-accent" />
-          <Statistic
-            title="Hours of Course Content"
-            value={1000}
-            formatter={formatter}
-          />
-        </div>
-        <div className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center">
-          <TrendingUpIcon size={80} className="text-accent" />
-          {/* <h6>98%</h6>
-              <p className="text-gray-500 text-base">Customer Retention Rate</p> */}
-          <Statistic
-            title="Customer Retention Rate"
-            value={98}
-            formatter={formatter}
-          />
         </div>
       </div>
     </div>

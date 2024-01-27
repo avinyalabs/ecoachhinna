@@ -7,6 +7,7 @@ import HeroSection2 from '@/components/hero2'
 import { useEffect, useState } from 'react'
 import LoadingAnimation from '@/components/loading-animation'
 import Events from '@/components/events'
+import HeroSection from '@/components/hero'
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -27,12 +28,14 @@ export default function Home() {
       ) : (
         <div className="w-full overflow-x-clip ">
           <div className="">
-            <HeroSection2 />
+            <HeroSection />
+            {/* <HeroSection2 /> */}
           </div>
           <Events />
+          <AboutMe />
           <Expertise />
           <Services />
-          <AboutMe />
+          {/* How does it work */}
           <Testimonials />
         </div>
       )}
