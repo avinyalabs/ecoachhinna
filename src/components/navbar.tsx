@@ -69,7 +69,7 @@ export const Navbar = () => {
     <>
       <nav className="px-4 md:px-20 lg:px-36 bg-transparent flex justify-between items-center py-4 md:py-2 ">
         <Link href={'/'}>
-          <Image src={'/logo.svg'} width={150} height={150} alt="Logo" />
+          <Image src={'/logo.svg'} width={120} height={120} alt="Logo" />
         </Link>
         <div className="hidden md:flex justify-center items-center !text-[16px] space-x-4">
           <Link href={'/'}>

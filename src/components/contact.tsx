@@ -37,7 +37,7 @@ export default function Contact() {
           href="/booking"
           className="flex justify-center items-center space-x-4 bg-accent text-white hover:bg-zinc-900 rounded-sm text-base px-8 py-3 w-fit duration-200 font-semibold"
         >
-          <p>LET&apos;S WORK TOGETHER</p>
+          <p>Book a demo session</p>
           <MoveRight />
         </Link>
       </div>
