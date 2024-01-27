@@ -9,6 +9,7 @@ import LoadingAnimation from '@/components/loading-animation'
 import Events from '@/components/events'
 import HeroSection from '@/components/hero'
 import { useLoaded } from '@/store/loading'
+import HowItWorks from '@/components/how-does-it-work'
 
 export default function Home() {
   // const [loading, setLoading] = useState(true)
@@ -37,7 +38,7 @@ export default function Home() {
           <AboutMe />
           <Expertise />
           <Services />
-          {/* How does it work */}
+          <HowItWorks />
           <Testimonials />
         </div>
       )}

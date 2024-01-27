@@ -1,77 +1,11 @@
-'use client'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { getTestimonials } from '../../sanity/lib/queries'
-
-type TestimonialsType = {
-  author: string
-  description: string
-  image: string
-  designation: string
-}
+import TestimonialsCarousel from './testimonialcorousel'
 
 export default function Testimonials() {
-  const [testimonials, setTestimonials] = useState<TestimonialsType[]>([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getTestimonials()
-      console.log(data)
-      setTestimonials(data)
-    }
-    fetchData()
-  }, [])
   return (
-    <div className="px-2 md:px-16 lg:px-40 py-12 space-y-4 text-center md:text-left">
-      <h5 className="text-accent font-semibold text-2xl">Testimonials</h5>
-      <div>
-        <h5 className="text-6xl font-bold">What Clients Are Saying</h5>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          {testimonials.map((test: TestimonialsType, i) => {
-            return (
-              <TestimonialsCard
-                key={i}
-                name={test.author}
-                image={test.image}
-                profession={test.designation}
-                text={test.description}
-              />
-            )
-          })}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const TestimonialsCard = ({
-  name,
-  image,
-  profession,
-  text,
-}: {
-  name: string
-  text: string
-  profession: string
-  image: string
-}) => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-5 px-4 py-8 hover:shadow-xl duration-200 w-full  text-xl font-semibold text-zinc-600 ">
-      <div className=" col-span-1 mx-auto">
-        <Image
-          src={image}
-          alt="testimonials"
-          width={100}
-          height={100}
-          className=""
-        />
-      </div>
-      <div className="md:col-span-4 space-y-4 ">
-        <p className="text-base">&ldquo;{text}&rdquo;</p>
-        <div className="flex justify-between items-center font-sans text-zinc-800">
-          <p>{name}</p>
-          <p>{profession && '-' + profession}</p>
-        </div>
+    <div className="px-0 py-20 space-y-4 text-center ">
+      <h5 className="text-6xl font-bold">What Clients Are Saying</h5>
+      <div className=" mt-8">
+        <TestimonialsCarousel />
       </div>
     </div>
   )

@@ -46,7 +46,7 @@ export default function AboutMe() {
       <h5 className="font-bold text-accent">About me</h5>
       <div className="grid grid-cols-1 md:grid-cols-2 space-y-5 ">
         <div className="w-full pr-4 md:pr-10">
-          <h3 className="min-w-0 text-4xl lg:text-5xl font-semibold ">
+          <h3 className="min-w-0 text-5xl lg:text-5xl font-semibold ">
             {about[0]?.title}
           </h3>
         </div>
