@@ -84,3 +84,19 @@ export async function getEvents() {
 export async function getFooterInfo() {
   return await client.fetch(groq`*[_type=='footer-info']{content,phone,email}`)
 }
+
+export async function getHowItWorks() {
+  return await client.fetch(
+    groq`*[_type=='how-it-works']{description,title,"image":image.asset->url}`
+  )
+}
+
+export async function getHowItWorksWithItems() {
+  return await client.fetch(groq`*[_type == 'howItWorksItems'] {
+    items[]-> {
+      "image":image.asset->url,
+      description,
+      title
+    }
+  }`)
+}

@@ -16,6 +16,7 @@ import forHomeMakers, { makerTags } from './schemas/services/for-home-markers'
 import footer, { footerInfo } from './schemas/footer'
 import heroSection, { carouselItem } from './schemas/hero-section'
 import events from './schemas/events'
+import howItWorks, { howItWorksItems } from './schemas/how-it-works'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -39,5 +40,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     heroSection,
     events,
     footerInfo,
+    howItWorks,
+    howItWorksItems,
   ],
 }

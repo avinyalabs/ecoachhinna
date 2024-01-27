@@ -50,7 +50,7 @@ const Events = () => {
     <div className="px-2 md:px-16 lg:px-40 py-12 space-y-4 text-center md:text-left">
       <h5 className="text-accent font-semibold text-2xl">Events</h5>
       <div>
-        <h5 className="text-5xl md:text-6xl font-bold">Our Events</h5>
+        <h5 className="text-3xl md:text-5xl font-bold">Our Events</h5>
         <div className="mt-10">
           <Carousel autoplay slidesToShow={slidesToShow}>
             {eventsData.map((event: EventCardType, index) => (

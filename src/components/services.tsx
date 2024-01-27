@@ -47,7 +47,9 @@ export default function Services() {
     <div className="px-2 md:px-16 lg:px-40 py-12 space-y-4 text-center md:text-left bg-accent/10">
       <h5 className="text-accent font-semibold text-2xl">Services</h5>
       <div>
-        <h5 className="text-6xl font-bold">Explore How can I Help You</h5>
+        <h5 className="text-3xl md:text-5xl font-bold">
+          Explore How can I Help You
+        </h5>
         <div className="mt-10">
           <Carousel autoplay slidesToShow={slidesToShow}>
             {services.map((service: ServiceType, index) => (
