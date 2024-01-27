@@ -33,6 +33,11 @@ const events = {
       title: 'Target Audience',
       type: 'string',
     },
+    {
+      name: 'isActive',
+      title: 'Is Active',
+      type: 'boolean',
+    },
   ],
 } satisfies SchemaTypeDefinition
 

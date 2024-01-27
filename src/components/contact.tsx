@@ -7,11 +7,17 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { getFooterData } from '../../sanity/lib/queries'
+import { getFooterData, getFooterInfo } from '../../sanity/lib/queries'
 
 type FooterType = {
   title: string
   content: string
+}
+
+type FooterInfoType = {
+  content: string
+  email: string
+  phone: string
 }
 
 export default function Contact() {
@@ -37,7 +43,7 @@ export default function Contact() {
           href="/booking"
           className="flex justify-center items-center space-x-4 bg-accent text-white hover:bg-zinc-900 rounded-sm text-base px-8 py-3 w-fit duration-200 font-semibold"
         >
-          <p>Book a demo session</p>
+          <p>Let&apos;s work Together</p>
           <MoveRight />
         </Link>
       </div>
@@ -51,14 +57,20 @@ export default function Contact() {
 }
 
 const Footer = () => {
+  const [footerInfo, setFooterInfo] = useState<FooterInfoType[]>([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getFooterInfo()
+      console.log(data, 'footer info')
+      setFooterInfo(data)
+    }
+    fetchData()
+  }, [])
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 font-light gap-8 text-lg ">
       <div className="text-center md:text-left space-y-8">
         <h5 className=" text-2xl font-normal">Hinna</h5>
-        <p className="min-w-0">
-          Amet suscipit urna turpis in malesuada et sapien semper porttitor
-          netus turpis molestie sit molestie quis vitae.
-        </p>
+        <p className="min-w-0">{footerInfo[0]?.content}</p>
         <div className="flex justify-center md:justify-start space-x-4 items-center">
           <span className=" flex justify-center items-center p-1.5 text-accent">
             <FacebookIcon className="" />
@@ -129,15 +141,15 @@ const Footer = () => {
         <div className="flex flex-col">
           <Link
             className="hover:text-accent duration-200"
-            href="mailto:seek@ecoachhinna.com"
+            href={`mailto:${footerInfo[0]?.email}`}
           >
-            seek@ecoachhinna.com
+            {footerInfo[0]?.email}
           </Link>
           <Link
             className="hover:text-accent duration-200"
-            href="tel:+919811525733"
+            href={`tel:+${footerInfo[0]?.phone}`}
           >
-            +91 98115 25733
+            {footerInfo[0]?.phone}
           </Link>
         </div>
       </div>

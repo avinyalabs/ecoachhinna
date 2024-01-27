@@ -44,7 +44,7 @@ export default function Services() {
     }
   }, [])
   return (
-    <div className="px-2 md:px-16 lg:px-40 py-12 space-y-4 text-center md:text-left">
+    <div className="px-2 md:px-16 lg:px-40 py-12 space-y-4 text-center md:text-left bg-accent/10">
       <h5 className="text-accent font-semibold text-2xl">Services</h5>
       <div>
         <h5 className="text-6xl font-bold">Explore How can I Help You</h5>
@@ -80,7 +80,7 @@ const ServiceCard = ({
   return (
     <Link
       href={link}
-      className="w-80 md:w-96 mx-auto flex flex-col justify-between items-center text-xl md:text-2xl font-semibold  space-x-4 border-b border-white py-3 text-center hover:text-black my-2"
+      className="w-80 md:w-96 mx-auto flex flex-col justify-between items-center text-xl md:text-2xl font-semibold  space-x-4 py-3 text-center hover:text-black my-2 mb-5"
     >
       <Image src={image} width={300} height={300} alt={category} />
       <p className="text-sm mt-5">{category}</p>

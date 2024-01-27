@@ -76,6 +76,11 @@ export async function getEvents() {
     duration,
     eventDate,
     "image":image.asset->url,
-    Audience
+    Audience,
+    isActive
   }`)
+}
+
+export async function getFooterInfo() {
+  return await client.fetch(groq`*[_type=='footer-info']{content,phone,email}`)
 }
