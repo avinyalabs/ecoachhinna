@@ -26,7 +26,9 @@ const HowItWorks = () => {
   return (
     <div className="px-2 md:px-16 lg:px-36 text-center py-20 space-y-8 w-full">
       <h1 className="text-5xl font-semibold ">How does it works</h1>
-      <p className="text-xl text-accent">Fun, secure and awesome learning</p>
+      <p className="text-xl text-accent font-medium">
+        Fun, secure and awesome learning
+      </p>
 
       {workflow[0]?.items?.map((item, index) => {
         return (

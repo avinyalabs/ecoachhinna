@@ -13,6 +13,30 @@ export const professionalTags = {
     },
   ],
 }
+
+export const professoinalHeader = {
+  name: 'professoinalHeader',
+  title: 'Professional Header',
+  type: 'document',
+  fields: [
+    {
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
+    },
+    {
+      name: 'subheading',
+      title: 'Sub Heading',
+      type: 'text',
+    },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'text',
+    },
+  ],
+} satisfies SchemaTypeDefinition
+
 const forProfessionals = {
   name: 'forProfessionals',
   type: 'document',
@@ -22,6 +46,16 @@ const forProfessionals = {
       name: 'subcategory',
       type: 'string',
       title: 'Sub Category',
+    },
+    {
+      name: 'subheading',
+      type: 'string',
+      title: 'Sub Heading',
+    },
+    {
+      name: 'pricing',
+      type: 'string',
+      title: 'Pricing',
     },
     {
       name: 'tags',

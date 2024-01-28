@@ -69,8 +69,23 @@ const Footer = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 font-light gap-8 text-lg ">
       <div className="text-center md:text-left space-y-8">
-        <h5 className=" text-2xl font-normal">Hinna</h5>
-        <p className="min-w-0">{footerInfo[0]?.content}</p>
+        <div className="text-center md:text-left space-y-8">
+          <h5 className=" text-2xl font-normal">Quick Links</h5>
+          <div className="flex flex-col">
+            <Link className="hover:text-accent duration-200" href="#">
+              Home
+            </Link>
+            <Link className="hover:text-accent duration-200" href="#">
+              Services
+            </Link>
+            <Link className="hover:text-accent duration-200" href="#about">
+              About
+            </Link>
+            <Link className="hover:text-accent duration-200" href="/contact-us">
+              Contact
+            </Link>
+          </div>
+        </div>
         <div className="flex justify-center md:justify-start space-x-4 items-center">
           <span className=" flex justify-center items-center p-1.5 text-accent">
             <FacebookIcon className="" />
@@ -120,19 +135,16 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center md:text-left space-y-8">
-        <h5 className=" text-2xl font-normal">Quick Links</h5>
+        <h5 className=" text-2xl font-normal">Others</h5>
         <div className="flex flex-col">
           <Link className="hover:text-accent duration-200" href="#">
-            Home
+            Privacy Policy
           </Link>
           <Link className="hover:text-accent duration-200" href="#">
-            Services
+            FAQ&apos;s
           </Link>
           <Link className="hover:text-accent duration-200" href="#about">
-            About
-          </Link>
-          <Link className="hover:text-accent duration-200" href="/contact-us">
-            Contact
+            Terms and Conditions
           </Link>
         </div>
       </div>

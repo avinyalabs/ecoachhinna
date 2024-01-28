@@ -11,15 +11,29 @@ import {
   TeamOutlined,
 } from '@ant-design/icons'
 import { useEffect, useState } from 'react'
-import { getDatingService } from '../../../../../sanity/lib/queries'
+import {
+  getDatingHeader,
+  getDatingService,
+} from '../../../../../sanity/lib/queries'
+import { cn } from '@/lib/utils'
+
+export type HeaderType = {
+  heading: string
+  subheading: string
+  content: string
+}
 
 const BetterDating = () => {
   const [skills, setSkills] = useState([])
+  const [header, setHeader] = useState<HeaderType[]>([])
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getDatingService()
-      console.log(data)
+      const [data, headerData] = await Promise.all([
+        getDatingService(),
+        getDatingHeader(),
+      ])
       setSkills(data)
+      setHeader(headerData)
     }
     fetchData()
   }, [])
@@ -27,9 +41,9 @@ const BetterDating = () => {
     <>
       <Header
         image="/dating.jpg"
-        courseName="I GLOW "
-        info="I Grow, Learn, Overcome and Win"
-        brief="An immersive program for youngsters to aim evolve into more desirable partners and employees"
+        courseName={header[0]?.heading}
+        info={header[0]?.subheading}
+        brief={header[0]?.content}
       />
       <div className=" py-8">
         <PageRouter currPage="/for-better-dating" />
@@ -53,18 +67,36 @@ const BetterDating = () => {
             Topics that I&lsquo;ll Cover
           </h5>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+          <div
+            className={cn(
+              'grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-start',
+              skills.length === 1 && 'md:grid-cols-2 ',
+              skills.length === 2 && 'md:grid-cols-2 ',
+              skills.length === 3 && 'lg:grid-cols-3 ',
+              skills.length >= 4 && 'lg:grid-cols-4 '
+            )}
+          >
             {skills.map((skill: any, i) => {
               return (
-                <div key={i}>
-                  <h1 className="text-2xl py-4 font-semibold">
-                    {skill.subcategory}
-                  </h1>
+                <div
+                  key={i}
+                  className="flex flex-col bg-gray-100 p-3 rounded-md h-fit"
+                >
+                  <div className="mb-5">
+                    <h1 className="text-2xl py-4 font-semibold">
+                      {skill.subcategory}
+                    </h1>
+                    <h2 className="text-xl font-medium">{skill.subheading}</h2>
+                  </div>
                   <div>
                     {skill.tags.map((tag: any, index: number) => {
                       return <CoursePoint title={tag.tag} key={index} />
                     })}
                   </div>
+                  <h2 className="text-3xl font-semibold my-4">
+                    Pricing :{' '}
+                    <span className="text-accent">{skill.pricing}</span>
+                  </h2>
                 </div>
               )
             })}
@@ -120,33 +152,4 @@ const offerings = [
     from: '#9580ff',
     to: '#aea0f3',
   },
-]
-
-const iGlow_skills_topics = [
-  'Body Language',
-  'Non-Verbal language',
-  'Powerful Listening Skills',
-  'Meeting people for the First Time',
-  'Introduction',
-  'Small Talk Conversations',
-  'Mistakes to avoid',
-  'Frames for cross-cultural communication',
-  'Structure for Building',
-  'Communication bridge',
-  'Express happiness in English',
-  'Sound interesting in English',
-  'How to discuss Pros & Cons',
-  'Brainstorming in English',
-  'English Contractions',
-  'Linking Words',
-  'Signposts',
-  'Practice speaking Challenges',
-  'Diverse Vocabulary /Idioms /Collocations / Phrases',
-  'Make suggestions',
-  'Make a complain and get Results',
-  'Better ways to say I’m Busy',
-  'Power words for leadership',
-  'Express Empathy in English',
-  'Presentations in English and Public Speaking Skills',
-  'Leadership Qualities',
 ]

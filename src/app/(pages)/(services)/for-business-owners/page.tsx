@@ -11,15 +11,24 @@ import {
   VideoCameraFilled,
 } from '@ant-design/icons'
 import { useEffect, useState } from 'react'
-import { getBusinessService } from '../../../../../sanity/lib/queries'
+import {
+  getBusinessHeader,
+  getBusinessService,
+} from '../../../../../sanity/lib/queries'
+import { HeaderType } from '../for-better-dating/page'
+import { cn } from '@/lib/utils'
 
 const BusinessOwners = () => {
   const [skills, setSkills] = useState([])
+  const [header, setHeader] = useState<HeaderType[]>([])
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getBusinessService()
-      console.log(data)
+      const [data, headerData] = await Promise.all([
+        getBusinessService(),
+        getBusinessHeader(),
+      ])
       setSkills(data)
+      setHeader(headerData)
     }
     fetchData()
   }, [])
@@ -27,9 +36,9 @@ const BusinessOwners = () => {
     <>
       <Header
         image="/business-owners.jpg"
-        courseName="I LEAP"
-        info="I Learn , Enhance , Act & Perform"
-        brief="A Comprehensive Program Designed for Business Owners and Entrepreneurs to accelerate Self Growth"
+        courseName={header[0]?.heading}
+        info={header[0]?.subheading}
+        brief={header[0]?.content}
       />
       <div className=" py-8">
         <PageRouter currPage="/for-business-owners" />
@@ -47,25 +56,42 @@ const BusinessOwners = () => {
               )
             })}
           </div>
-          P
         </div>
         <div className="py-16 space-y-12 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold ">
             Topics that I&lsquo;ll Cover
           </h5>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+          <div
+            className={cn(
+              'grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-start',
+              skills.length === 1 && 'md:grid-cols-2 ',
+              skills.length === 2 && 'md:grid-cols-2 ',
+              skills.length === 3 && 'lg:grid-cols-3 ',
+              skills.length >= 4 && 'lg:grid-cols-4 '
+            )}
+          >
             {skills.map((skill: any, i) => {
               return (
-                <div key={i}>
-                  <h1 className="text-2xl py-4 font-semibold">
-                    {skill.subcategory}
-                  </h1>
+                <div
+                  key={i}
+                  className="flex flex-col bg-gray-100 p-3 rounded-md h-fit"
+                >
+                  <div className="mb-5">
+                    <h1 className="text-2xl py-4 font-semibold">
+                      {skill.subcategory}
+                    </h1>
+                    <h2 className="text-xl font-medium">{skill.subheading}</h2>
+                  </div>
                   <div>
                     {skill.tags.map((tag: any, index: number) => {
                       return <CoursePoint title={tag.tag} key={index} />
                     })}
                   </div>
+                  <h2 className="text-3xl font-semibold my-4">
+                    Pricing :{' '}
+                    <span className="text-accent">{skill.pricing}</span>
+                  </h2>
                 </div>
               )
             })}

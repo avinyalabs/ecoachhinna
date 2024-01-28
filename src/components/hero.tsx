@@ -13,11 +13,20 @@ import {
 import Autoplay from 'embla-carousel-autoplay'
 import { useEffect, useState } from 'react'
 import { getHeroSectionData } from '../../sanity/lib/queries'
+import { TypewriterEffectSmooth } from './ui/typewrittereffect'
 
 type HeroSectionDataType = {
   title: string
   carouselItems: { title: string }[]
 }
+const words = [
+  { text: 'Do' },
+  { text: 'you' },
+  { text: 'say' },
+  { text: '.' },
+  { text: '.' },
+  { text: '.' },
+]
 
 export default function HeroSection() {
   const [heroData, setHeroData] = useState<HeroSectionDataType[]>([])
@@ -33,9 +42,10 @@ export default function HeroSection() {
     <div className="w-full overflow-x-clip relative h-[80%] md:h-[80%] py-8 flex justify-start items-center bg-accent/10">
       <div className="px-4 md:px-20 py-4 lg:px-36 flex justify-between items-center flex-col md:flex-row w-full md:text-left my-auto">
         <div className="space-y-6 w-full md:w-3/5">
-          <h1 className="text-3xl lg:text-5xl text-black w-3/4 font-bold">
-            Do you say...
-          </h1>
+          <TypewriterEffectSmooth
+            words={words}
+            className="h-full text-center md:text-left w-full"
+          />
           <div className="w-[80%]">
             <Carousel
               className="w-full p-2 pl-0"

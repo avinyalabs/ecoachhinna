@@ -4,13 +4,23 @@ import whatICanHelp from './what-i-can-help'
 import aboutMe, { statsCard } from './about-me'
 import testimonials from './testimonials'
 import services from './services'
-import forKids, { kidTags } from './services/for-school-kids'
-import forBusiness, { businessTags } from './services/for-business-owners'
-import forDating, { datingTags } from './services/for-better-dating'
+import forKids, { kidTags, kidsHeader } from './services/for-school-kids'
+import forBusiness, {
+  businessHeader,
+  businessTags,
+} from './services/for-business-owners'
+import forDating, {
+  datingHeader,
+  datingTags,
+} from './services/for-better-dating'
 import forProfessionals, {
   professionalTags,
+  professoinalHeader,
 } from './services/for-working-professionals'
-import forHomeMakers, { makerTags } from './services/for-home-markers'
+import forHomeMakers, {
+  makerTags,
+  makersHeader,
+} from './services/for-home-markers'
 import footer, { footerInfo } from './footer'
 import heroSection, { carouselItem } from './hero-section'
 import events from './events'
@@ -40,6 +50,11 @@ const schemas: SchemaTypeDefinition[] = [
   howItWorks,
   howItWorksItems,
   statsCard,
+  datingHeader,
+  businessHeader,
+  makersHeader,
+  kidsHeader,
+  professoinalHeader,
 ]
 
 export default schemas

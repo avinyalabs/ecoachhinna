@@ -6,9 +6,13 @@ export const CoursePoint = ({ title }: { title: string }) => {
   return (
     <div className="rounded flex justify-start items-center  hover:shadow-lg px-6 transition hover:scale-105 py-2 space-x-4 font-normal">
       <div className="min-w-fit">
-        <Circle size={24} className="text-accent" />
+        <Circle
+          size={12}
+          className="text-accent rounded-full border-2"
+          strokeWidth={8}
+        />
       </div>
-      <h5 className="text-xl  min-w-0">{title}</h5>
+      <h5 className="text-lg  min-w-0">{title}</h5>
     </div>
   )
 }

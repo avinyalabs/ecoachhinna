@@ -32,29 +32,34 @@ export async function getServices() {
   )
 }
 
+export type ServiceDetails = {
+  _id: string
+  subcategory: string
+  tags: { tag: string }[]
+}
 export async function getKidsService() {
   return await client.fetch(
-    groq`*[_type=='forKids']{subcategory,tags[]->{tag}}`
+    groq`*[_type=='forKids']{subcategory,subheading,pricing,tags[]->{tag}}`
   )
 }
 export async function getBusinessService() {
   return await client.fetch(
-    groq`*[_type=='forBusiness']{subcategory,tags[]->{tag}}`
+    groq`*[_type=='forBusiness']{subcategory,subheading,pricing,tags[]->{tag}}`
   )
 }
 export async function getDatingService() {
   return await client.fetch(
-    groq`*[_type=='forDating']{subcategory,tags[]->{tag}}`
+    groq`*[_type=='forDating']{subcategory,subheading,pricing,tags[]->{tag}}`
   )
 }
 export async function getProfessionalService() {
   return await client.fetch(
-    groq`*[_type=='forProfessionals']{subcategory,tags[]->{tag}}`
+    groq`*[_type=='forProfessionals']{subcategory,subheading,pricing,tags[]->{tag}}`
   )
 }
 export async function getHomeMakerService() {
   return await client.fetch(
-    groq`*[_type=='forHomeMakers']{subcategory,tags[]->{tag}}`
+    groq`*[_type=='forHomeMakers']{subcategory,subheading,pricing,tags[]->{tag}}`
   )
 }
 
@@ -71,13 +76,19 @@ export async function getHeroSectionData() {
 }
 
 export async function getEvents() {
-  return await client.fetch(groq`*[_type=='events']{\
+  return await client.fetch(groq`*[_type=='events']{
     title,
     duration,
     eventDate,
     "image":image.asset->url,
     Audience,
     isActive
+  }`)
+}
+
+export async function getActiveEvents() {
+  return await client.fetch(groq`*[_type=='events' && isActive == true]{
+    title
   }`)
 }
 
@@ -103,4 +114,40 @@ export async function getHowItWorksWithItems() {
 
 export async function getStatsData() {
   return await client.fetch(groq`*[_type == 'stats-card']{title,value}`)
+}
+
+export async function getBusinessHeader() {
+  return await client.fetch(groq`*[_type == 'businessHeader']{
+    heading,
+    subheading,
+    content
+  }`)
+}
+export async function getMakersHeader() {
+  return await client.fetch(groq`*[_type == 'makersHeader']{
+    heading,
+    subheading,
+    content
+  }`)
+}
+export async function getKidsHeader() {
+  return await client.fetch(groq`*[_type == 'kidsHeader']{
+    heading,
+    subheading,
+    content
+  }`)
+}
+export async function getDatingHeader() {
+  return await client.fetch(groq`*[_type == 'datingHeader']{
+    heading,
+    subheading,
+    content
+  }`)
+}
+export async function getProfessionalHeader() {
+  return await client.fetch(groq`*[_type == 'professoinalHeader']{
+    heading,
+    subheading,
+    content
+  }`)
 }

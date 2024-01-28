@@ -2,9 +2,43 @@
 
 import Toast from '@/utils/common/toast'
 import { useEffect, useState } from 'react'
-import { Navbar } from '../navbar'
+import { getActiveEvents } from '../../../sanity/lib/queries'
 
 const RegisterEvent = () => {
+  const [values, setValues] = useState<{
+    firstname: string
+    lastname: string
+    email: string
+    contact: string
+    event: string
+  }>({
+    firstname: '',
+    lastname: '',
+    email: '',
+    contact: '',
+    event: '',
+  })
+
+  const [events, setEvents] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getActiveEvents()
+      console.log(data)
+      setEvents(data)
+    }
+    fetchData()
+  }, [])
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target
+    setValues((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
+
   const inputStyle =
     'block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-accent focus:outline-none focus:ring-0 focus:border-accent peer !w-60'
 
@@ -30,6 +64,9 @@ const RegisterEvent = () => {
                   className={inputStyle}
                   placeholder=" "
                   required={true}
+                  onChange={(e) => {
+                    setValues({ ...values, firstname: e.target.value })
+                  }}
                 />
                 <label htmlFor="firstname" className={labelStyle}>
                   First Name
@@ -42,6 +79,9 @@ const RegisterEvent = () => {
                   className={inputStyle}
                   placeholder=" "
                   required={true}
+                  onChange={(e) => {
+                    setValues({ ...values, lastname: e.target.value })
+                  }}
                 />
                 <label htmlFor="lastname" className={labelStyle}>
                   Last Name
@@ -56,6 +96,9 @@ const RegisterEvent = () => {
                   className={inputStyle}
                   placeholder=" "
                   required={true}
+                  onChange={(e) => {
+                    setValues({ ...values, email: e.target.value })
+                  }}
                 />
                 <label htmlFor="Email" className={labelStyle}>
                   E-mail
@@ -68,11 +111,35 @@ const RegisterEvent = () => {
                   className={inputStyle}
                   placeholder=" "
                   required={true}
+                  onChange={(e) => {
+                    setValues({ ...values, contact: e.target.value })
+                  }}
                 />
                 <label htmlFor="contact" className={labelStyle}>
                   Phone Number
                 </label>
               </div>
+            </div>
+            <div>
+              <select
+                id="event"
+                name="event" // Add name attribute
+                value={values.event || ''} // Add value attribute
+                onChange={handleChange} // Add onChange handler
+                className={inputStyle}
+              >
+                <option value="" disabled>
+                  Select Event
+                </option>
+                {events.map((event: any, index) => (
+                  <option key={index} value={event.title}>
+                    {event.title}
+                  </option>
+                ))}
+              </select>
+              <label htmlFor="event" className={labelStyle}>
+                Event
+              </label>
             </div>
             <div>
               <button

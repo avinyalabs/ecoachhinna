@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Page() {
   return (
     <>
-      <div className="w-full lg:h-screen py-16 relative bg-zinc-700/50 flex justify-center items-center">
+      <div className="w-full h-[70vh] py-16 relative bg-zinc-700/50 flex justify-center items-center">
         <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-80">
           <Image
             src="/bookings.jpg"
