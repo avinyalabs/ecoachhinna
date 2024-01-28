@@ -1,6 +1,7 @@
 import { MoveRightIcon } from 'lucide-react'
 import Image from 'next/image'
 import { PageRouter, PageRoutes } from '../navigate-page'
+import Link from 'next/link'
 // import { CalButton } from '../cal-button'
 
 export default function Header({
@@ -15,7 +16,7 @@ export default function Header({
   image: string
 }) {
   return (
-    <div className="w-full h-[75vh] py-16 relative bg-zinc-700/50 flex justify-center items-center">
+    <div className="w-full h-[70vh] py-16 relative bg-zinc-700/50 flex justify-center items-center">
       <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-80">
         <Image
           src={image}
@@ -34,10 +35,13 @@ export default function Header({
           <p className="font-normal text-zinc-100 text-xl md:w-[600px] mx-auto">
             {brief}
           </p>
-          <button className="px-8 py-3 text-base font-medium rounded bg-accent text-white flex justify-center items-center hover:bg-accent/90 duration-200 space-x-2 mx-auto ">
-            <p>Get in Touch</p>
+          <Link
+            className="px-8 py-3 text-base font-medium rounded bg-accent text-white flex justify-center items-center hover:bg-accent/90 duration-200 space-x-2 mx-auto w-fit"
+            href={'/booking'}
+          >
+            <p>Book a Demo</p>
             <MoveRightIcon />
-          </button>
+          </Link>
           <iframe>h</iframe>
         </div>
         <div className="flex justify-end items-center order-1 md:order-2"></div>

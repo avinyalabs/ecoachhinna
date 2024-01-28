@@ -13,6 +13,30 @@ export const kidTags = {
     },
   ],
 }
+
+export const kidsHeader = {
+  name: 'kidsHeader',
+  title: 'Kids Header',
+  type: 'document',
+  fields: [
+    {
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
+    },
+    {
+      name: 'subheading',
+      title: 'Sub Heading',
+      type: 'text',
+    },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'text',
+    },
+  ],
+} satisfies SchemaTypeDefinition
+
 const forKids = {
   name: 'forKids',
   type: 'document',
@@ -22,6 +46,16 @@ const forKids = {
       name: 'subcategory',
       type: 'string',
       title: 'Sub Category',
+    },
+    {
+      name: 'subheading',
+      type: 'string',
+      title: 'Sub Heading',
+    },
+    {
+      name: 'pricing',
+      type: 'string',
+      title: 'Pricing',
     },
     {
       name: 'tags',

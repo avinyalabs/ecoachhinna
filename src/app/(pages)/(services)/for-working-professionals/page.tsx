@@ -11,15 +11,23 @@ import {
   UsergroupAddOutlined,
 } from '@ant-design/icons'
 import { useEffect, useState } from 'react'
-import { getProfessionalService } from '../../../../../sanity/lib/queries'
+import {
+  getProfessionalHeader,
+  getProfessionalService,
+} from '../../../../../sanity/lib/queries'
+import { HeaderType } from '../for-better-dating/page'
 
 const WorkingProfessionals = () => {
   const [skills, setSkills] = useState([])
+  const [header, setHeader] = useState<HeaderType[]>([])
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getProfessionalService()
-      console.log(data)
+      const [data, headerData] = await Promise.all([
+        getProfessionalService(),
+        getProfessionalHeader(),
+      ])
       setSkills(data)
+      setHeader(headerData)
     }
     fetchData()
   }, [])
@@ -27,9 +35,9 @@ const WorkingProfessionals = () => {
     <>
       <Header
         image="/office.jpg"
-        courseName="I GATE"
-        info="I Grow Adopt, Transform & Evolve"
-        brief="A 360 degree program to boost the growth of professionals in corporates"
+        courseName={header[0]?.heading}
+        info={header[0]?.subheading}
+        brief={header[0]?.content}
       />
       <div className=" py-8">
         <PageRouter currPage="/for-working-professionals" />
@@ -56,15 +64,25 @@ const WorkingProfessionals = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
             {skills.map((skill: any, i) => {
               return (
-                <div key={i}>
-                  <h1 className="text-2xl py-4 font-semibold">
-                    {skill.subcategory}
-                  </h1>
+                <div
+                  key={i}
+                  className="flex flex-col bg-gray-100 p-3 rounded-md h-fit"
+                >
+                  <div className="mb-5">
+                    <h1 className="text-2xl py-4 font-semibold">
+                      {skill.subcategory}
+                    </h1>
+                    <h2 className="text-xl font-medium">{skill.subheading}</h2>
+                  </div>
                   <div>
                     {skill.tags.map((tag: any, index: number) => {
                       return <CoursePoint title={tag.tag} key={index} />
                     })}
                   </div>
+                  <h2 className="text-3xl font-semibold my-4">
+                    Pricing :{' '}
+                    <span className="text-accent">{skill.pricing}</span>
+                  </h2>
                 </div>
               )
             })}

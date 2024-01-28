@@ -25,7 +25,7 @@ export default function ExpertiseCard() {
         return (
           <div
             key={i}
-            className="flex justify-center items-center md:items-start space-y-4 flex-col line-above p-2 md:p-4 mt-2 border-[#fff2d7]  hover:scale-105 transition border-t hover:border-accent mx-2"
+            className="flex items-center md:items-start space-y-4 flex-col line-above p-2 md:p-4 mt-2 border-[#fff2d7]  hover:scale-105 transition border-t hover:border-accent mx-2"
           >
             <Image
               src={expertise.image}
@@ -33,7 +33,7 @@ export default function ExpertiseCard() {
               width={75}
               height={75}
             />
-            <h5 className="font-semibold">{expertise.title}</h5>
+            <h5 className="font-semibold text-accent">{expertise.title}</h5>
             <p className="min-w-0 text-[15px] text-justify">
               {expertise.content}
             </p>

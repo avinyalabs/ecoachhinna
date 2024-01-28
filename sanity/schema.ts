@@ -4,15 +4,26 @@ import whatICanHelp from './schemas/what-i-can-help'
 import aboutMe, { statsCard } from './schemas/about-me'
 import testimonials from './schemas/testimonials'
 import services from './schemas/services'
-import forKids, { kidTags } from './schemas/services/for-school-kids'
+import forKids, {
+  kidTags,
+  kidsHeader,
+} from './schemas/services/for-school-kids'
 import forBusiness, {
+  businessHeader,
   businessTags,
 } from './schemas/services/for-business-owners'
-import forDating, { datingTags } from './schemas/services/for-better-dating'
+import forDating, {
+  datingHeader,
+  datingTags,
+} from './schemas/services/for-better-dating'
 import forProfessionals, {
   professionalTags,
+  professoinalHeader,
 } from './schemas/services/for-working-professionals'
-import forHomeMakers, { makerTags } from './schemas/services/for-home-markers'
+import forHomeMakers, {
+  makerTags,
+  makersHeader,
+} from './schemas/services/for-home-markers'
 import footer, { footerInfo } from './schemas/footer'
 import heroSection, { carouselItem } from './schemas/hero-section'
 import events from './schemas/events'
@@ -43,5 +54,10 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     howItWorks,
     howItWorksItems,
     statsCard,
+    datingHeader,
+    businessHeader,
+    makersHeader,
+    kidsHeader,
+    professoinalHeader,
   ],
 }
