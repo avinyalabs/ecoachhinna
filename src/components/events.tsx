@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { getEvents } from '../../sanity/lib/queries'
+import { getEvents, getEventsHeading } from '../../sanity/lib/queries'
 import toast from 'react-hot-toast'
 
 type EventCardType = {
@@ -14,17 +14,23 @@ type EventCardType = {
   image: string
   Audience: string
   isActive: boolean
+  price: string
 }
 
 const Events = () => {
   const path = usePathname()
   const [slidesToShow, setSlidesToShow] = useState<number>(3)
   const [eventsData, setEventsData] = useState<EventCardType[]>([])
+  const [heading, setHeading] = useState([''])
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getEvents()
+      const [data, heading] = await Promise.all([
+        getEvents(),
+        getEventsHeading(),
+      ])
       console.log(data, '==>')
       setEventsData(data)
+      setHeading(heading)
     }
     fetchData()
     const handleResize = () => {
@@ -62,6 +68,7 @@ const Events = () => {
                 image={event.image}
                 audience={event.Audience}
                 isActive={event.isActive}
+                price={event.price}
               />
             ))}
           </Carousel>
@@ -80,6 +87,7 @@ const EventCard = ({
   audience,
   image,
   isActive,
+  price,
 }: {
   //   image: string
   title: string
@@ -88,6 +96,7 @@ const EventCard = ({
   audience: string
   image: string
   isActive: boolean
+  price: string
 }) => {
   const registerHandler = () => {
     toast.error('Event has already been occurred')
@@ -116,6 +125,9 @@ const EventCard = ({
         </div>
         <p>
           <span className="font-bold">Target Audience :</span> {audience}
+        </p>
+        <p className="text-xl">
+          Price : <span className="font-semibold text-accent">{price}</span>
         </p>
         {isActive && (
           <Link

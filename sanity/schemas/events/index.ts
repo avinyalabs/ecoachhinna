@@ -38,6 +38,24 @@ const events = {
       title: 'Is Active',
       type: 'boolean',
     },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'string',
+    },
+  ],
+} satisfies SchemaTypeDefinition
+
+export const eventHeading = {
+  name: 'eventHeading',
+  type: 'document',
+  title: 'Events Heading',
+  fields: [
+    {
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 

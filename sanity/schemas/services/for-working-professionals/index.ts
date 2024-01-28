@@ -71,4 +71,30 @@ const forProfessionals = {
   ],
 } satisfies SchemaTypeDefinition
 
+export const professionalOfferings = {
+  name: 'professionalOfferings',
+  type: 'document',
+  title: 'Professional Offerings',
+  fields: [
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
+    },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'text',
+    },
+  ],
+} satisfies SchemaTypeDefinition
+
 export default forProfessionals

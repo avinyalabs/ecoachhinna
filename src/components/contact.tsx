@@ -1,10 +1,5 @@
 'use client'
-import {
-  FacebookIcon,
-  InstagramIcon,
-  MoveRight,
-  TwitterIcon,
-} from 'lucide-react'
+import { InstagramIcon, Linkedin, MoveRight, Youtube } from 'lucide-react'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { getFooterData, getFooterInfo } from '../../sanity/lib/queries'
@@ -88,10 +83,10 @@ const Footer = () => {
         </div>
         <div className="flex justify-center md:justify-start space-x-4 items-center">
           <span className=" flex justify-center items-center p-1.5 text-accent">
-            <FacebookIcon className="" />
+            <Linkedin className="" />
           </span>
           <span className=" flex justify-center items-center p-1.5 text-accent">
-            <TwitterIcon />
+            <Youtube />
           </span>
           <span className=" flex justify-center items-center p-1.5 text-accent">
             <InstagramIcon />
@@ -137,13 +132,16 @@ const Footer = () => {
       <div className="text-center md:text-left space-y-8">
         <h5 className=" text-2xl font-normal">Others</h5>
         <div className="flex flex-col">
-          <Link className="hover:text-accent duration-200" href="#">
+          <Link
+            className="hover:text-accent duration-200"
+            href="/privacy-policy"
+          >
             Privacy Policy
           </Link>
           <Link className="hover:text-accent duration-200" href="#">
             FAQ&apos;s
           </Link>
-          <Link className="hover:text-accent duration-200" href="#about">
+          <Link className="hover:text-accent duration-200" href="/tnc">
             Terms and Conditions
           </Link>
         </div>
