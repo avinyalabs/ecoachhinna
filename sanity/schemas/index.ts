@@ -35,6 +35,7 @@ import events, { eventHeading } from './events'
 import howItWorks, { howItWorksItems } from './how-it-works'
 import registerData from './register/registerData'
 import bookingHeading from './booking'
+import faqs from './faq'
 
 const schemas: SchemaTypeDefinition[] = [
   contactData,
@@ -73,6 +74,7 @@ const schemas: SchemaTypeDefinition[] = [
   makersOfferings,
   kidsOfferings,
   professionalOfferings,
+  faqs,
 ]
 
 export default schemas
