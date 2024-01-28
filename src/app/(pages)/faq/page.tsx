@@ -10,9 +10,10 @@ import { getFAQs } from '@/../sanity/lib/queries'
 
 export default async function FAQ() {
   const faqs = await getFAQs()
+  console.log('🚀 ~ FAQ ~ faqs:', faqs)
   return (
-    <div>
-      <div className="max-w-4xl mx-auto my-8">
+    <div className="px-2 md:px-20 lg:px-36">
+      <div className=" mx-auto my-16">
         <nav aria-label="breadcrumb" className="text-sm mb-4">
           <ol className="list-none p-0 inline-flex">
             <li className="flex items-center">

@@ -209,6 +209,8 @@ type FAQ = {
   answer: string
 }
 export async function getFAQs() {
+  console.log('hit action')
+
   return (await client.fetch(
     groq`*[_type == 'faq']{ _id, question, answer }`
   )) as FAQ[]

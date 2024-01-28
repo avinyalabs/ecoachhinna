@@ -138,7 +138,7 @@ const Footer = () => {
           >
             Privacy Policy
           </Link>
-          <Link className="hover:text-accent duration-200" href="#">
+          <Link className="hover:text-accent duration-200" href="/faq">
             FAQ&apos;s
           </Link>
           <Link className="hover:text-accent duration-200" href="/tnc">
