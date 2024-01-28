@@ -23,19 +23,23 @@ export const OfferingCard = ({
   info,
 }: {
   title: string
-  Icon: JSX.Element
+  Icon: string
   info: string
 }) => {
   return (
     <Card
       className={` w-full h-full  bg-gradient-to-tl from-[#ed3237] to-[#fb666b]  text-white rounded transition `}
     >
-      <CardHeader>{Icon}</CardHeader>
+      <CardHeader>
+        <Image src={Icon} width={60} height={60} alt={title} />
+      </CardHeader>
       <CardContent className="">
         <h5 className="text-2xl font-bold min-w-0">{title}</h5>
       </CardContent>
       <CardFooter>
-        <p className="min-w-0 font-light text-zinc-200 text-lg">{info}</p>
+        <p className="min-w-0 font-light text-zinc-200 text-lg text-justify">
+          {info}
+        </p>
       </CardFooter>
     </Card>
   )

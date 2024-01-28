@@ -14,22 +14,27 @@ import {
 import { useEffect, useState } from 'react'
 import {
   getKidsHeader,
+  getKidsOfferings,
   getKidsService,
 } from '../../../../../sanity/lib/queries'
 import { HeaderType } from '../for-better-dating/page'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 const SchoolKidsPage = () => {
   const [skills, setSkills] = useState([])
   const [header, setHeader] = useState<HeaderType[]>([])
+  const [offerings, setOfferings] = useState([])
   useEffect(() => {
     const fetchData = async () => {
-      const [data, headerData] = await Promise.all([
+      const [data, headerData, offeringsData] = await Promise.all([
         getKidsService(),
         getKidsHeader(),
+        getKidsOfferings(),
       ])
       setSkills(data)
       setHeader(headerData)
+      setOfferings(offeringsData)
     }
     fetchData()
   }, [])
@@ -44,15 +49,17 @@ const SchoolKidsPage = () => {
       <div className=" py-8">
         <PageRouter currPage="/for-school-kids" />
         <div className="space-y-8 py-16 px-2 md:px-20 lg:px-36">
-          <h5 className="text-4xl text-center font-bold">What ECLIMB offers</h5>
+          <h5 className="text-4xl text-center font-bold">
+            What {header[0]?.heading} offers
+          </h5>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {offerings.map((off, i) => {
+            {offerings.map((off: any, i) => {
               return (
                 <OfferingCard
                   key={i}
-                  title={off.title}
-                  info={off.info}
-                  Icon={off.icon}
+                  title={off.heading}
+                  info={off.content}
+                  Icon={off.image}
                 />
               )
             })}
@@ -93,6 +100,12 @@ const SchoolKidsPage = () => {
                     Pricing :{' '}
                     <span className="text-accent">{skill.pricing}</span>
                   </h2>
+                  <Link
+                    className="px-8 py-3 text-base font-medium rounded bg-accent text-white  hover:bg-accent/90 duration-200 space-x-2 w-fit "
+                    href={'/contact-us'}
+                  >
+                    <p>Register</p>
+                  </Link>
                 </div>
               )
             })}
@@ -104,76 +117,3 @@ const SchoolKidsPage = () => {
 }
 
 export default SchoolKidsPage
-
-const offerings = [
-  {
-    title: 'Confidence Building ',
-    icon: <SmileFilled className="text-[4rem] w-fit" />,
-    info: 'I understand that some kids may feel a bit shy or hesitant when it comes to speaking up in class or expressing themselves. My friendly and patient approach helps boost their self-esteem and encourages them to share their thoughts and ideas confidently.',
-    from: '#51c5e6',
-    to: '#c4effb',
-  },
-  {
-    title: 'Speech Clarity',
-    icon: <SoundFilled className="text-[4rem] w-fit" />,
-    info: 'Is your child having trouble with pronunciation? I can help! I use interactive games and exercises to improve speech clarity, making it easier for your child to be understood by peers and teachers.',
-    from: '#9580ff',
-    to: '#aea0f3',
-  },
-  {
-    title: 'Listening Skills',
-    icon: <CustomerServiceFilled className="text-[4rem] w-fit" />,
-    info: 'Effective communication goes beyond talking; it also involves listening actively. I teach kids how to be attentive listeners, which is a crucial skill for better understanding in the classroom and building positive relationships with others.',
-    from: '#e5487d',
-    to: '#ef739c',
-  },
-  {
-    title: 'Creative Expression',
-    icon: <EditFilled className="text-[4rem] w-fit" />,
-    info: 'I believe that communication is not just about words. I encourage creativity through storytelling, drama, and other creative activities that help children express themselves in imaginative ways.',
-    from: '#e99e45',
-    to: '#fbb764',
-  },
-  {
-    title: 'Social Interaction',
-    icon: <RedditSquareFilled className="text-[4rem] w-fit" />,
-    info: 'Communication is at the heart of building friendships. I teach kids how to engage in conversations, ask questions, and share their thoughts in a friendly and polite manner, making social interactions more enjoyable.',
-    from: '#ed3237',
-    to: '#fb666b',
-  },
-  {
-    title: 'Communication Coaching for Kids',
-    icon: <BulbFilled className="text-[4rem] w-fit" />,
-    info: 'If your child is in school, it is a crucial time for developing effective communication skills. I offer personalized coaching sessions that are engaging, fun, and tailored to your child’s unique needs.',
-    from: '#9580ff',
-    to: '#aea0f3',
-  },
-]
-
-const communication_skills_topics = [
-  'Body Language',
-  'Non-Verbal Language',
-  'Powerful Listening Skills',
-  'Meeting People for the First Time',
-  'Introduction',
-  'Small Talk Conversations',
-  'Mistakes to Avoid',
-  'Frames for Cross-Cultural Communication',
-  'Structure for Building Communication Bridge',
-  'Express Happiness in English',
-  'Sound Interesting in English',
-  'How to Discuss Pros & Cons',
-  'Brainstorming in English',
-  'English Contractions',
-  'Linking Words',
-  'Signposts',
-  'Practice Speaking Challenges',
-  'Diverse Vocabulary / Idioms / Collocations / Phrases',
-  'Make Suggestions',
-  'Make a Complaint and Get Results',
-  "Better Ways to Say I'm Busy",
-  'Power Words for Leadership',
-  'Express Empathy in English',
-  'Presentations in English and Public Speaking Skills',
-  'Leadership Qualities',
-]

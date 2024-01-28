@@ -13,22 +13,27 @@ import {
 import { useEffect, useState } from 'react'
 import {
   getBusinessHeader,
+  getBusinessOfferings,
   getBusinessService,
 } from '../../../../../sanity/lib/queries'
 import { HeaderType } from '../for-better-dating/page'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 const BusinessOwners = () => {
   const [skills, setSkills] = useState([])
   const [header, setHeader] = useState<HeaderType[]>([])
+  const [offerings, setOfferings] = useState([])
   useEffect(() => {
     const fetchData = async () => {
-      const [data, headerData] = await Promise.all([
+      const [data, headerData, offeringsData] = await Promise.all([
         getBusinessService(),
         getBusinessHeader(),
+        getBusinessOfferings(),
       ])
       setSkills(data)
       setHeader(headerData)
+      setOfferings(offeringsData)
     }
     fetchData()
   }, [])
@@ -43,15 +48,17 @@ const BusinessOwners = () => {
       <div className=" py-8">
         <PageRouter currPage="/for-business-owners" />
         <div className="space-y-8 py-16 px-2 md:px-20 lg:px-36">
-          <h5 className="text-4xl text-center font-bold">What I LEAP offers</h5>
+          <h5 className="text-4xl text-center font-bold">
+            What {header[0]?.heading} offers
+          </h5>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {offerings.map((off, i) => {
+            {offerings.map((off: any, i) => {
               return (
                 <OfferingCard
                   key={i}
-                  title={off.title}
-                  info={off.info}
-                  Icon={off.icon}
+                  title={off.heading}
+                  info={off.content}
+                  Icon={off.image}
                 />
               )
             })}
@@ -92,6 +99,12 @@ const BusinessOwners = () => {
                     Pricing :{' '}
                     <span className="text-accent">{skill.pricing}</span>
                   </h2>
+                  <Link
+                    className="px-8 py-3 text-base font-medium rounded bg-accent text-white  hover:bg-accent/90 duration-200 space-x-2 w-fit "
+                    href={'/contact-us'}
+                  >
+                    <p>Register</p>
+                  </Link>
                 </div>
               )
             })}

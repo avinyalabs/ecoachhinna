@@ -165,3 +165,40 @@ export async function getEventsHeading() {
     heading
   }`)
 }
+
+export async function getDatingOfferings() {
+  return await client.fetch(groq`*[_type == 'datingOfferings']{
+    heading,
+    content,
+    "image" : image.asset->url,
+  }`)
+}
+
+export async function getKidsOfferings() {
+  return await client.fetch(groq`*[_type == 'kidsOfferings']{
+    heading,
+    content,
+    "image" : image.asset->url,
+  }`)
+}
+export async function getBusinessOfferings() {
+  return await client.fetch(groq`*[_type == 'businessOfferings']{
+    heading,
+    content,
+    "image" : image.asset->url,
+  }`)
+}
+export async function getMakersOfferings() {
+  return await client.fetch(groq`*[_type == 'makersOfferings']{
+    heading,
+    content,
+    "image" : image.asset->url,
+  }`)
+}
+export async function getProfessionalOfferings() {
+  return await client.fetch(groq`*[_type == 'professionalOfferings']{
+    heading,
+    content,
+    "image" : image.asset->url,
+  }`)
+}

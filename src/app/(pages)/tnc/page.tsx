@@ -8,8 +8,11 @@ export default function TermsAndConditions() {
         <div className="space-y-4">
           <h5 className="text-xl font-bold">
             Before accessing and using&nbsp;
-            <Link href="/" className="hover:text-gray-700 underline ">
-              www.ecoachhinna.com
+            <Link
+              href="https://www.ecoachhinna.in"
+              className="hover:text-gray-700 underline "
+            >
+              www.ecoachhinna.in
             </Link>
             , users are required to read, understand, and accept the following
             terms and conditions.

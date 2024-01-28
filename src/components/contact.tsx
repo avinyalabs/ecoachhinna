@@ -132,13 +132,16 @@ const Footer = () => {
       <div className="text-center md:text-left space-y-8">
         <h5 className=" text-2xl font-normal">Others</h5>
         <div className="flex flex-col">
-          <Link className="hover:text-accent duration-200" href="#">
+          <Link
+            className="hover:text-accent duration-200"
+            href="/privacy-policy"
+          >
             Privacy Policy
           </Link>
           <Link className="hover:text-accent duration-200" href="#">
             FAQ&apos;s
           </Link>
-          <Link className="hover:text-accent duration-200" href="#about">
+          <Link className="hover:text-accent duration-200" href="/tnc">
             Terms and Conditions
           </Link>
         </div>

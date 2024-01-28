@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
               href="mailto:support@ecoachhinna.com"
               className="hover:text-gray-700 underline"
             >
-              support@ecoachhinna.com
+              support@ecoachhinna.in
             </a>{' '}
             or by mail using the details provided below:
           </p>
