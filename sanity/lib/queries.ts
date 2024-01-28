@@ -82,7 +82,8 @@ export async function getEvents() {
     eventDate,
     "image":image.asset->url,
     Audience,
-    isActive
+    isActive,
+    price
   }`)
 }
 
@@ -149,5 +150,18 @@ export async function getProfessionalHeader() {
     heading,
     subheading,
     content
+  }`)
+}
+
+export async function getBookingHeader() {
+  return await client.fetch(groq`*[_type == 'booking-heading']{
+    title,
+    content
+  }`)
+}
+
+export async function getEventsHeading() {
+  return await client.fetch(groq`*[_type == 'eventHeading']{
+    heading
   }`)
 }

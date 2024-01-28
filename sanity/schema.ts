@@ -7,27 +7,34 @@ import services from './schemas/services'
 import forKids, {
   kidTags,
   kidsHeader,
+  kidsOfferings,
 } from './schemas/services/for-school-kids'
 import forBusiness, {
   businessHeader,
+  businessOfferings,
   businessTags,
 } from './schemas/services/for-business-owners'
 import forDating, {
   datingHeader,
+  datingOfferings,
   datingTags,
 } from './schemas/services/for-better-dating'
 import forProfessionals, {
+  professionalOfferings,
   professionalTags,
   professoinalHeader,
 } from './schemas/services/for-working-professionals'
 import forHomeMakers, {
   makerTags,
   makersHeader,
+  makersOfferings,
 } from './schemas/services/for-home-markers'
 import footer, { footerInfo } from './schemas/footer'
 import heroSection, { carouselItem } from './schemas/hero-section'
-import events from './schemas/events'
+import events, { eventHeading } from './schemas/events'
 import howItWorks, { howItWorksItems } from './schemas/how-it-works'
+import registerData from './schemas/register/registerData'
+import bookingHeading from './schemas/booking'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -59,5 +66,13 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     makersHeader,
     kidsHeader,
     professoinalHeader,
+    registerData,
+    bookingHeading,
+    eventHeading,
+    datingOfferings,
+    businessOfferings,
+    makersOfferings,
+    kidsOfferings,
+    professionalOfferings,
   ],
 }

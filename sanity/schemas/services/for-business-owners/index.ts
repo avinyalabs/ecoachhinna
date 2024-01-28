@@ -70,4 +70,30 @@ const forBusiness = {
   ],
 } satisfies SchemaTypeDefinition
 
+export const businessOfferings = {
+  name: 'businessOfferings',
+  type: 'document',
+  title: 'Business Offerings',
+  fields: [
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
+    },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'text',
+    },
+  ],
+} satisfies SchemaTypeDefinition
+
 export default forBusiness

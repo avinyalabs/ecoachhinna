@@ -39,6 +39,42 @@ const RegisterEvent = () => {
     }))
   }
 
+  const submitHandler = async (e: any) => {
+    e.preventDefault()
+    const { firstname, lastname, email, event, contact } = values
+    console.log(values)
+    try {
+      const toast = new Toast('Sending Form data')
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          email,
+          contact,
+          event,
+        }),
+      })
+      if (res.ok) {
+        setValues({
+          firstname: '',
+          lastname: '',
+          email: '',
+          contact: '',
+          event: '',
+        })
+        toast.success('Thanks for Registering!')
+      } else {
+        toast.error('Error in creating request')
+      }
+    } catch (err) {
+      console.log('Error ', err)
+    }
+  }
+
   const inputStyle =
     'block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-accent focus:outline-none focus:ring-0 focus:border-accent peer !w-60'
 
@@ -55,6 +91,7 @@ const RegisterEvent = () => {
           <form
             action=""
             className="py-4 md:py-10 space-y-10 flex flex-col items-center md:items-start"
+            onSubmit={submitHandler}
           >
             <div className="flex flex-col md:flex-row justify-between md:space-x-10 mb-5 space-y-10 md:space-y-0">
               <div className="relative z-0">

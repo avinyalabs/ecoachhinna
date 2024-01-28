@@ -71,4 +71,30 @@ const forKids = {
   ],
 } satisfies SchemaTypeDefinition
 
+export const kidsOfferings = {
+  name: 'kidsOfferings',
+  type: 'document',
+  title: 'Kids Offerings',
+  fields: [
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
+    },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'text',
+    },
+  ],
+} satisfies SchemaTypeDefinition
+
 export default forKids
