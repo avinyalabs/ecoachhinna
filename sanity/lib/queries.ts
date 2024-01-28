@@ -32,6 +32,11 @@ export async function getServices() {
   )
 }
 
+export type ServiceDetails = {
+  _id: string
+  subcategory: string
+  tags: { tag: string }[]
+}
 export async function getKidsService() {
   return await client.fetch(
     groq`*[_type=='forKids']{subcategory,subheading,pricing,tags[]->{tag}}`

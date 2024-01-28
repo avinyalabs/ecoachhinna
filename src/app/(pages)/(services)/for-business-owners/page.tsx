@@ -16,6 +16,7 @@ import {
   getBusinessService,
 } from '../../../../../sanity/lib/queries'
 import { HeaderType } from '../for-better-dating/page'
+import { cn } from '@/lib/utils'
 
 const BusinessOwners = () => {
   const [skills, setSkills] = useState([])
@@ -55,14 +56,21 @@ const BusinessOwners = () => {
               )
             })}
           </div>
-          P
         </div>
         <div className="py-16 space-y-12 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold ">
             Topics that I&lsquo;ll Cover
           </h5>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+          <div
+            className={cn(
+              'grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-start',
+              skills.length === 1 && 'md:grid-cols-2 ',
+              skills.length === 2 && 'md:grid-cols-2 ',
+              skills.length === 3 && 'lg:grid-cols-3 ',
+              skills.length >= 4 && 'lg:grid-cols-4 '
+            )}
+          >
             {skills.map((skill: any, i) => {
               return (
                 <div

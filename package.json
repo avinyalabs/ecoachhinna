@@ -25,6 +25,7 @@
     "clsx": "^2.1.0",
     "embla-carousel-autoplay": "8.0.0-rc19",
     "embla-carousel-react": "8.0.0-rc19",
+    "framer-motion": "^11.0.3",
     "joi": "^17.11.1",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.293.0",
