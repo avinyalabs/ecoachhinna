@@ -51,7 +51,14 @@ export default function Services() {
           Explore How can I Help You
         </h5>
         <div className="mt-10">
-          <Carousel autoplay slidesToShow={slidesToShow}>
+          <Carousel
+            autoplay
+            slidesToShow={parseInt(
+              getComputedStyle(document.documentElement).getPropertyValue(
+                `--slides-per-row-${path === '/' ? 'mobile' : 'tablet'}`
+              )
+            )}
+          >
             {services.map((service: ServiceType, index) => (
               <ServiceCard
                 key={index}

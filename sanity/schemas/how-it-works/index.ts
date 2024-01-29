@@ -45,4 +45,22 @@ export const howItWorksItems = {
   ],
 }
 
+export const howItWorksHeader = {
+  name: 'howItWorksHeader',
+  type: 'document',
+  title: 'How it works (Header)',
+  fields: [
+    {
+      name: 'title',
+      type: 'string',
+      title: 'Title',
+    },
+    {
+      name: 'content',
+      type: 'string',
+      title: 'Content',
+    },
+  ],
+} satisfies SchemaTypeDefinition
+
 export default howItWorks

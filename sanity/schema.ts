@@ -32,10 +32,14 @@ import forHomeMakers, {
 import footer, { footerInfo } from './schemas/footer'
 import heroSection, { carouselItem } from './schemas/hero-section'
 import events, { eventHeading } from './schemas/events'
-import howItWorks, { howItWorksItems } from './schemas/how-it-works'
+import howItWorks, {
+  howItWorksHeader,
+  howItWorksItems,
+} from './schemas/how-it-works'
 import registerData from './schemas/register/registerData'
 import bookingHeading from './schemas/booking'
 import faqs from './schemas/faq'
+import expertiseHeader from './schemas/expertise'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -76,5 +80,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     kidsOfferings,
     professionalOfferings,
     faqs,
+    expertiseHeader,
+    howItWorksHeader,
   ],
 }

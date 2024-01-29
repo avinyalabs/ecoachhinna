@@ -69,7 +69,7 @@ export async function getFooterData() {
 
 export async function getHeroSectionData() {
   return await client.fetch(
-    groq`*[_type=='hero-section']{title,'carouselItems': carousel[]->{
+    groq`*[_type=='hero-section']{title,content,'carouselItems': carousel[]->{
       title
     }}`
   )
@@ -214,4 +214,12 @@ export async function getFAQs() {
   return (await client.fetch(
     groq`*[_type == 'faq']{ _id, question, answer }`
   )) as FAQ[]
+}
+
+export async function getExpertiseHeader() {
+  return await client.fetch(groq`*[_type == 'expertiseHeader']{title,content}`)
+}
+
+export async function getHowItWorksHeader() {
+  return await client.fetch(groq`*[_type == 'howItWorksHeader']{title,content}`)
 }

@@ -109,12 +109,12 @@ export default function AboutMe() {
           {stats.map((stat, index) => {
             return (
               <div
-                className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center border-[1px] border-accent/20"
+                className="hover:shadow-xl duration-200 rounded-lg p-6 flex justify-center items-center flex-col text-center border-[1px] border-accent/80 bg-accent/85 text-white"
                 key={index}
               >
-                <TrendingUpIcon size={80} className="text-accent" />
-                <p className="text-2xl">{stat.value}</p>
-                <p className="text-gray-600">{stat.title}</p>
+                <TrendingUpIcon size={80} />
+                <p className="text-2xl text-gray-100">{stat.value}</p>
+                <p className="text-gray-100">{stat.title}</p>
               </div>
             )
           })}

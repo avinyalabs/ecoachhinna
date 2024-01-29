@@ -17,6 +17,7 @@ import { getHeroSectionData } from '../../sanity/lib/queries'
 type HeroSectionDataType = {
   title: string
   carouselItems: { title: string }[]
+  content: string
 }
 
 export default function HeroSection2() {
@@ -67,7 +68,7 @@ export default function HeroSection2() {
           </Carousel>
         </div>
         <div className="w-full space-y-2">
-          <p className=" font-medium opacity-95">Want to Start?</p>
+          <p className=" font-medium opacity-95">{heroData[0]?.content}</p>
           <Link
             href="/booking"
             className="flex justify-center items-center text-center text-xl w-full md:w-[24rem] py-2 border-[1px] border-accent bg-accent hover:bg-accent/0 hover:border-white duration-200 rounded-md space-x-4 px-2"

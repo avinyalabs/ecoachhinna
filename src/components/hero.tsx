@@ -18,6 +18,7 @@ import { TypewriterEffectSmooth } from './ui/typewrittereffect'
 type HeroSectionDataType = {
   title: string
   carouselItems: { title: string }[]
+  content: string
 }
 const words = [
   { text: 'Do' },
@@ -70,7 +71,7 @@ export default function HeroSection() {
           </div>
           <div className="w-full space-y-2">
             <p className="text-gray-500 font-medium opacity-95">
-              Want to Start?
+              {heroData[0]?.content}
             </p>
             <Link
               href="/booking"

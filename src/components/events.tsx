@@ -58,7 +58,14 @@ const Events = () => {
       <div>
         <h5 className="text-xl font-medium text-accent">Our Events</h5>
         <div className="mt-10">
-          <Carousel autoplay slidesToShow={slidesToShow}>
+          <Carousel
+            autoplay
+            slidesToShow={parseInt(
+              getComputedStyle(document.documentElement).getPropertyValue(
+                `--slides-per-row-${path === '/' ? 'mobile' : 'tablet'}`
+              )
+            )}
+          >
             {eventsData.map((event: EventCardType, index) => (
               <EventCard
                 key={index}
