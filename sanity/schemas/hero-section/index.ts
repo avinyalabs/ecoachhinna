@@ -33,6 +33,11 @@ const heroSection = {
         },
       ],
     },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 

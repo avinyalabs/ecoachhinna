@@ -32,10 +32,11 @@ import forHomeMakers, {
 import footer, { footerInfo } from './footer'
 import heroSection, { carouselItem } from './hero-section'
 import events, { eventHeading } from './events'
-import howItWorks, { howItWorksItems } from './how-it-works'
+import howItWorks, { howItWorksHeader, howItWorksItems } from './how-it-works'
 import registerData from './register/registerData'
 import bookingHeading from './booking'
 import faqs from './faq'
+import expertiseHeader from './expertise'
 
 const schemas: SchemaTypeDefinition[] = [
   contactData,
@@ -75,6 +76,8 @@ const schemas: SchemaTypeDefinition[] = [
   kidsOfferings,
   professionalOfferings,
   faqs,
+  expertiseHeader,
+  howItWorksHeader,
 ]
 
 export default schemas

@@ -2,7 +2,10 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { getHowItWorksWithItems } from '../../../sanity/lib/queries'
+import {
+  getHowItWorksHeader,
+  getHowItWorksWithItems,
+} from '../../../sanity/lib/queries'
 
 type WorkFlowType = {
   title: string
@@ -12,23 +15,30 @@ type WorkFlowType = {
 type WorkFlowItemsType = {
   items: WorkFlowType[]
 }
+
+type HowItWorksHeaderType = {
+  title: string
+  content: string
+}
+
 const HowItWorks = () => {
   const [workflow, setWorkFlow] = useState<WorkFlowItemsType[]>([])
-
+  const [header, setHeader] = useState<HowItWorksHeaderType[]>([])
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getHowItWorksWithItems()
-      console.log(data, 'work items')
+      const [data, headerData] = await Promise.all([
+        getHowItWorksWithItems(),
+        getHowItWorksHeader(),
+      ])
       setWorkFlow(data)
+      setHeader(headerData)
     }
     fetchData()
   }, [])
   return (
     <div className="px-2 md:px-16 lg:px-36 text-center py-20 space-y-8 w-full">
-      <h1 className="text-5xl font-semibold ">How does it works</h1>
-      <p className="text-xl text-accent font-medium">
-        Fun, secure and awesome learning
-      </p>
+      <h1 className="text-5xl font-semibold ">{header[0]?.title}</h1>
+      <p className="text-xl text-accent font-medium">{header[0]?.content}</p>
 
       {workflow[0]?.items?.map((item, index) => {
         return (

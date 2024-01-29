@@ -34,6 +34,9 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    --slides-per-row-mobile: 1;
+    --slides-per-row-tablet: 2;
+    --slides-per-row-desktop: 3;
   }
 
   .dark {
@@ -64,6 +67,19 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+  }
+
+  @media (min-width: 500px) {
+    :root {
+      --slides-per-row-mobile: 3;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --slides-per-row-tablet: 3;
+      --slides-per-row-desktop: 4; /* Adjust this value as needed */
+    }
   }
 }
 
