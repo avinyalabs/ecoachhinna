@@ -202,3 +202,16 @@ export async function getProfessionalOfferings() {
     "image" : image.asset->url,
   }`)
 }
+
+type FAQ = {
+  _id: string
+  question: string
+  answer: string
+}
+export async function getFAQs() {
+  console.log('hit action')
+
+  return (await client.fetch(
+    groq`*[_type == 'faq']{ _id, question, answer }`
+  )) as FAQ[]
+}
