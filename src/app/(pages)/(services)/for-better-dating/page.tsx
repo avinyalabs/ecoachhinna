@@ -18,6 +18,7 @@ import {
 } from '../../../../../sanity/lib/queries'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import { cache } from 'react'
 
 export type HeaderType = {
   heading: string
