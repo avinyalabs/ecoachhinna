@@ -1,4 +1,5 @@
 import { createClient, groq } from 'next-sanity'
+import { cache } from 'react'
 
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -114,7 +115,11 @@ export async function getHowItWorksWithItems() {
 }
 
 export async function getStatsData() {
-  return await client.fetch(groq`*[_type == 'stats-card']{title,value}`)
+  console.log('running stats data')
+  return await cache(() => {
+    console.log('running query for stats')
+    return client.fetch(groq`*[_type == 'stats-card']{title,value}`)
+  })()
 }
 
 export async function getBusinessHeader() {

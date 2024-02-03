@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     'Hinna K Mendiratta is an Educator Mentor /Speaker having 10 years of experience in the field of structured communication trainings and teaching.',
 }
 
+export const revalidate = 3600
+
 export default function RootLayout({
   children,
 }: {
