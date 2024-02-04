@@ -60,6 +60,13 @@ const forBusiness = {
       name: 'tags',
       title: 'Tags',
       type: 'array',
+      validation(rule) {
+        return rule
+          .min(5)
+          .error('You must enter 5 skills')
+          .max(10)
+          .error('You can enter only upto 10 skills')
+      },
       of: [
         {
           type: 'reference',
