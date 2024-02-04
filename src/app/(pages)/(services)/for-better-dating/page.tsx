@@ -77,11 +77,11 @@ const BetterDating = () => {
 
           <div
             className={cn(
-              'grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-start',
-              skills.length === 1 && 'md:grid-cols-2 ',
-              skills.length === 2 && 'md:grid-cols-2 ',
-              skills.length === 3 && 'lg:grid-cols-3 ',
-              skills.length >= 4 && 'lg:grid-cols-4 '
+              'grid grid-cols-1 md:grid-cols-2  content-center justify-center items-start py-8',
+              skills.length === 1 && 'md:grid-cols-2 gap-4 lg:gap-32',
+              skills.length === 2 && 'md:grid-cols-2 gap-4 lg:gap-32',
+              skills.length === 3 && 'lg:grid-cols-3 gap-4',
+              skills.length >= 4 && 'lg:grid-cols-4 gap-4'
             )}
           >
             {skills.map((skill: any, i) => {
@@ -91,7 +91,7 @@ const BetterDating = () => {
                   className={cn(
                     'flex flex-col bg-gray-100 p-3 rounded-md h-fit ',
                     skill.tags.length <= 5 && 'md:h-[50vh] lg:h-[75vh]',
-                    skill.tags.length >= 10 && 'md:h-[75vh] lg:h-[125vh]'
+                    skill.tags.length > 5 && 'md:h-[75vh] lg:h-[125vh]'
                   )}
                 >
                   <div className="mb-5 text-center">

@@ -235,7 +235,7 @@ const TestimonialSCard = ({
   image,
 }: TestimonialsType) => {
   return (
-    <div className="w-full md:w-[70vw] lg:w-[60vw] rounded-lg px-6 py-12 bg-accent/80 text-white mx-4 h-80 flex flex-col justify-center text-xl">
+    <div className="w-full md:w-[70vw] lg:w-[60vw] rounded-lg px-6 py-12 bg-accent/80 text-white mx-4 h-80 flex flex-col justify-center text-xl shadow">
       <p className="text-white min-w-0 text-left">
         &ldquo;{description}&rdquo;
       </p>
