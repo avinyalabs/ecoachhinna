@@ -77,36 +77,39 @@ const BetterDating = () => {
 
           <div
             className={cn(
-              'grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-start',
-              skills.length === 1 && 'md:grid-cols-2 ',
-              skills.length === 2 && 'md:grid-cols-2 ',
-              skills.length === 3 && 'lg:grid-cols-3 ',
-              skills.length >= 4 && 'lg:grid-cols-4 '
+              'grid grid-cols-1 md:grid-cols-2  content-center justify-center items-start py-8',
+              skills.length === 1 && 'md:grid-cols-2 gap-4 lg:gap-32',
+              skills.length === 2 && 'md:grid-cols-2 gap-4 lg:gap-32',
+              skills.length === 3 && 'lg:grid-cols-3 gap-4',
+              skills.length >= 4 && 'lg:grid-cols-4 gap-4'
             )}
           >
             {skills.map((skill: any, i) => {
               return (
                 <div
                   key={i}
-                  className="flex flex-col bg-gray-100 p-3 rounded-md h-fit"
+                  className={cn(
+                    'flex flex-col bg-gray-100 p-3 rounded-md h-fit ',
+                    skill.tags.length <= 5 && 'md:h-[50vh] lg:h-[75vh]',
+                    skill.tags.length > 5 && 'md:h-[75vh] lg:h-[125vh]'
+                  )}
                 >
-                  <div className="mb-5">
+                  <div className="mb-5 text-center">
                     <h1 className="text-2xl py-4 font-semibold">
                       {skill.subcategory}
                     </h1>
                     <h2 className="text-xl font-medium">{skill.subheading}</h2>
                   </div>
-                  <div>
+                  <div className="h-full ">
                     {skill.tags.map((tag: any, index: number) => {
                       return <CoursePoint title={tag.tag} key={index} />
                     })}
                   </div>
-                  <h2 className="text-3xl font-semibold my-4">
-                    Pricing :{' '}
-                    <span className="text-accent">{skill.pricing}</span>
+                  <h2 className="text-3xl font-semibold mt-8 mb-4 text-center">
+                    Fee : <span className="text-accent">{skill.pricing}</span>
                   </h2>
                   <Link
-                    className="px-8 py-3 text-base font-medium rounded bg-accent text-white  hover:bg-accent/90 duration-200 space-x-2 w-fit "
+                    className="  px-8 py-3 text-base font-medium rounded bg-accent text-white  hover:bg-accent/90 duration-200 space-x-2 w-full text-center "
                     href={'/contact-us'}
                   >
                     <p>Register</p>

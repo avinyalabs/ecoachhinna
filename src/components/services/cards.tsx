@@ -4,15 +4,17 @@ import Image from 'next/image'
 
 export const CoursePoint = ({ title }: { title: string }) => {
   return (
-    <div className="rounded flex justify-start items-center  hover:shadow-lg px-6 transition hover:scale-105 py-2 space-x-4 font-normal">
+    <div className="rounded flex justify-start items-center   px-6 transition ease-in delay-100 duration-300 hover:font-semibold  py-2 space-x-4 font-medium">
       <div className="min-w-fit">
         <Circle
           size={12}
-          className="text-accent rounded-full border-2"
+          className="text-accent rounded-full border-2 hidden md:inline"
           strokeWidth={8}
         />
       </div>
-      <h5 className="text-lg  min-w-0">{title}</h5>
+      <h5 className="text-lg text-center md:text-left w-full min-w-0">
+        {title}
+      </h5>
     </div>
   )
 }
@@ -31,7 +33,13 @@ export const OfferingCard = ({
       className={` w-full h-full  bg-gradient-to-tl from-[#ed3237] to-[#fb666b]  text-white rounded transition `}
     >
       <CardHeader>
-        <Image src={Icon} width={60} height={60} alt={title} />
+        <Image
+          src={Icon}
+          width={60}
+          height={60}
+          alt={title}
+          className="text-white"
+        />
       </CardHeader>
       <CardContent className="">
         <h5 className="text-2xl font-bold min-w-0">{title}</h5>

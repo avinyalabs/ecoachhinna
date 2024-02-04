@@ -61,6 +61,12 @@ const forDating = {
       name: 'tags',
       title: 'Tags',
       type: 'array',
+      validation(rule) {
+        return rule
+          .min(5)
+          .max(10)
+          .error('You must have 5 skills only upto 10 skills')
+      },
       of: [
         {
           type: 'reference',
