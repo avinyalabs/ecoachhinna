@@ -70,7 +70,7 @@ export async function getFooterData() {
 
 export async function getHeroSectionData() {
   return await client.fetch(
-    groq`*[_type=='hero-section']{title,content,'carouselItems': carousel[]->{
+    groq`*[_type=='hero-section']{title,content,buttonText,'carouselItems': carousel[]->{
       title
     }}`
   )
@@ -172,7 +172,7 @@ export async function getEventsHeading() {
 }
 
 export async function getDatingOfferings() {
-  return await client.fetch(groq`*[_type == 'datingOfferings']{
+  return await client.fetch(groq`*[_type == 'datingOfferings'] | order(order asc){
     heading,
     content,
     "image" : image.asset->url,
@@ -180,28 +180,28 @@ export async function getDatingOfferings() {
 }
 
 export async function getKidsOfferings() {
-  return await client.fetch(groq`*[_type == 'kidsOfferings']{
+  return await client.fetch(groq`*[_type == 'kidsOfferings'] | order(order asc){
     heading,
     content,
     "image" : image.asset->url,
   }`)
 }
 export async function getBusinessOfferings() {
-  return await client.fetch(groq`*[_type == 'businessOfferings']{
+  return await client.fetch(groq`*[_type == 'businessOfferings'] | order(order asc){
     heading,
     content,
     "image" : image.asset->url,
   }`)
 }
 export async function getMakersOfferings() {
-  return await client.fetch(groq`*[_type == 'makersOfferings']{
+  return await client.fetch(groq`*[_type == 'makersOfferings'] | order(order asc){
     heading,
     content,
     "image" : image.asset->url,
   }`)
 }
 export async function getProfessionalOfferings() {
-  return await client.fetch(groq`*[_type == 'professionalOfferings']{
+  return await client.fetch(groq`*[_type == 'professionalOfferings'] | order(order asc){
     heading,
     content,
     "image" : image.asset->url,

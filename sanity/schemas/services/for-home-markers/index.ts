@@ -83,6 +83,11 @@ export const makersOfferings = {
   title: 'Makers Offerings',
   fields: [
     {
+      name: 'order',
+      type: 'number',
+      title: 'Order',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',

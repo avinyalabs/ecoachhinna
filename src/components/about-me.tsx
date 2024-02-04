@@ -21,6 +21,10 @@ type StatsCard = {
 }
 
 export default function AboutMe() {
+  const [inViewRef, inView] = useInView({
+    triggerOnce: true,
+  })
+  const [startCounting, setStartCounting] = useState(false)
   const [about, setAbout] = useState<AboutTypes[]>([])
   const [stats, setStats] = useState<StatsCard[]>([])
 
@@ -51,6 +55,15 @@ export default function AboutMe() {
     e.preventDefault()
     setIsModalOpen(false)
   }
+
+  useEffect(() => {
+    if (inView && !startCounting) {
+      setStartCounting(true)
+    }
+  }, [inView, startCounting])
+  const formatter: any = (value: number) => (
+    <CountUp end={startCounting ? value : 0} separator="," />
+  )
   return (
     <>
       <div
@@ -105,7 +118,10 @@ export default function AboutMe() {
           </Link>
         </Modal>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 font-bold">
+        <div
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 font-bold"
+          ref={inViewRef}
+        >
           {stats.map((stat, index) => {
             return (
               <div
@@ -113,7 +129,14 @@ export default function AboutMe() {
                 key={index}
               >
                 <TrendingUpIcon size={80} />
-                <p className="text-2xl text-gray-100">{stat.value}</p>
+                <p className="text-2xl text-gray-100 flex flex-row">
+                  <Statistic
+                    value={parseInt(stat.value.slice(0, stat.value.length - 1))}
+                    formatter={formatter}
+                    valueStyle={{ color: 'white', fontFamily: 'sans-serif' }}
+                  />
+                  {stat.value.charAt(stat.value.length - 1)}
+                </p>
                 <p className="text-gray-100">{stat.title}</p>
               </div>
             )

@@ -19,6 +19,7 @@ type HeroSectionDataType = {
   title: string
   carouselItems: { title: string }[]
   content: string
+  buttonText: string
 }
 const words = [
   { text: 'Do' },
@@ -77,7 +78,7 @@ export default function HeroSection() {
               href="/booking"
               className="flex justify-center items-center text-center text-xl  w-full md:w-[24rem] py-2 border-[1px] text-white bg-[#ED3237] duration-200 rounded-md space-x-4 "
             >
-              <p className="text-lg">Book a Demo Session</p>
+              <p className="text-lg">{heroData[0]?.buttonText}</p>
               <div className="hover:translate-x-2 duration-300">
                 <MoveRight />
               </div>
