@@ -82,6 +82,11 @@ export const businessOfferings = {
   title: 'Business Offerings',
   fields: [
     {
+      name: 'order',
+      type: 'number',
+      title: 'Order',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',

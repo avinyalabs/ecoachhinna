@@ -38,6 +38,11 @@ const heroSection = {
       title: 'Content',
       type: 'string',
     },
+    {
+      name: 'buttonText',
+      title: 'Button Text',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 
