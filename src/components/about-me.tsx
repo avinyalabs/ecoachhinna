@@ -130,7 +130,7 @@ export default function AboutMe() {
             />
           </div>
           <div className="space-y-4 my-auto">
-            <div className="min-w-0 p-4 text-4xl mr-5 text-justify">
+            <div className="min-w-0 p-4 text-4xl mr-5 text-center md:text-left">
               <h5>{about[0]?.content}</h5>
             </div>
           </div>
