@@ -43,6 +43,11 @@ const forKids = {
   title: 'For Kids',
   fields: [
     {
+      name: 'order',
+      type: 'number',
+      title: 'Order',
+    },
+    {
       name: 'subcategory',
       type: 'string',
       title: 'Sub Category',

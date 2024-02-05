@@ -43,6 +43,11 @@ const forDating = {
   title: 'For Dating',
   fields: [
     {
+      name: 'order',
+      type: 'number',
+      title: 'Order',
+    },
+    {
       name: 'subcategory',
       type: 'string',
       title: 'Sub Category',
