@@ -79,7 +79,7 @@ export default function AboutMe() {
             <p className="mx-4 min-w-0 text-base md:text-xl md:w-[90%] text-justify">
               {about[0]?.description}
             </p>
-            <p className="mx-4 min-w-0 text-base md:text-xl md:w-[90%] text-justify">
+            <p className="mx-4 min-w-0 text-base md:text-xl md:w-[90%] text-justify my-3">
               {about[0]?.description2}
             </p>
             <div className="py-4 m-4 w-full">
@@ -101,13 +101,14 @@ export default function AboutMe() {
           onCancel={handleCancel}
           onOk={handleOk}
           footer={null}
+          className="flex justify-center"
         >
           <iframe
             src="https://www.youtube.com/embed/47ynDcgY05s?si=UNUnngmvj0P19s1s"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen={true}
-            className="w-full h-80"
+            className="w-full h-[20rem] md:h-[28rem]"
           ></iframe>
           <Link
             href="#"

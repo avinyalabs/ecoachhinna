@@ -67,13 +67,16 @@ const Footer = () => {
         <div className="text-center md:text-left space-y-8">
           <h5 className=" text-2xl font-normal">Quick Links</h5>
           <div className="flex flex-col">
-            <Link className="hover:text-accent duration-200" href="#">
+            <Link className="hover:text-accent duration-200" href="/">
               Home
             </Link>
-            <Link className="hover:text-accent duration-200" href="#">
+            <Link
+              className="hover:text-accent duration-200"
+              href="/for-school-kids"
+            >
               Services
             </Link>
-            <Link className="hover:text-accent duration-200" href="#about">
+            <Link className="hover:text-accent duration-200" href="/#about">
               About
             </Link>
             <Link className="hover:text-accent duration-200" href="/contact-us">

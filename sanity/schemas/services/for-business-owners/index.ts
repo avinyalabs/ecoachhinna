@@ -42,6 +42,11 @@ const forBusiness = {
   title: 'For Business',
   fields: [
     {
+      name: 'order',
+      type: 'number',
+      title: 'Order',
+    },
+    {
       name: 'subcategory',
       type: 'string',
       title: 'Sub Category',

@@ -43,6 +43,11 @@ const forHomeMakers = {
   title: 'For Home Makers',
   fields: [
     {
+      name: 'order',
+      type: 'number',
+      title: 'Order',
+    },
+    {
       name: 'subcategory',
       type: 'string',
       title: 'Sub Category',

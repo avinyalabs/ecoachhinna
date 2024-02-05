@@ -91,3 +91,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+.ant-modal-content {
+  min-width: 120%;
+  width: 120%;
+}
+
+@media (max-width: 600px) {
+  .ant-modal-content {
+    width: 100%;
+    min-width: 100%;
+  }
+}

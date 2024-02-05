@@ -70,11 +70,7 @@ const HomeMakers = () => {
 
           <div
             className={cn(
-              'grid grid-cols-1 md:grid-cols-2  content-center justify-center items-start py-8',
-              skills.length === 1 && 'md:grid-cols-2 gap-4 lg:gap-32',
-              skills.length === 2 && 'md:grid-cols-2 gap-4 lg:gap-32',
-              skills.length === 3 && 'lg:grid-cols-3 gap-4',
-              skills.length >= 4 && 'lg:grid-cols-4 gap-4'
+              'flex flex-wrap content-center justify-center lg:justify-around items-center md:items-start py-8'
             )}
           >
             {skills.map((skill: any, i) => {
@@ -82,9 +78,9 @@ const HomeMakers = () => {
                 <div
                   key={i}
                   className={cn(
-                    'flex flex-col bg-gray-100 p-3 rounded-md h-fit ',
-                    skill.tags.length <= 5 && 'md:h-[50vh] lg:h-[75vh]',
-                    skill.tags.length > 5 && 'md:h-[75vh] lg:h-[125vh]'
+                    'flex flex-col bg-gray-100 p-3 rounded-md h-fit !w-[350px] my-5',
+                    skill.tags.length <= 5 && 'h-[60vh] md:h-[55vh]',
+                    skill.tags.length > 5 && 'md:h-[90vh]'
                   )}
                 >
                   <div className="mb-5 text-center">
@@ -102,7 +98,7 @@ const HomeMakers = () => {
                     Fee : <span className="text-accent">{skill.pricing}</span>
                   </h2>
                   <Link
-                    className="  px-8 py-3 text-base font-medium rounded bg-accent text-white  hover:bg-accent/90 duration-200 space-x-2 w-full text-center "
+                    className="  px-8 py-2 text-base font-medium rounded bg-accent text-white  hover:bg-accent/90 duration-200 space-x-2 w-fit text-center mx-auto"
                     href={'/contact-us'}
                   >
                     <p>Register</p>
