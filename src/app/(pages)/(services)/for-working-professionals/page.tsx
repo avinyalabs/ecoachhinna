@@ -82,7 +82,8 @@ const WorkingProfessionals = () => {
                   className={cn(
                     'flex flex-col bg-gray-100 p-3 rounded-md h-fit !w-[350px] my-5',
                     skill.tags.length <= 5 && 'h-[60vh] md:h-[55vh]',
-                    skill.tags.length > 5 && 'md:h-[90vh]'
+                    skill.tags.length > 5 && 'md:h-[85vh]',
+                    skill.tags.length > 10 && 'md:h-[95vh]'
                   )}
                 >
                   <div className="mb-5 text-center">
@@ -96,8 +97,8 @@ const WorkingProfessionals = () => {
                       return <CoursePoint title={tag.tag} key={index} />
                     })}
                   </div>
-                  <h2 className="text-3xl font-semibold mt-8 mb-4 text-center">
-                    Fee : <span className="text-accent">{skill.pricing}</span>
+                  <h2 className="text-[1.40rem] font-semibold mt-8 mb-4 text-center">
+                    Price : <span className="text-accent">{skill.pricing}</span>
                   </h2>
                   <Link
                     className="  px-8 py-2 text-base font-medium rounded bg-accent text-white  hover:bg-accent/90 duration-200 space-x-2 w-fit text-center mx-auto"
