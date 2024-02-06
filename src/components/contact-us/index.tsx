@@ -160,7 +160,7 @@ const Contact = () => {
         </div>
         <div className="hidden md:block">
           <Image
-            src="/contactusimage.png"
+            src="/contactusimage.webp"
             width={400}
             height={500}
             alt="Contact"
