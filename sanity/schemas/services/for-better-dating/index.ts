@@ -2,7 +2,7 @@ import { SchemaTypeDefinition } from 'sanity'
 
 export const datingTags = {
   name: 'datingTags',
-  title: 'Dating Tags',
+  title: 'Partnership Tags',
   type: 'document',
   fields: [
     {
@@ -16,7 +16,7 @@ export const datingTags = {
 
 export const datingHeader = {
   name: 'datingHeader',
-  title: 'Dating Header',
+  title: 'Partnership Header',
   type: 'document',
   fields: [
     {
@@ -34,13 +34,18 @@ export const datingHeader = {
       title: 'Content',
       type: 'text',
     },
+    {
+      name: 'topicHeading',
+      title: 'Topics heading',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 
 const forDating = {
   name: 'forDating',
   type: 'document',
-  title: 'For Dating',
+  title: 'For Partnership',
   fields: [
     {
       name: 'order',
@@ -85,7 +90,7 @@ const forDating = {
 export const datingOfferings = {
   name: 'datingOfferings',
   type: 'document',
-  title: 'Dating Offerings',
+  title: 'Partnership offersings',
   fields: [
     {
       name: 'order',

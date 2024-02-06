@@ -24,6 +24,7 @@ export type HeaderType = {
   heading: string
   subheading: string
   content: string
+  topicHeading: string
 }
 
 const BetterDating = () => {
@@ -46,13 +47,13 @@ const BetterDating = () => {
   return (
     <>
       <Header
-        image="/dating.jpg"
+        image="/partnership.webp"
         courseName={header[0]?.heading}
         info={header[0]?.subheading}
         brief={header[0]?.content}
       />
       <div className=" py-8">
-        <PageRouter currPage="/for-better-dating" />
+        <PageRouter currPage="/for-speaking-partner" />
         <div className="space-y-8 py-16 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold">
             What {header[0]?.heading} offers
@@ -72,7 +73,7 @@ const BetterDating = () => {
         </div>
         <div className="py-16 space-y-12 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold ">
-            Topics that I&lsquo;ll Cover
+            {header[0]?.topicHeading}
           </h5>
 
           <div
@@ -122,48 +123,3 @@ const BetterDating = () => {
 }
 
 export default BetterDating
-
-// const offerings = [
-//   {
-//     title: 'Confidence Building ',
-//     icon: <HeartFilled className="text-[4rem] w-fit" />,
-//     info: 'Dating can be nerve-wracking, but I’ll work with you to boost your self-confidence, so you can approach potential partners with poise and authenticity.',
-//     from: '#51c5e6',
-//     to: '#c4effb',
-//   },
-//   {
-//     title: 'Effective Communication',
-//     icon: <MessageFilled className="text-[4rem] w-fit" />,
-//     info: 'Successful dating starts with great communication. I’ll teach you how to express yourself, listen actively, and build connections through meaningful conversations.',
-//     from: '#9580ff',
-//     to: '#aea0f3',
-//   },
-//   {
-//     title: 'Online Dating Guidance',
-//     icon: <ScheduleFilled className="text-[4rem] w-fit" />,
-//     info: 'In today’s digital age, online dating is common. I’ll help you navigate dating apps, create an appealing profile, and engage in safe and enjoyable online interactions.',
-//     from: '#e5487d',
-//     to: '#ef739c',
-//   },
-//   {
-//     title: 'First Date Strategies',
-//     icon: <CheckSquareFilled className="text-[4rem] w-fit" />,
-//     info: 'Feeling jittery about first dates? I’ll provide you with strategies to plan, execute, and enjoy first dates, making a lasting impression.',
-//     from: '#e99e45',
-//     to: '#fbb764',
-//   },
-//   {
-//     title: 'Healthy Relationship Dynamics',
-//     icon: <SafetyCertificateFilled className="text-[4rem] w-fit" />,
-//     info: 'Understanding what makes a healthy relationship is essential. I’ll guide you on recognizing red flags, setting boundaries, and nurturing positive connections.',
-//     from: '#ed3237',
-//     to: '#fb666b',
-//   },
-//   {
-//     title: 'Communication Coaching for Kids',
-//     icon: <TeamOutlined className="text-[4rem] w-fit" />,
-//     info: 'If your child is in school, it is a crucial time for developing effective communication skills. I offer personalized coaching sessions that are engaging, fun, and tailored to your child’s unique needs.',
-//     from: '#9580ff',
-//     to: '#aea0f3',
-//   },
-// ]

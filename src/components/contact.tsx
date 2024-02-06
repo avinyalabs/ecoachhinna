@@ -101,9 +101,9 @@ const Footer = () => {
         <div className="flex flex-col">
           <Link
             className="hover:text-accent duration-200"
-            href="/for-better-dating"
+            href="/for-speaking-partner"
           >
-            For Better Dating
+            For Speaking Partnership
           </Link>
           <Link
             className="hover:text-accent duration-200"

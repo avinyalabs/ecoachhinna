@@ -17,7 +17,7 @@ import {
   getKidsOfferings,
   getKidsService,
 } from '../../../../../sanity/lib/queries'
-import { HeaderType } from '../for-better-dating/page'
+import { HeaderType } from '../for-speaking-partner/page'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 

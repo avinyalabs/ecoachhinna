@@ -147,7 +147,8 @@ export async function getDatingHeader() {
   return await client.fetch(groq`*[_type == 'datingHeader']{
     heading,
     subheading,
-    content
+    content,
+    topicHeading
   }`)
 }
 export async function getProfessionalHeader() {

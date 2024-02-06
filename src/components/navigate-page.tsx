@@ -4,7 +4,7 @@ import Link from 'next/link'
 const pagePaths = [
   '/for-school-kids',
   '/for-business-owners',
-  '/for-better-dating',
+  '/for-speaking-partner',
   '/for-working-professionals',
   '/for-home-makers',
 ]
@@ -12,7 +12,7 @@ const pagePaths = [
 export type PageRoutes =
   | '/for-school-kids'
   | '/for-business-owners'
-  | '/for-better-dating'
+  | '/for-speaking-partner'
   | '/for-working-professionals'
   | '/for-home-makers'
 export const PageRouter = ({ currPage }: { currPage: PageRoutes }) => {
