@@ -40,6 +40,7 @@ import registerData from './schemas/register/registerData'
 import bookingHeading from './schemas/booking'
 import faqs from './schemas/faq'
 import expertiseHeader from './schemas/expertise'
+import otherServices, { bullets } from './schemas/services/other-services'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -82,5 +83,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     faqs,
     expertiseHeader,
     howItWorksHeader,
+    otherServices,
+    bullets,
   ],
 }

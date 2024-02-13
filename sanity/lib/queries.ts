@@ -209,6 +209,18 @@ export async function getProfessionalOfferings() {
   }`)
 }
 
+export async function getOtherServices() {
+  return await client.fetch(groq`*[_type == 'other-services'] | order(order asc){
+    heading,
+    "image" : image.asset->url,
+    content,
+    description,
+    bullets[]->{
+      bullet
+    }
+  }`)
+}
+
 type FAQ = {
   _id: string
   question: string

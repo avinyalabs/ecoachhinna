@@ -56,7 +56,7 @@ export const Navbar = () => {
     {
       label: (
         <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200 text-base">
-          <Link href="/for-home-makers">Home Makers</Link>
+          <Link href="/other-services">Other Services</Link>
         </div>
       ),
       key: '5',
@@ -110,7 +110,7 @@ export const Navbar = () => {
                 </div>
 
                 <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                  <Link href="/for-home-makers">Home Makers</Link>
+                  <Link href="/other-services">Other Services</Link>
                 </div>
               </HoverCardContent>
             </HoverCard>

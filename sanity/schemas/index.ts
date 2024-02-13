@@ -37,6 +37,7 @@ import registerData from './register/registerData'
 import bookingHeading from './booking'
 import faqs from './faq'
 import expertiseHeader from './expertise'
+import otherServices, { bullets } from './services/other-services'
 
 const schemas: SchemaTypeDefinition[] = [
   contactData,
@@ -78,6 +79,8 @@ const schemas: SchemaTypeDefinition[] = [
   faqs,
   expertiseHeader,
   howItWorksHeader,
+  otherServices,
+  bullets,
 ]
 
 export default schemas

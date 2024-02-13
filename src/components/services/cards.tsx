@@ -38,7 +38,7 @@ export const OfferingCard = ({
           width={60}
           height={60}
           alt={title}
-          className="text-white"
+          className="text-white filter-white"
         />
       </CardHeader>
       <CardContent className="">

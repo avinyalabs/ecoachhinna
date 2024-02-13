@@ -111,13 +111,7 @@ const Footer = () => {
           >
             Working Professionals
           </Link>
-          <Link
-            className="hover:text-accent
-           duration-200"
-            href="/for-home-makers"
-          >
-            Home Makers
-          </Link>
+
           <Link
             className="hover:text-accent duration-200"
             href="/for-business-owners"
@@ -129,6 +123,13 @@ const Footer = () => {
             href="/for-school-kids"
           >
             School Kids
+          </Link>
+          <Link
+            className="hover:text-accent
+           duration-200"
+            href="/other-services"
+          >
+            Other Services
           </Link>
         </div>
       </div>
