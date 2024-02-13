@@ -16,7 +16,7 @@ export const makerTags = {
 
 export const makersHeader = {
   name: 'makersHeader',
-  title: 'Makers Header',
+  title: 'Other services Header',
   type: 'document',
   fields: [
     {
@@ -33,6 +33,11 @@ export const makersHeader = {
       name: 'content',
       title: 'Content',
       type: 'text',
+    },
+    {
+      name: 'topicHeading',
+      title: 'Topics heading',
+      type: 'string',
     },
   ],
 } satisfies SchemaTypeDefinition

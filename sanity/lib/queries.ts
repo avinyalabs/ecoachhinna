@@ -126,21 +126,24 @@ export async function getBusinessHeader() {
   return await client.fetch(groq`*[_type == 'businessHeader']{
     heading,
     subheading,
-    content
+    content,
+    topicHeading
   }`)
 }
 export async function getMakersHeader() {
   return await client.fetch(groq`*[_type == 'makersHeader']{
     heading,
     subheading,
-    content
+    content,
+    topicHeading
   }`)
 }
 export async function getKidsHeader() {
   return await client.fetch(groq`*[_type == 'kidsHeader']{
     heading,
     subheading,
-    content
+    content,
+    topicHeading
   }`)
 }
 export async function getDatingHeader() {
@@ -155,7 +158,8 @@ export async function getProfessionalHeader() {
   return await client.fetch(groq`*[_type == 'professoinalHeader']{
     heading,
     subheading,
-    content
+    content,
+    topicHeading
   }`)
 }
 

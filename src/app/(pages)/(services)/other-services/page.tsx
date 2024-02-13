@@ -125,9 +125,10 @@ const HomeMakers = () => {
                     </button>,
                   ]}
                 >
-                  <h1 className="text-2xl my-2">{service.heading}</h1>
-                  <p className="text-base mt-5">{service.description}</p>
-                  <ul className="list-disc ml-5 text-lg mt-3">
+                  <h1 className="text-3xl my-2">{service.heading}</h1>
+                  <p className="text-lg mt-5">{service.description}</p>
+                  <h2 className="text-lg font-semibold my-4">Key Points</h2>
+                  <ul className="list-disc ml-5 text-base mt-3">
                     {service.bullets?.map((bullet, index) => (
                       <li key={index}>{bullet.bullet}</li>
                     ))}

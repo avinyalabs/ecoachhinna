@@ -34,6 +34,11 @@ export const professoinalHeader = {
       title: 'Content',
       type: 'text',
     },
+    {
+      name: 'topicHeading',
+      title: 'Topics heading',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 

@@ -67,7 +67,7 @@ const WorkingProfessionals = () => {
         </div>
         <div className="py-16 space-y-12 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold ">
-            Topics that I&lsquo;ll Cover
+            {header[0]?.topicHeading}
           </h5>
 
           <div
