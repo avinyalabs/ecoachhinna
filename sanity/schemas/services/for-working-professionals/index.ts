@@ -68,6 +68,11 @@ const forProfessionals = {
       title: 'Pricing',
     },
     {
+      name: 'link',
+      type: 'string',
+      title: 'Link',
+    },
+    {
       name: 'tags',
       title: 'Tags',
       type: 'array',

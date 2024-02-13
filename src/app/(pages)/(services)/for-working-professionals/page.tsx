@@ -99,7 +99,8 @@ const WorkingProfessionals = () => {
                   </h2>
                   <Link
                     className="  px-8 py-2 text-base font-medium rounded bg-accent text-white  hover:bg-accent/90 duration-200 space-x-2 w-fit text-center mx-auto"
-                    href={'/contact-us'}
+                    href={`${skill.link}`}
+                    target="_blank"
                   >
                     <p>Register</p>
                   </Link>

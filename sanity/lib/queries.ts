@@ -40,27 +40,27 @@ export type ServiceDetails = {
 }
 export async function getKidsService() {
   return await client.fetch(
-    groq`*[_type=='forKids']  | order(order asc) {subcategory,subheading,pricing,tags[]->{tag}}`
+    groq`*[_type=='forKids']  | order(order asc) {subcategory,subheading,pricing,link,tags[]->{tag}}`
   )
 }
 export async function getBusinessService() {
   return await client.fetch(
-    groq`*[_type=='forBusiness']  | order(order asc) {subcategory,subheading,pricing,tags[]->{tag}}`
+    groq`*[_type=='forBusiness']  | order(order asc) {subcategory,subheading,pricing,link,tags[]->{tag}}`
   )
 }
 export async function getDatingService() {
   return await client.fetch(
-    groq`*[_type=='forDating']  | order(order asc) {subcategory,subheading,pricing,tags[]->{tag}}`
+    groq`*[_type=='forDating']  | order(order asc) {subcategory,subheading,pricing,link,tags[]->{tag}}`
   )
 }
 export async function getProfessionalService() {
   return await client.fetch(
-    groq`*[_type=='forProfessionals']  | order(order asc) {subcategory,subheading,pricing,tags[]->{tag}}`
+    groq`*[_type=='forProfessionals']  | order(order asc) {subcategory,subheading,pricing,link,tags[]->{tag}}`
   )
 }
 export async function getHomeMakerService() {
   return await client.fetch(
-    groq`*[_type=='forHomeMakers']  | order(order asc) {subcategory,subheading,pricing,tags[]->{tag}}`
+    groq`*[_type=='forHomeMakers']  | order(order asc) {subcategory,subheading,pricing,link,tags[]->{tag}}`
   )
 }
 
