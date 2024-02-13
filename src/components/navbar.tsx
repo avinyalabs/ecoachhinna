@@ -21,7 +21,7 @@ export const Navbar = () => {
     {
       label: (
         <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200 text-base">
-          <Link href="/for-school-kids">For School Kids</Link>
+          <Link href="/for-school-kids">School Kids</Link>
         </div>
       ),
       key: '0',
@@ -30,7 +30,7 @@ export const Navbar = () => {
       label: (
         <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200 text-base">
           <Link href="/for-business-owners">
-            For Business Owners with overseas clients
+            Business Owners with overseas clients
           </Link>
         </div>
       ),
@@ -39,7 +39,7 @@ export const Navbar = () => {
     {
       label: (
         <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200 text-base">
-          <Link href="for-speaking-partner">For Speaking Partnership</Link>
+          <Link href="for-speaking-partner">Speaking Partnership</Link>
         </div>
       ),
       key: '3',
@@ -48,9 +48,7 @@ export const Navbar = () => {
     {
       label: (
         <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200 text-base">
-          <Link href="/for-working-professionals">
-            For Working Professionals
-          </Link>
+          <Link href="/for-working-professionals">Working Professionals</Link>
         </div>
       ),
       key: '4',
@@ -58,7 +56,7 @@ export const Navbar = () => {
     {
       label: (
         <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200 text-base">
-          <Link href="/for-home-makers">For Home Makers</Link>
+          <Link href="/for-home-makers">Home Makers</Link>
         </div>
       ),
       key: '5',
@@ -87,34 +85,32 @@ export const Navbar = () => {
           <div className="flex justify-center items-center !text-[16px] hover:text-accent hover:underline duration-200 cursor-pointer">
             <HoverCard>
               <HoverCardTrigger className="outline-none flex justify-center items-center space-x-1">
-                <p>Services</p>
+                <p>Services for</p>
                 <ChevronDown size={16} />
               </HoverCardTrigger>
               <HoverCardContent>
                 <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                  <Link href="/for-school-kids">For School Kids</Link>
+                  <Link href="/for-school-kids">School Kids</Link>
                 </div>
 
                 <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
                   <Link href="/for-business-owners">
-                    For Business Owners with overseas clients
+                    Business Owners with overseas clients
                   </Link>
                 </div>
 
                 <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                  <Link href="for-speaking-partner">
-                    For Speaking Partnership
-                  </Link>
+                  <Link href="for-speaking-partner">Speaking Partnership</Link>
                 </div>
 
                 <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
                   <Link href="/for-working-professionals">
-                    For Working Professionals
+                    Working Professionals
                   </Link>
                 </div>
 
                 <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                  <Link href="/for-home-makers">For Home Makers</Link>
+                  <Link href="/for-home-makers">Home Makers</Link>
                 </div>
               </HoverCardContent>
             </HoverCard>
@@ -171,7 +167,7 @@ export const Navbar = () => {
               onClick={(e) => e.preventDefault()}
               className="outline-none flex justify-center items-center space-x-1 my-2 text-xl"
             >
-              <Space>Services</Space>
+              <Space>Services for</Space>
             </a>
           </Dropdown>
           <button className=" text-white mt-2">

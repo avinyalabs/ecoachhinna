@@ -79,10 +79,7 @@ const BusinessOwners = () => {
                 <div
                   key={i}
                   className={cn(
-                    'flex flex-col bg-gray-100 p-3 rounded-md h-fit !w-[350px] my-5',
-                    skill.tags.length <= 5 && 'h-[60vh] md:h-[55vh]',
-                    skill.tags.length > 5 && 'md:h-[85vh]',
-                    skill.tags.length > 10 && 'md:h-[95vh]'
+                    'flex flex-col bg-gray-100 p-3 rounded-md h-[70vh] !w-[350px] my-5'
                   )}
                 >
                   <div className="mb-5 text-center">
@@ -91,11 +88,12 @@ const BusinessOwners = () => {
                     </h1>
                     <h2 className="text-xl font-medium">{skill.subheading}</h2>
                   </div>
-                  <div className="h-full ">
+                  <div className="h-[100%] overflow-y-auto no-scrollbar">
                     {skill.tags.map((tag: any, index: number) => {
                       return <CoursePoint title={tag.tag} key={index} />
                     })}
                   </div>
+
                   <h2 className="text-[1.40rem] font-semibold mt-8 mb-4 text-center">
                     Price : <span className="text-accent">{skill.pricing}</span>
                   </h2>

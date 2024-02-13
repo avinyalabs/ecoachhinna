@@ -103,3 +103,7 @@
     min-width: 100%;
   }
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
