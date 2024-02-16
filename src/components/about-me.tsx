@@ -130,14 +130,14 @@ export default function AboutMe() {
                 key={index}
               >
                 <TrendingUpIcon size={80} />
-                <p className="text-2xl text-gray-100 flex flex-row">
+                <div className="text-2xl text-gray-100 flex flex-row">
                   <Statistic
                     value={parseInt(stat.value.slice(0, stat.value.length - 1))}
                     formatter={formatter}
                     valueStyle={{ color: 'white', fontFamily: 'sans-serif' }}
                   />
                   {stat.value.charAt(stat.value.length - 1)}
-                </p>
+                </div>
                 <p className="text-gray-100">{stat.title}</p>
               </div>
             )

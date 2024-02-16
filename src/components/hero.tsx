@@ -32,14 +32,21 @@ const words = [
 
 export default function HeroSection() {
   const [heroData, setHeroData] = useState<HeroSectionDataType[]>([])
+  const [hydrated, setHydrated] = useState(false)
   useEffect(() => {
     const fetchData = async () => {
       const data = await getHeroSectionData()
       console.log(data, 'hero data')
-      setHeroData(data)
+      if (data) {
+        setHydrated(true)
+        setHeroData(data)
+      }
     }
     fetchData()
   }, [])
+  if (!hydrated) {
+    return <div>loading...</div>
+  }
   return (
     <div className="w-full overflow-x-clip relative h-[80%] md:h-[80%] py-8 flex justify-start items-center bg-accent/10">
       <div className="px-4 md:px-20 py-4 lg:px-36 flex justify-between items-center flex-col md:flex-row w-full md:text-left my-auto">
@@ -79,9 +86,9 @@ export default function HeroSection() {
               className="flex justify-center items-center text-center text-xl  w-full md:w-[24rem] py-2 border-[1px] text-white bg-[#ED3237] duration-200 rounded-md space-x-4 "
             >
               <p className="text-lg">{heroData[0]?.buttonText}</p>
-              <div className="hover:translate-x-2 duration-300">
+              <p className="hover:translate-x-2 duration-300">
                 <MoveRight />
-              </div>
+              </p>
             </Link>
           </div>
         </div>

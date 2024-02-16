@@ -41,27 +41,6 @@ const HowItWorks = () => {
       <h1 className="text-5xl font-semibold ">{header[0]?.title}</h1>
       <p className="text-xl text-accent font-medium">{header[0]?.content}</p>
 
-      {/* {workflow[0]?.items?.map((item, index) => {
-        return (
-          <div
-            className={`flex justify-around items-center ${index % 2 == 0 ? 'flex-row' : 'flex-row-reverse'}`}
-            key={index}
-          >
-            <div className="flex ml-5">
-              <h1 className="text-3xl md:text-4xl text-accent">{index + 1}</h1>
-              <div className="text-left w-80 md:w-96 space-y-5 px-4 ">
-                <h2 className="text-3xl md:text-4xl font-semibold">
-                  {item.title}
-                </h2>
-                <p className="text-justify">{item.description}</p>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <Image src={item.image} alt="Image" width={350} height={350} />
-            </div>
-          </div>
-        )
-      })} */}
       <div className="container bg-gray-200 mx-auto w-full h-full">
         <div className="relative wrap overflow-hidden p-10 h-full">
           <div
@@ -72,7 +51,7 @@ const HowItWorks = () => {
           <div className="mb-12 flex justify-between items-center w-full right-timeline ">
             <div className="order-1 w-5/12 hidden md:flex">
               <Image
-                src={workflow[0]?.items[0]?.image}
+                src={workflow[0]?.items[0]?.image || '/professionals.jpg'}
                 width={400}
                 height={300}
                 alt="Image"
@@ -95,7 +74,7 @@ const HowItWorks = () => {
           <div className="mb-12 flex justify-between flex-row-reverse items-center w-full left-timeline">
             <div className="order-1 w-5/12 hidden md:flex">
               <Image
-                src={workflow[0]?.items[1]?.image}
+                src={workflow[0]?.items[1]?.image || '/professionals.jpg'}
                 width={400}
                 height={300}
                 alt="Image"
@@ -118,7 +97,7 @@ const HowItWorks = () => {
           <div className="mb-12 flex justify-between items-center w-full right-timeline">
             <div className="order-1 w-5/12 hidden md:flex">
               <Image
-                src={workflow[0]?.items[2]?.image}
+                src={workflow[0]?.items[2]?.image || '/professionals.jpg'}
                 width={400}
                 height={300}
                 alt="Image"
@@ -141,7 +120,7 @@ const HowItWorks = () => {
           <div className="mb-12 flex justify-between flex-row-reverse items-center w-full left-timeline">
             <div className="order-1 w-5/12 hidden md:flex">
               <Image
-                src={workflow[0]?.items[3]?.image}
+                src={workflow[0]?.items[3]?.image || '/professionals.jpg'}
                 width={400}
                 height={300}
                 alt="Image"
@@ -164,7 +143,7 @@ const HowItWorks = () => {
           <div className="mb-12 flex justify-between items-center w-full right-timeline">
             <div className="order-1 w-5/12 hidden md:flex">
               <Image
-                src={workflow[0]?.items[4]?.image}
+                src={workflow[0]?.items[4]?.image || '/professionals.jpg'}
                 width={400}
                 height={300}
                 alt="Image"

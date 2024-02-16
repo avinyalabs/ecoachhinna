@@ -20,28 +20,29 @@ export default function Home() {
       setLoaded(true)
     }, 2000)
   }, [])
+  if (!loaded) {
+    return (
+      <div className="h-[100dvh] fixed w-[100dvw] top-0 left-0 overflow-hidden !bg-black">
+        <div className="flex justify-center w-full h-full items-center">
+          <LoadingAnimation />
+        </div>
+      </div>
+    )
+  }
   return (
     <div>
-      {!loaded ? (
-        <div className="h-[100dvh] fixed w-[100dvw] top-0 left-0 overflow-hidden !bg-black">
-          <div className="flex justify-center w-full h-full items-center">
-            <LoadingAnimation />
-          </div>
+      <div className="w-full overflow-x-clip ">
+        <div>
+          <HeroSection />
+          {/* <HeroSection2 /> */}
         </div>
-      ) : (
-        <div className="w-full overflow-x-clip ">
-          <div className="">
-            <HeroSection />
-            {/* <HeroSection2 /> */}
-          </div>
-          <Events />
-          <AboutMe />
-          <Expertise />
-          <Services />
-          <HowItWorks />
-          <Testimonials />
-        </div>
-      )}
+        <Events />
+        <AboutMe />
+        <Expertise />
+        <Services />
+        <HowItWorks />
+        <Testimonials />
+      </div>
     </div>
   )
 }
