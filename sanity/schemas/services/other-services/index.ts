@@ -57,6 +57,16 @@ const otherServices = {
         },
       ],
     },
+    {
+      name: 'link',
+      title: 'Link',
+      type: 'string',
+    },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 

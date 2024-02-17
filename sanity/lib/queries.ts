@@ -17,7 +17,7 @@ export async function getWhatICanHelp() {
 
 export async function getAboutMe() {
   return await client.fetch(
-    groq`*[_type=='about-me']{title,description,content,description2}`
+    groq`*[_type=='about-me']{title,description,content,description2,link}`
   )
 }
 export async function getTestimonials() {
@@ -64,12 +64,12 @@ export async function getHomeMakerService() {
 }
 
 export async function getFooterData() {
-  return await client.fetch(groq`*[_type=='footer']{title,content}`)
+  return await client.fetch(groq`*[_type=='footer']{title,content,link}`)
 }
 
 export async function getHeroSectionData() {
   return await client.fetch(
-    groq`*[_type=='hero-section']{title,content,buttonText,'carouselItems': carousel[]->{
+    groq`*[_type=='hero-section']{title,content,buttonText,link,'carouselItems': carousel[]->{
       title
     }}`
   )
@@ -83,7 +83,8 @@ export async function getEvents() {
     "image":image.asset->url,
     Audience,
     isActive,
-    price
+    price,
+    link
   }`)
 }
 
@@ -216,7 +217,9 @@ export async function getOtherServices() {
     description,
     bullets[]->{
       bullet
-    }
+    },
+    link,
+    price
   }`)
 }
 
@@ -239,4 +242,8 @@ export async function getExpertiseHeader() {
 
 export async function getHowItWorksHeader() {
   return await client.fetch(groq`*[_type == 'howItWorksHeader']{title,content}`)
+}
+
+export async function getNavbarLinks() {
+  return await client.fetch(groq`*[_type == 'navbarLinks']{signup,booking}`)
 }

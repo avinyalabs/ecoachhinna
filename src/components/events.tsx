@@ -15,6 +15,7 @@ type EventCardType = {
   Audience: string
   isActive: boolean
   price: string
+  link: string
 }
 
 const Events = () => {
@@ -76,6 +77,7 @@ const Events = () => {
                 audience={event.Audience}
                 isActive={event.isActive}
                 price={event.price}
+                link={event.link}
               />
             ))}
           </Carousel>
@@ -95,6 +97,7 @@ const EventCard = ({
   image,
   isActive,
   price,
+  link,
 }: {
   //   image: string
   title: string
@@ -104,6 +107,7 @@ const EventCard = ({
   image: string
   isActive: boolean
   price: string
+  link: string
 }) => {
   const registerHandler = () => {
     toast.error('Event has already been occurred')
@@ -138,7 +142,7 @@ const EventCard = ({
         </p>
         {isActive && (
           <Link
-            href={'/register-for-event'}
+            href={link || '/register-for-event'}
             className="w-fit border-[1px] mt-3 text-base px-2 py-1 border-accent bg-accent text-white hover:bg-accent/90"
           >
             <p className="text-white hover:text-white">Register for event</p>

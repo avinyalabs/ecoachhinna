@@ -38,6 +38,7 @@ import bookingHeading from './booking'
 import faqs from './faq'
 import expertiseHeader from './expertise'
 import otherServices, { bullets } from './services/other-services'
+import navbarLink from './navbar'
 
 const schemas: SchemaTypeDefinition[] = [
   contactData,
@@ -81,6 +82,7 @@ const schemas: SchemaTypeDefinition[] = [
   howItWorksHeader,
   otherServices,
   bullets,
+  navbarLink,
 ]
 
 export default schemas

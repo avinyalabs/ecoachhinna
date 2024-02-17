@@ -7,6 +7,7 @@ import { getFooterData, getFooterInfo } from '../../sanity/lib/queries'
 type FooterType = {
   title: string
   content: string
+  link: string
 }
 
 type FooterInfoType = {
@@ -35,8 +36,9 @@ export default function Contact() {
           <p className="">{footerData[0]?.content}</p>
         </div>
         <Link
-          href="/booking"
+          href={footerData[0]?.link || '/booking'}
           className="flex justify-center items-center space-x-4 bg-accent text-white hover:bg-zinc-900 rounded-sm text-base px-8 py-3 w-fit duration-200 font-semibold"
+          target="_blank"
         >
           <p>Let&apos;s work Together</p>
           <MoveRight />
@@ -99,12 +101,12 @@ const Footer = () => {
       <div className="text-center md:text-left space-y-8">
         <h5 className=" text-2xl font-normal">Services</h5>
         <div className="flex flex-col">
-          <Link
+          {/* <Link
             className="hover:text-accent duration-200"
             href="/for-speaking-partner"
           >
             Speaking Partnership
-          </Link>
+          </Link> */}
           <Link
             className="hover:text-accent duration-200"
             href="/for-working-professionals"

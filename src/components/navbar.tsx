@@ -11,12 +11,28 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { LinkedinOutlined } from '@ant-design/icons'
 import { ChevronDown } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DownOutlined } from '@ant-design/icons'
 import type { MenuProps } from 'antd'
 import { Dropdown, Space } from 'antd'
+import { getNavbarLinks } from '../../sanity/lib/queries'
 
 export const Navbar = () => {
+  const [navbarLinks, setNavbarLinks] = useState<
+    {
+      signup: string
+      booking: string
+    }[]
+  >([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getNavbarLinks()
+      if (data) {
+        setNavbarLinks(data)
+      }
+    }
+    fetchData()
+  }, [])
   const items: MenuProps['items'] = [
     {
       label: (
@@ -36,14 +52,14 @@ export const Navbar = () => {
       ),
       key: '1',
     },
-    {
-      label: (
-        <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200 text-base">
-          <Link href="for-speaking-partner">Speaking Partnership</Link>
-        </div>
-      ),
-      key: '3',
-    },
+    // {
+    //   label: (
+    //     <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200 text-base">
+    //       <Link href="for-speaking-partner">Speaking Partnership</Link>
+    //     </div>
+    //   ),
+    //   key: '3',
+    // },
 
     {
       label: (
@@ -51,7 +67,7 @@ export const Navbar = () => {
           <Link href="/for-working-professionals">Working Professionals</Link>
         </div>
       ),
-      key: '4',
+      key: '2',
     },
     {
       label: (
@@ -59,7 +75,7 @@ export const Navbar = () => {
           <Link href="/other-services">Other Services</Link>
         </div>
       ),
-      key: '5',
+      key: '3',
     },
   ]
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -79,7 +95,9 @@ export const Navbar = () => {
             <Link href={'/#about'}>About</Link>
           </Button>
           <Button variant="ghost" className="hover:text-accent !text-[16px]">
-            <Link href={'/booking'}>Booking</Link>
+            <Link href={navbarLinks[0]?.booking || '/booking'} target="_blank">
+              Booking
+            </Link>
           </Button>
 
           <div className="flex justify-center items-center !text-[16px] hover:text-accent hover:underline duration-200 cursor-pointer">
@@ -99,9 +117,9 @@ export const Navbar = () => {
                   </Link>
                 </div>
 
-                <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
+                {/* <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
                   <Link href="for-speaking-partner">Speaking Partnership</Link>
-                </div>
+                </div> */}
 
                 <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
                   <Link href="/for-working-professionals">
@@ -115,6 +133,15 @@ export const Navbar = () => {
               </HoverCardContent>
             </HoverCard>
           </div>
+          <button className="px-3 py-1 rounded-sm bg-accent text-white">
+            <Link
+              href={navbarLinks[0]?.signup || '/contact-us'}
+              className="w-full h-full"
+              target="_blank"
+            >
+              Sign Up
+            </Link>
+          </button>
           <button className="px-3 py-1 rounded-sm bg-accent text-white">
             <Link href={'/contact-us'} className="w-full h-full">
               Contact Me
@@ -148,7 +175,7 @@ export const Navbar = () => {
         </section>
       </nav>
       {isNavOpen && (
-        <div className="bg-white h-60 w-full flex md:hidden flex-col justify-center ">
+        <div className="bg-white h-72 w-full flex md:hidden flex-col justify-center ">
           <Button variant="ghost" className=" hover:text-accent !text-[20px]">
             <Link href={'/'}>Home</Link>
           </Button>
@@ -171,6 +198,14 @@ export const Navbar = () => {
             </a>
           </Dropdown>
           <button className=" text-white mt-2">
+            <Link
+              href={'/contact-us'}
+              className="bg-accent px-3 py-1 w-full h-full  rounded-sm text-xl"
+            >
+              Sign Up
+            </Link>
+          </button>
+          <button className=" text-white mt-4">
             <Link
               href={'/contact-us'}
               className="bg-accent px-3 py-1 w-full h-full  rounded-sm text-xl"

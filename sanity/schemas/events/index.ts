@@ -43,6 +43,11 @@ const events = {
       title: 'Price',
       type: 'string',
     },
+    {
+      name: 'link',
+      title: 'Link',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 

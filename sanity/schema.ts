@@ -41,6 +41,7 @@ import bookingHeading from './schemas/booking'
 import faqs from './schemas/faq'
 import expertiseHeader from './schemas/expertise'
 import otherServices, { bullets } from './schemas/services/other-services'
+import navbarLink from './schemas/navbar'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -85,5 +86,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     howItWorksHeader,
     otherServices,
     bullets,
+    navbarLink,
   ],
 }

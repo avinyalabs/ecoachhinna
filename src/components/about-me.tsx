@@ -13,6 +13,7 @@ type AboutTypes = {
   description: string
   content: string
   description2: string
+  link: string
 }
 
 type StatsCard = {
@@ -104,7 +105,7 @@ export default function AboutMe() {
           className="flex justify-center"
         >
           <iframe
-            src="https://www.youtube.com/embed/47ynDcgY05s?si=UNUnngmvj0P19s1s"
+            src={about[0]?.link || ''}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen={true}

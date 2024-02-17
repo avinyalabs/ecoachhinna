@@ -29,6 +29,8 @@ type OtherServicesProps = {
   description: string
   image: string
   bullets: [{ bullet: string }]
+  link: string
+  price: string
 }
 
 const HomeMakers = () => {
@@ -92,9 +94,12 @@ const HomeMakers = () => {
                     {service.heading}
                   </h5>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="flex flex-col items-start">
                   <p className="min-w-0 font-light text-zinc-200 text-lg text-justify">
                     {service.content}
+                  </p>
+                  <p className="text-xl font-semibold pt-2">
+                    Price : ₹{service.price}
                   </p>
                 </CardFooter>
                 <div className="mx-5 space-x-5 my-4">
@@ -106,7 +111,8 @@ const HomeMakers = () => {
                   </button>
                   <Link
                     className="px-8 py-3 text-base font-medium rounded bg-accent text-white  hover:bg-accent/90 duration-200 space-x-2 w-fit text-center mx-auto h-12 border-white border-[1px]"
-                    href={'/contact-us'}
+                    href={service.link || '/contact-us'}
+                    target="_blank"
                   >
                     Register
                   </Link>

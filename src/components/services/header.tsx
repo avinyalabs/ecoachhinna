@@ -27,12 +27,12 @@ export default function Header({
         />
       </div>
       <div className="flex justify-center items-center md:w-[60%] mt-40">
-        <div className="font-black my-auto space-y-8 order-2 md:order-1 text-center w-full">
+        <div className="font-black my-auto space-y-5 md:space-y-8 order-2 md:order-1 text-center w-full">
           <h5 className="text-accent text-6xl ">{courseName}</h5>
           <h6 className="text-2xl md:text-3xl lg:text-5xl text-white ">
             {info}
           </h6>
-          <p className="font-normal text-zinc-100 text-xl md:w-[600px] mx-auto">
+          <p className="font-normal text-zinc-100 text-lg md:text-xl md:w-[600px] mx-auto">
             {brief}
           </p>
           <Link

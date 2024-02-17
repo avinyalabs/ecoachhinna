@@ -14,6 +14,11 @@ const footer = {
       title: 'Content',
       type: 'text',
     },
+    {
+      name: 'link',
+      title: 'Link',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 
