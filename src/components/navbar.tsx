@@ -183,7 +183,9 @@ export const Navbar = () => {
             <Link href={'/#about'}>About</Link>
           </Button>
           <Button variant="ghost" className="hover:text-accent !text-[20px]">
-            <Link href={'/booking'}>Booking</Link>
+            <Link href={navbarLinks[0]?.booking || '/booking'} target="_blank">
+              Booking
+            </Link>
           </Button>
           <Dropdown
             menu={{ items }}
@@ -199,8 +201,9 @@ export const Navbar = () => {
           </Dropdown>
           <button className=" text-white mt-2">
             <Link
-              href={'/contact-us'}
+              href={navbarLinks[0]?.signup || '/contact-us'}
               className="bg-accent px-3 py-1 w-full h-full  rounded-sm text-xl"
+              target="_blank"
             >
               Sign Up
             </Link>
