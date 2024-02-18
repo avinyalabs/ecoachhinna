@@ -38,6 +38,11 @@ export const businessHeader = {
       title: 'Topics heading',
       type: 'string',
     },
+    {
+      name: 'link',
+      title: 'Link',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 

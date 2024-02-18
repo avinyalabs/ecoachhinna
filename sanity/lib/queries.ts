@@ -123,7 +123,8 @@ export async function getBusinessHeader() {
     heading,
     subheading,
     content,
-    topicHeading
+    topicHeading,
+    link
   }`)
 }
 export async function getMakersHeader() {
@@ -131,7 +132,8 @@ export async function getMakersHeader() {
     heading,
     subheading,
     content,
-    topicHeading
+    topicHeading,
+    link
   }`)
 }
 export async function getKidsHeader() {
@@ -139,7 +141,8 @@ export async function getKidsHeader() {
     heading,
     subheading,
     content,
-    topicHeading
+    topicHeading,
+    link
   }`)
 }
 export async function getDatingHeader() {
@@ -147,7 +150,7 @@ export async function getDatingHeader() {
     heading,
     subheading,
     content,
-    topicHeading
+    topicHeading,
   }`)
 }
 export async function getProfessionalHeader() {
@@ -155,7 +158,8 @@ export async function getProfessionalHeader() {
     heading,
     subheading,
     content,
-    topicHeading
+    topicHeading,
+    link
   }`)
 }
 

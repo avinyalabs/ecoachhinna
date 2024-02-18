@@ -45,6 +45,7 @@ const SchoolKidsPage = () => {
         courseName={header[0]?.heading}
         info={header[0]?.subheading}
         brief={header[0]?.content}
+        link={header[0]?.link}
       />
       <div className=" py-8">
         <PageRouter currPage="/for-school-kids" />

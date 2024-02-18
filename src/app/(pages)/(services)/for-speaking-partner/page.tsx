@@ -24,6 +24,7 @@ export type HeaderType = {
   subheading: string
   content: string
   topicHeading: string
+  link: string
 }
 
 const BetterDating = () => {
@@ -50,9 +51,9 @@ const BetterDating = () => {
         courseName={header[0]?.heading}
         info={header[0]?.subheading}
         brief={header[0]?.content}
+        link="/booking"
       />
       <div className=" py-8">
-        <PageRouter currPage="/for-speaking-partner" />
         <div className="space-y-8 py-16 px-2 md:px-20 lg:px-36">
           <h5 className="text-4xl text-center font-bold">
             What {header[0]?.heading} offers

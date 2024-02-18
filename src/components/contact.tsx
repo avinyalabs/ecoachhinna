@@ -46,8 +46,8 @@ export default function Contact() {
       </div>
       <Footer />
       <div className="flex justify-between items-center py-4 font-extralight">
-        <p>&#169;2024 Ecoachinna</p>
-        <p>Powered by Ecoachinna</p>
+        <p>&#169;2024 ecoachinna</p>
+        <p>Powered by ecoachinna</p>
       </div>
     </div>
   )

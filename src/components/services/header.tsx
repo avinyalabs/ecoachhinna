@@ -9,11 +9,13 @@ export default function Header({
   info,
   brief,
   image,
+  link,
 }: {
   courseName: string
   info: string
   brief: string
   image: string
+  link: string
 }) {
   return (
     <div className="w-full h-[70vh] py-16 relative bg-zinc-700/50 flex justify-center items-center">
@@ -37,9 +39,10 @@ export default function Header({
           </p>
           <Link
             className="px-8 py-3 text-base font-medium rounded bg-accent text-white flex justify-center items-center hover:bg-accent/90 duration-200 space-x-2 mx-auto w-fit"
-            href={'/booking'}
+            href={link || '/booking'}
+            target="_blank"
           >
-            <p>Book a Demo</p>
+            <p>Book an Evaluation Session</p>
             <MoveRightIcon />
           </Link>
           <iframe>h</iframe>

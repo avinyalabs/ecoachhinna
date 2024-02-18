@@ -7,7 +7,7 @@ import { Toaster } from 'react-hot-toast'
 const figtree = Figtree({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'E coach Hina',
+  title: 'ecoachhinna',
   description:
     'Hinna K Mendiratta is an Educator Mentor /Speaker having 10 years of experience in the field of structured communication trainings and teaching.',
 }

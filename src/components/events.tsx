@@ -143,6 +143,7 @@ const EventCard = ({
         {isActive && (
           <Link
             href={link || '/register-for-event'}
+            target="_blank"
             className="w-fit border-[1px] mt-3 text-base px-2 py-1 border-accent bg-accent text-white hover:bg-accent/90"
           >
             <p className="text-white hover:text-white">Register for event</p>

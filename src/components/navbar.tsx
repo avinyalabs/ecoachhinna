@@ -45,9 +45,7 @@ export const Navbar = () => {
     {
       label: (
         <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200 text-base">
-          <Link href="/for-business-owners">
-            Business Owners with overseas clients
-          </Link>
+          <Link href="/for-business-owners">Business Owners</Link>
         </div>
       ),
       key: '1',
@@ -112,9 +110,7 @@ export const Navbar = () => {
                 </div>
 
                 <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
-                  <Link href="/for-business-owners">
-                    Business Owners with overseas clients
-                  </Link>
+                  <Link href="/for-business-owners">Business Owners</Link>
                 </div>
 
                 {/* <div className="border-zinc-700 hover:border-accent border-b py-2 hover:text-accent duration-200">
