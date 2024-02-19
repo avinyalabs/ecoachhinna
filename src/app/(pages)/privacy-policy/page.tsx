@@ -73,7 +73,7 @@ export default function PrivacyPolicy() {
             are not satisfied with our response to your complaint, you have the
             right to lodge your complaint with the relevant data protection
             authority. The jurisdiction for all legal complaints and appeals
-            will be at Bombay High Court and District authorities in Mumbai.
+            will be at Delhi High Court and District authorities in Delhi.
           </p>
         </div>
       </div>
