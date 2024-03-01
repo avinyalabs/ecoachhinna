@@ -28,6 +28,11 @@ const testimonials = {
       title: 'Designation',
       type: 'string',
     },
+    {
+      name: 'video',
+      title: 'Video',
+      type: 'string',
+    },
   ],
 } satisfies SchemaTypeDefinition
 

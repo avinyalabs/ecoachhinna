@@ -22,7 +22,7 @@ export async function getAboutMe() {
 }
 export async function getTestimonials() {
   return await client.fetch(
-    groq`*[_type=='testimonials']{description,author,designation,"image":image.asset->url}`
+    groq`*[_type=='testimonials']{description,author,designation,"image":image.asset->url,video}`
   )
 }
 

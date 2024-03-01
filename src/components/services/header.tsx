@@ -42,7 +42,7 @@ export default function Header({
             href={link || '/booking'}
             target="_blank"
           >
-            <p>Book an Evaluation Session</p>
+            <p>Book an Evolution Session</p>
             <MoveRightIcon />
           </Link>
           <iframe>h</iframe>
