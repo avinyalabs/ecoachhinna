@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Carousel, {
   arrowsPlugin,
   autoplayPlugin,
@@ -241,6 +241,7 @@ const TestimonialSCard = ({
   video,
 }: TestimonialsType) => {
   const [visibleModal, setVisibleModal] = useState(null)
+  const iframeRef = useRef<HTMLIFrameElement | null>(null)
   const showModal = (index: any) => {
     setVisibleModal(index)
   }
@@ -248,7 +249,16 @@ const TestimonialSCard = ({
     setVisibleModal(null)
   }
 
-  const handleCancel = () => {
+  const handleCancel = (e: any) => {
+    e.preventDefault()
+    const iframe = iframeRef.current
+    if (iframe) {
+      iframe.contentWindow?.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        '*'
+      )
+      iframe.src = iframe.src // Reset the video to the beginning
+    }
     setVisibleModal(null)
   }
   return (
@@ -298,6 +308,7 @@ const TestimonialSCard = ({
       >
         <iframe
           src={video || ''}
+          ref={iframeRef}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen={true}

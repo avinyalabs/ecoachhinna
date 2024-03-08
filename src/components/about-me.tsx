@@ -25,6 +25,8 @@ export default function AboutMe() {
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
   })
+
+  const iframeRef = useRef<HTMLIFrameElement | null>(null)
   const [startCounting, setStartCounting] = useState(false)
   const [about, setAbout] = useState<AboutTypes[]>([])
   const [stats, setStats] = useState<StatsCard[]>([])
@@ -54,6 +56,14 @@ export default function AboutMe() {
 
   const handleCancel = (e: any) => {
     e.preventDefault()
+    const iframe = iframeRef.current
+    if (iframe) {
+      iframe.contentWindow?.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        '*'
+      )
+      iframe.src = iframe.src // Reset the video to the beginning
+    }
     setIsModalOpen(false)
   }
 
@@ -106,6 +116,7 @@ export default function AboutMe() {
         >
           <iframe
             src={about[0]?.link || ''}
+            ref={iframeRef}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen={true}
