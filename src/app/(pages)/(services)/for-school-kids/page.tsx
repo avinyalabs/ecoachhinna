@@ -91,9 +91,7 @@ const SchoolKidsPage = () => {
                   <div className="h-[100%] no-scrollbar">
                     <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="item-1">
-                        <AccordionTrigger>
-                          {skill.subcategory} Items
-                        </AccordionTrigger>
+                        <AccordionTrigger>{skill.subcategory}</AccordionTrigger>
                         <AccordionContent>
                           {' '}
                           {skill.tags.map((tag: any, index: number) => {
