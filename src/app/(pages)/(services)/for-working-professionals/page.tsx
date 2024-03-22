@@ -16,6 +16,12 @@ import {
   getProfessionalOfferings,
   getProfessionalService,
 } from '../../../../../sanity/lib/queries'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 import { HeaderType } from '../for-speaking-partner/page'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
@@ -81,7 +87,7 @@ const WorkingProfessionals = () => {
                 <div
                   key={i}
                   className={cn(
-                    'flex flex-col bg-gray-100 p-3 rounded-md h-[70vh] !w-[350px] my-5'
+                    'flex flex-col bg-gray-100 p-3 rounded-md h-[100%] !w-[350px] my-5'
                   )}
                 >
                   <div className="mb-5 text-center">
@@ -90,10 +96,20 @@ const WorkingProfessionals = () => {
                     </h1>
                     <h2 className="text-xl font-medium">{skill.subheading}</h2>
                   </div>
-                  <div className="h-[100%] overflow-y-auto no-scrollbar">
-                    {skill.tags.map((tag: any, index: number) => {
-                      return <CoursePoint title={tag.tag} key={index} />
-                    })}
+                  <div className="h-[100%] no-scrollbar">
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger>
+                          {skill.subcategory} Items
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          {' '}
+                          {skill.tags.map((tag: any, index: number) => {
+                            return <CoursePoint title={tag.tag} key={index} />
+                          })}
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
                   </div>
                   <h2 className="text-[1.40rem] font-semibold mt-8 mb-4 text-center">
                     Price : <span className="text-accent">{skill.pricing}</span>
